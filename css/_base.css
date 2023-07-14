@@ -1,0 +1,121 @@
+.image {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  display: block;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-left: auto;
+  margin-bottom: 4rem;
+}
+
+.button {
+  text-align: center;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1000px;
+  padding: 1rem;
+}
+
+h1 {
+  font-size: 1.8rem;
+  font-family: athiya, serif;
+  text-align: center;
+  color: #7A7979;
+}
+
+h2 {
+  font-size: 1.6rem;
+  font-family: montserrat, sans-serif;
+  text-align: left;
+  color: #9F8BBB;
+}
+
+h3 {
+  font-family: montserrat, sans-serif;
+}
+
+h4 {
+  font-size: 1rem;
+  font-family: montserrat, sans-serif;
+}
+
+body {
+  background: gray;
+  font-family: montserrat, sans-serif;
+}
+
+.button {
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-align: center;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.button__grupos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: end;
+      align-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-left: auto;
+  padding-top: 0.7rem;
+  padding-bottom: 2rem;
+  gap: 1rem;
+}
+
+.button__planificar {
+  padding: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: end;
+      align-content: flex-end;
+  background: white;
+  color: #765A9A;
+  border: 2px solid #765A9A;
+  border-radius: 0.5rem;
+  font-weight: 700;
+}
+
+.button__ver {
+  padding: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: end;
+      align-content: flex-end;
+  background: #765A9A;
+  color: white;
+  border: 1px solid #765A9A;
+  border-radius: 0.5rem;
+  font-weight: 700;
+}
+
+.button__estado {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  font-weight: 700;
+  border-radius: 1rem;
+  border: none;
+}
+
+.button__estado--proximo {
+  color: white;
+  background: #83B697;
+}
+/*# sourceMappingURL=_base.css.map */

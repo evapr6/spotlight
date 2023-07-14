@@ -1,0 +1,72 @@
+@use "variables"
+@use "base"
+
+/*para poner el contenedor con sombreado*/
+.header
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    height: variables.$gap__header
+    box-sizing: border-box
+    border: 0 .2px solid variables.$color__corporativo
+    box-shadow: 0 0 variables.$gap__l variables.$color__shadow
+    z-index: 10
+    //para que no se superponga el header con el body, lo que deja un margen
+    .container
+        background: white
+        box-shadow: 0 0 variables.$gap__l #0003
+        border-radius: 5px
+        display: flex
+        justify-content: space-between
+        //menú hamburguesa
+    .nav
+        z-index: -1
+        position: fixed
+        top: variables.$gap__header
+        inset: 0
+        background: variables.$color__corporativo
+        display: flex
+        justify-content: center
+        align-items: center
+        transform: translateX(-200vw)
+        //para desaparecer el menu
+        transition: .5s
+        &--show
+            transform: translateX(0vw)
+        &__ul
+            list-style: none
+            padding: 0
+        &__link
+            display: block
+            //justify-content: space-between
+            text-decoration: none
+            color: white
+            font-size: variables.$gap__l
+            padding: variables.$gap__s
+            text-align: center
+    &__brand-link
+        //display: inline-block
+        text-decoration: none
+        width: variables.$gap__xxl
+    &__brand-icono
+        min-width: 80px
+    &__button
+        align-self: center
+        width: variables.$gap__l
+        background: none
+        justify-content: flex-end
+        border: 0
+        padding: 0
+        margin-left: auto
+        margin-right: variables.$gap__xs
+        .image
+            height: 100%
+            //display: block
+            //justify-content: flex-end
+
+
+
+
+
+

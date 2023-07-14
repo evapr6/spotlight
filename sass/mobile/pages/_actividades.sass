@@ -1,0 +1,146 @@
+@use "base"
+@use "variables"
+@use "typography"
+
+//hero
+.hero
+    padding:
+        top: variables.$gap__header
+        left: variables.$gap__s
+        right: variables.$gap__s
+        bottom: variables.$gap__l
+    background: variables.$color__morado-claro
+    &__title
+        color: variables.$color__titulo
+        font-size: variables.$gap__xl
+    &__description
+        text-align: center
+        font-size: variables.$gap__s
+        margin-left: variables.$gap__xs
+        margin-right: variables.$gap__xs
+        color: variables.$color__texto
+        padding-bottom: variables.$gap__m
+    &__swiper
+        padding-top: variables.$gap__l
+        max-height: 500px
+        position: relative
+        display: inline-block
+        padding-bottom: variables.$gap__xxl
+        &-title
+            position: absolute
+            top: 2px
+            left: 4px
+            font-size: variables.$gap__s
+            background: variables.$color__corporativo
+            color: variables.$color__blanco
+            padding: .5rem
+            border-radius: 10px
+            margin-bottom: variables.$gap__xs
+            margin-top: variables.$gap__s
+        //como solucionar esto
+        &-info
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: flex-end
+            color: variables.$color__morado-medio
+            border-radius: 10px
+        &-event
+            position: absolute
+            bottom: 80px
+            right: 10px
+            font-size: .9rem
+            margin-bottom: 10px
+        &-museum
+            position: absolute
+            bottom: 100px
+            right: 10px
+            font-size: .7rem
+
+
+
+//inicio actividades
+.actividades
+    display: flex
+    flex-direction: column
+    background: variables.$color__blanco
+    & > .container
+        width: 100vw
+    &__introduction
+        padding-block: variables.$gap--xl
+    &__title-section
+        color: variables.$color__corporativo
+        font-weight: normal
+        font-size: 2.2rem
+        margin-top: 0
+    &__description
+        text-align: center
+        font-size: variables.$gap__s
+        color: variables.$color__texto
+    &__cards
+        display: flex
+        flex-direction: column
+        margin-inline: variables.$gap__s
+    &__card
+        display: grid
+        max-width: 800px
+        border-radius: variables.$gap__s
+        grid-template-columns: 3fr 1fr
+        grid-template-rows: repeat(3,fit-content(100%))
+        grid-template-areas: "header header" "place price" "title go"
+        gap: variables.$gap__xs
+        background: variables.$color__morado-claro
+        margin-block: variables.$gap__l
+        padding-bottom: variables.$gap__m
+        box-shadow: 0 0 variables.$gap__l variables.$color__shadow
+        &-header
+            grid-area: header
+            &-wrapper
+                position: absolute
+                margin-top: variables.$gap__xs
+                margin-left: variables.$gap__xs
+                display: flex
+                align-items: center
+                gap: variables.$gap__xs
+                background: #0006
+                border-radius: 10px
+                padding-inline: .6rem
+                .actividades__card-symbol
+                    height: 32px
+                    max-width: 60px
+                .actividades__card-date
+                    font-family: typography.$fuente__texto
+                    font-weight: bold
+                    font-size: .8rem
+                    text-align: end
+                    color: variables.$color__blanco
+            .actividades__card-image
+                border-top-left-radius: variables.$gap__s
+                border-top-right-radius: variables.$gap__s
+                min-height: 100px
+
+        &-place
+            grid-area: place
+            font-size: 1.2rem
+            margin-left: variables.$gap__l
+            margin-bottom: variables.$gap__xs
+            //para centrar en eje vertical
+            align-self: center
+            color: variables.$color__corporativo
+        &-price
+            grid-area: price
+            font-size: variables.$gap__m
+            font-weight: 700
+            margin-bottom: variables.$gap__xs
+            margin-right: variables.$gap__s
+            place-self: center
+            color: variables.$color__titulo
+        &-title
+            grid-area: title
+            margin-left: variables.$gap__l
+            font-size: 1.2rem
+            color: variables.$color__morado-medio
+        &-button
+            grid-area: go
+            margin-right: variables.$gap__s
+            place-self: center

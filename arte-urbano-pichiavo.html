@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <title>Spotlight| Arte Urbano - Pichiavo</title>
+        <link
+            rel="icon"
+            type="image/png"
+            href="img/favicon.png"
+        >
+        <!-- (Opcional: Solo Safari) Previsualización en marcadores -->
+        <link
+            rel="apple-touch-icon"
+            href="/img/touch-icon-ipad.png">
+        <link
+            rel="apple-touch-icon"
+            sizes="152x152"
+            href="/img/touch-icon-ipad.png">
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="img/touch-icon-iphone-retina.png"
+        >
+        <link
+            rel="apple-touch-icon"
+            sizes="167x167"
+            href="img/touch-icon-ipad-retina.png"
+        >
+        <!-- (Opcional) Sugiere un color al navegador para personalizar la ventana en general -->
+        <meta name="theme-color" content="#fff">
+        <!-- (Opcional) Sugiere un color al navegador para personalizar la ventana en modo claro -->
+        <meta name="theme-color"
+              content="#F0EDF4"
+              media="(prefers-color-scheme: light)">
+        <!-- (Opcional) Sugiere un color al navegador para personalizar la ventana en modo oscuro -->
+        <meta name="theme-color"
+              content="#765A9A"
+              media="(prefers-color-scheme: dark)">
+        <!-- Bloquea el zoom en smartphones-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <!--Declara quien es el autor. Sin utilidad práctica -->
+        <meta name="author" content="Eva">
+        <!-- Declara palabras claves -->
+        <meta name="keywords" content="html, css, javascript, blog, minimalista, arte, exposiciones, actividades">
+        <!-- Declara la descripción de la web. Es utilizado por los motores de busqueda para la previa -->
+        <meta name="description" content="Web para encontrar exposiciones, actividades y leer acerca del arte">
+        <!-- Open Graph y Twitter card: Declara como se mostrará la previa del enlace si es compartida por Facebook o alguna otra red social -->
+        <meta property="og:image" content="img/miniatura.png">
+        <meta property="og:title" content="Blog simple">
+        <!-- website, video, audio, article, book o profile -->
+        <meta property="og:type" content="website">
+        <meta
+            name="twitter:card"
+            content="Es mi trabajo final, sigueme!"
+        >
+
+        <meta
+            name="twitter:creator"
+            content="@evapeydro6">
+        <!-- Open Graph Imagen completa (Opcional) -->
+
+        <meta property="og:image:type" content="image/jpeg">
+        <meta property="og:image:width" content="400">
+        <meta property="og:image:height" content="300">
+        <meta property="og:image:alt" content="A shiny red apple with a bite taken out">
+
+        <!-- Fuentes-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <!-- Fin Fuentes-->
+        <!--CSS-->
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        >
+        <!-- Tus archivos CSS -->
+        <!--split media-->
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="css/mobile.css"
+            media="all and (max-width: 600px)"
+        >
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="css/desktop.css"
+            media="all and (min-width: 600px)"
+        >
+        <!--split media-->
+        <!--Para el menú hamburguesa-->
+        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <!--Fin funcionalidades del menú hamburguesa-->
+        <!--Slider-->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+        />
+        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+        <link rel="stylesheet" href="sass/desktop/_header.sass">
+        <!--fin slider-->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+        <!--AOS-->
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <!--fin AOS-->
+    </head>
+    <body>
+        <header class="header" x-data="{ open: false }">
+        <div class="container">
+            <a href="index.html" class="header__brand-link">
+                <img
+                    src="img/spotlight_movil_reducida.png"
+                    alt="Logo Spotlight versión movil"
+                    class="image header__brand-icono"
+                />
+            </a>
+            <nav class="nav" :class="open ? 'nav--show' : ''">
+                <ul class="nav__ul">
+                    <li class="nav__item">
+                        <a href="exposiciones.html" class="nav__link">Exposiciones</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="actividades.html" class="nav__link">Actividades</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="arte_urbano.html" class="nav__link">Arte urbano</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="artistas.html" class="nav__link">Artistas</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="blog.html" class="nav__link">Blog</a>
+                    </li>
+                </ul>
+            </nav>
+            <button class="header__button" aria-hidden="true" @click="open = !open">
+                <img
+                    :src="open ? 'img/icons/close.webp' : 'img/icons/open.webp'"
+                    alt="Botón de mostrar u ocultar el menú movil"
+                    class="image"
+                >
+            </button>
+        </div>
+    </header>
+        <main>
+            <!---------------------------hero-------------------------->
+            <section id="inicio" class="pichiavo__hero">
+                <div class="container">
+                    <div class="pichiavo__hero--container">
+                        <img class="image pichiavo__hero--image" src="img/pichiavo/ciutat-fallera-valencia-pichiavo-grande.webp" alt="Foto general del mural de pichiavo">
+                        <hgroup class="pichiavo__hero--group">
+                            <h1 class="pichiavo__hero--title">Pichiavo</h1>
+                            <p class="pichiavo__hero--description">
+                                Urban mythology
+                            </p>
+                        </hgroup>
+                        <a class="link pichiavo__hero--button button button--ver" href="#artista">Ver artista</a>
+                        <!--faltaria buscadores pero no van a tener funcionalidad-->
+                    </div>
+                </div>
+            </section>
+            <!-------Fin Hero -------------------------------------------->
+            <section data-aos="fade-up"
+                     data-aos-duration="3000" class="pichiavo">
+                <div class="container__color">
+                    <div class="container">
+                        <article class="pichiavo__mural ">
+                            <div class="pichiavo__mural-container">
+                                <div class="pichiavo__infromation">
+                                    <h2 class="pichiavo__information--title">Venus y Zeus</h2>
+                                    <p class="pichiavo__information--text">
+                                        Esta es uno de los murales más grandes realizado por Pichiavo (con unas dimensiones de 10x60m), ejecutada en el 2017 en su ciudad, Valencia, España. Se encuentra localizada en la ciudad fallera, un área dónde muchos artistas realizan sus estudios  y dónde se almacenan distintos monumentos falleros.
+                                    </p>
+                                    <p class="pichiavo__information--text pichiavo__information--text-bold ">
+                                        La Ciudad del Artista fallero se revitaliza gracias a una intervención de arte urbano en una de las fachadas del taller del artista fallero Ximo Esteve, junto a la Ronda Nord, en la que están participando artistas valencianos con el ánimo de revitalizar la zona.
+                                        Es uno de los más grandes y deslumbrantes murales de arte urbano de Valencia, creado para dignificar el entorno de los talleres artesanales de la Ciudad del Artista Fallero
+                                    </p>
+                                    <p class="pichiavo__information--text">
+                                        Los artistas valencianos Pichi&Avo son los autores de un mural que ha revitalizado, sin duda alguna, un muro de la Ciudad del Artista Fallero de 600 metros cuadrados, ubicado en un solar de la calle Carlos Cortina, junto a la Ronda Norte. Con esta intervención se contribuye a la regeneración de esta zona y a su impulso como espacio creativo.
+                                    </p>
+                                    <p class="pichiavo__information--text">
+                                        La intervención está financiada desde la concejalía de Patrimonio y Recursos Culturales, cuya máxima responsable es Glòria Tello, y la de Cultura Festiva, cuyo concejal es Pere Fuset. Desde ambas áreas manifestaron que dicho acuerdo del equipo de gobierno servía para revitalizar la Ciudad del Artisfa Fallero, ponerla en valor, dignificarla como un foco de creación artística y llamar la atención desde la distancia para todos aquellos que transitan la ciudad artesana.
+                                    </p>
+                                    <p class="pichiavo__information--text">
+                                        La creación de Pichi&Avo (autores de grandes bellas obras de grafiti) está definida por Glòria Tello como una obra de mucha calidad y de carácter internacional, estando al alcance de la ciudadanía para poder contemplarla en cualquier momento. La propia concejala de Patrimonio y Recursos Culturales manifestó que para hacer realidad este gran mural, empezó contactando con la asociación que se encarga de organizar un festival de arte urbano en el municipio castellonense de Fanzara, que es mundialmente conocido por este tema.
+                                    </p>
+                                    <p id="artista" class="pichiavo__information--text">
+                                        El muro, ya terminado por fin, luce una nueva creación urbana que seguramente será un nuevo foco de atracción turística y de interés por la ciudadanía en general. En el mural, además de las grandes figuras como dos caballos alados, se observan palabras como «Che», «Masclet», «Unesco», «Paella», «Festa» o «Penya» escritas con el arte del grafiti.
+                                    </p>
+                                </div>
+                                <div class="pichiavo__swipper">
+                                    <div class="swiper pichiavo__swiper">
+                                        <!-- Additional required wrapper -->
+                                        <div class="swiper-wrapper">
+                                            <!-- Slides -->
+                                            <div class="swiper-slide pichiavo__swiper--image1">
+                                                <img
+                                                    src="img/pichiavo/ciutat-fallera-valencia-pichiavo-grande.webp"
+                                                    alt="Imagen general del mural Venus y Zeus de Pichiavo"
+                                                    class="pichiavo__swiper-image image"
+                                                >
+                                            </div>
+                                            <div class="swiper-slide pichiavo__swiper--image2">
+                                                <img
+                                                    src="img/pichiavo/ciutat-Fallera-Valencia-Pichiavo-3.webp"
+                                                    alt="Imagen de una parte  del mural Venus y Zeus de Pichiavo"
+                                                    class="pichiavo__swiper-image image"
+                                                >
+                                            </div>
+                                            <div class="swiper-slide pichiavo__swiper--image3">
+                                                <img
+                                                    src="img/pichiavo/ciutat-Fallera-Valencia-Pichiavo-4.webp"
+                                                    alt="Imagen de la otra mitad del mural Venus y Zeus de Pichiavo"
+                                                    class="pichiavo__swiper-image image"
+                                                >
+                                            </div>
+                                            <div class="swiper-slide pichiavo__swiper-image4">
+                                                <img
+                                                    src="img/pichiavo/Ciutat-Fallera-Valencia-Pichiavo-2.webp"
+                                                    alt="Imagen de la noticia madrid atemoporal"
+                                                    class="hero__swiper-image image"
+                                                >
+                                            </div>
+                                        </div>
+                                        <!-- If we need pagination -->
+                                        <div class="swiper-pagination"></div>
+
+                                        <!-- If we need scrollbar -->
+                                        <div class="swiper-scrollbar"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article data-aos="fade-up"
+                                 data-aos-duration="3000"  class="pichiavo__artista">
+                            <div class="pichiavo__artista--infromation">
+                                <h3  class="pichiavo__artista--title">Pichiavo</h3>
+                                <p class="pichiavo__artista--text">
+                                    PichiAvo está formado por Juan Antonio (Pichi, 1977) y Álvaro (Avo, 1985), un dúo de artistas urbanos procedentes de Valencia,España. Reconocidos por su habilidad para crear relaciones entre pintura y escultura en contextos urbanos, adoptan un enfoque plenamente innovador en sus fusiones artísticas. En su trabajo se puede identificar la equilibrada combinación del arte clásico y el más actual arte urbano. PichiAvo nace huyendo de la individualidad del artista, uniéndose para concebir una obra perfectamente singular que adopta un lenguaje conceptualmente urbano, tanto en la calle como en el estudio
+                                </p>
+                                <p class="pichiavo__artista--text">
+                                    Con formación en Bellas Artes y en Diseño, se conocen en la escena del arte del grafiti de Valencia, y forman el dúo PichiAvo en 2007. A partir de ese momento, trabajan en el desarrollo de proyectos conjuntos persiguiendo la búsqueda incesante de un estilo propio. Para ello pasan por distintas etapas pictóricas, centrándose al principio en la destreza y en la técnica hasta llegar a la necesidad de expresarse con lo que más les define hoy: el grafiti y el arte clásico. Trabajan tanto en el exterior como en el interior del estudio, pintura, escultura e instalación, que abarcan una amplia versatilidad matérica y pictórica.
+
+                                </p>
+                                <p class="pichiavo__artista--text">
+                                    En 2015, PichiAvo llevan a cabo su primera gran pintura mural en el Festival North West Walls en Bélgica, tras ser invitados por el también artista Arne Quinze, trabajo que lanza su carrera internacional. A partir de este momento, realizan proyectos en algunos de los más relevantes emplazamientos del arte urbano internacional como Wynwood Walls (2015), el Hard Rock Stadium (2016), ambos en Miami; o el Houston Bowery Wall de Nueva York (2017), siendo los primeros artistas europeos que pintan dicho muro. En 2019 crean una escultura monumental de 26 m de altura para las Fallas de Valencia, e inauguran su primera gran exposición en un centro de arte público. En abril de 2019 realizan en la ciudad de Oporto el segundo mayor mural del mundo, en colaboración con el célebre artista portugués Vhils.
+                                    .
+                                </p>
+                                <p class="pichiavo__artista--text">
+                                    La intervención está financiada desde la concejalía de Patrimonio y Recursos Culturales, cuya máxima responsable es Glòria Tello, y la de Cultura Festiva, cuyo concejal es Pere Fuset. Desde ambas áreas manifestaron que dicho acuerdo del equipo de gobierno servía para revitalizar la Ciudad del Artisfa Fallero, ponerla en valor, dignificarla como un foco de creación artística y llamar la atención desde la distancia para todos aquellos que transitan la ciudad artesana.
+                                </p>
+                                <p class="pichiavo__artista--text">
+                                    La carrera de PichiAvo ha alcanzado el reconocimiento artístico y la popularidad a nivel internacional, estableciéndose como unos de los artistas urbanos con más proyección en la escena actual del arte urbano.
+                                </p>
+                                <p class="pichiavo__artista--text">
+                                    El muro, ya terminado por fin, luce una nueva creación urbana que seguramente será un nuevo foco de atracción turística y de interés por la ciudadanía en general. En el mural, además de las grandes figuras como dos caballos alados, se observan palabras como «Che», «Masclet», «Unesco», «Paella», «Festa» o «Penya» escritas con el arte del grafiti.
+                                </p>
+                                <p class="pichiavo__artista--text">
+                                   <a class="link artista__link" href="https://www.instagram.com/pichiavo/?hl=es"> @pichiavo</a>
+                                </p>
+                            </div>
+                            <div class="pichiavo__group--images">
+                                <img
+                                                src="img/pichiavo/pichiavo_artistas_aumentada.webp"
+                                                alt="Imagen de los artistas que componen Pichiavo"
+                                                class="pichiavo__artista--image image"
+                                >
+                                <img
+                                                src="img/pichiavo/pichiavo_escutura.webp"
+                                                alt="Imagen de los artistas que componen Pichiavo en su taller"
+                                                class="pichiavo__artista--image image"
+                                >
+                            </div>
+                        </article>
+                        <div data-aos="fade-up"
+                             data-aos-duration="3000" class="pichiavo__mapa">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1539.307064670784!2d-0.3900203537579675!3d39.500626946092524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd60454f32d8b833%3A0x31cf3e6742ce4325!2sMural%20de%20PichiAvo%20(Ciudad%20Fallera)!5e0!3m2!1ses!2ses!4v1689327525804!5m2!1ses!2ses" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="footer__division-up">
+                <div class="container">
+                    <div class="footer__up">
+                        <div class="footer__group">
+                            <details class="subnav subnav--primero">
+                                <summary class="subnav__title">Spotlight</summary>
+                                <ul class="nav__ul ul-reset">
+                                    <li class="nav__item"><a href="page_construction.html" class="link nav__link">Sobre nosotros</a></li>
+                                    <li class="nav__item"><a href="page_construction.html" class="link nav__link">¿Qué hecemos?</a></li>
+                                    <li class="nav__item"><a href="page_construction.html" class="link nav__link">Equipo</a></li>
+                                    <li class="nav__item"><a href="page_construction.html" class="link nav__link">Contacto</a></li>
+                                </ul>
+                            </details>
+                            <details class="subnav subnav--segundo">
+                                <summary class="subnav__title">Servicios</summary>
+                                <ul class="nav__ul ul-reset">
+                                    <li class="nav__item"><a href="exposiciones.html" class="link nav__link">Exposiciones</a></li>
+                                    <li class="nav__item"><a href="page_construction.html" class="link nav__link">Planifica</a></li>
+                                    <li class="nav__item"><a href="arte_urbano.html" class="link nav__link">Arte urbano</a></li>
+                                    <li class="nav__item"><a href="page_construction.html" class="link nav__link">Publicidad</a></li>
+                                    <li class="nav__item"><a href="page_construction.html" class="link nav__link">Anúnciate.</a></li>
+                                </ul>
+                            </details>
+                        </div>
+                        <form class="footer__form">
+                            <div class="footer__form-newsletter">
+                                <label>
+                                    Suscribete a nuesta newsletter
+                                    <input type="email" name="correo" class="form-correo">
+                                </label>
+                                <button  type="submit" class="button button__enviar"> Enviar</button>
+                            </div>
+                            <div class="footer__form-checkbox">
+                                <label>
+                                    <input type="checkbox" name="privacidad" value="">
+                                    Acepto las condiciones de uso y privacidad
+                                </label>
+                            </div>
+                        </form>
+                        <div class="footer__social">
+                            <p class="footer__social-title ">Siguenos</p>
+                            <ul class="ul-reset social">
+                                <li class="social__item">
+                                    <a href="#" class="link social__link">
+                                        <img class="image social__icon" src="img/icons/facebook_icon.svg" alt="Facebook">
+                                    </a>
+                                </li>
+                                <li class="social__item">
+                                    <a href="#" class="link social__link">
+                                        <img class="image social__icon" src="img/icons/twitter.svg" alt="Twitter">
+                                    </a>
+                                </li>
+                                <li class="social__item">
+                                    <a href="page_construction.html" class="link social__link">
+                                        <a href="page_construction.html" class="link social__link">
+                                    <a href="page_construction.html" class="link social__link">
+                                        <img class="image social__icon" src="img/icons/instagram_icon.svg" alt="Instagram">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__division-down">
+                <div class=" footer__down">
+                    <nav class="footer__group-items">
+                        <div class="footer__group-item">
+                            <p><a href="aviso_legal.html" class="link text">Aviso Legal</a></p>
+                            <a href="page_construction.html" class="link social__link">
+                            <p><a href="page_construction.html" class="link text">Contacto</a></p>
+                        </div>
+                        <div class="footer__group-item">
+                            <p><a href="cookies.html" class="link text">Politica de Cookies</a></p>
+                            <p><a href="politica_privacidad.html" class="link text">Privacidad</a></p>
+                        </div>
+                        <p class="footer__group-item"><a href="#" class="link text">Política de Protección de datos</a></p>
+                    </nav>
+                    <div class="footer__group-finally">
+                        <p>Spotlight, art expericence</p>
+                        <a href="#inicio" class="link">
+                            <img src="img/icons/arrow_up_icon.svg" alt="flecha para llevarte al inicio"
+                                 class="social__icon image">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--spwiper imagenes-->
+        <script>
+            new Swiper('.swiper', {
+                // Optional parameters
+                direction: 'horizontal',
+                loop: true,
+
+                //segundos
+                autoplay: {
+                    delay: 5000,
+                },
+
+                // If we need pagination
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+
+                // Navigation arrows
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+
+                // And if we need scrollbar
+                scrollbar: {
+                    el: '.swiper-scrollbar',
+                },
+            });
+        </script>
+        <!-- fin spwiper imagenes-->
+        <!--animaciones-->
+        <script>
+            AOS.init();
+        </script>
+        <!-- fin animaciones-->
+        <!--footer aperturass-->
+        <script>
+            // Variables
+            const anchuraMovil = 600;
+            const subNavs = document.querySelectorAll('.subnav');
+
+            // Functions
+            function removeAllClickEvents(elem) {
+                const clone = elem.cloneNode(true);
+                elem.parentNode.replaceChild(clone, elem);
+                return clone;
+            }
+
+            function initialSubNavs() {
+                const width = window.innerWidth;
+                if (width < anchuraMovil) {
+                    // Mobile
+                    subNavs.forEach(subNav => {
+                        // Close
+                        subNav.removeAttribute("open");
+                        // Details, enable click on summary
+                        const summary = subNav.querySelector(".subnav__title");
+                        const newDOM = removeAllClickEvents(summary);
+                        newDOM.addEventListener("click", (event) => {
+                            event.preventDefault();
+                            const open = subNav.getAttribute("open");
+                            if (open) {
+                                subNav.removeAttribute("open");
+                            } else {
+                                subNav.setAttribute("open", true);
+                            }
+                        });
+                    });
+                } else {
+                    // Desktop
+                    subNavs.forEach(subNav => {
+                        // Open
+                        subNav.setAttribute("open", true);
+                        // Details, disable click on summary
+                        const summary = subNav.querySelector(".subnav__title");
+                        const newDOM = removeAllClickEvents(summary);
+                        newDOM.addEventListener("click", (event) => {
+                            event.preventDefault();
+                            subNav.setAttribute("open", true);
+                        });
+                    });
+                }
+            }
+
+            // Events
+            window.addEventListener('resize', initialSubNavs);
+
+            // Init
+            initialSubNavs();
+        </script>
+        <!--fin footer aperturas-->
+    </body>
+</html>

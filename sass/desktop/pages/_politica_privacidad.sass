@@ -1,0 +1,60 @@
+@use "base"
+@use "variables"
+@use "typography"
+
+//hero
+.hero
+    padding:
+        top: 10rem
+        left: variables.$gap__s
+        right: variables.$gap__s
+        bottom: variables.$gap__l
+    background: variables.$color__morado-claro
+    &__title
+        color: variables.$color__titulo
+        font-weight: normal
+        font-size: variables.$gap__xl
+    &__description
+        text-align: center
+        font-size: variables.$gap__s
+        margin-inline: .8rem
+        color: variables.$color__texto
+        padding-bottom: variables.$gap__m
+
+//pagina cookies
+.privacidad
+    margin-inline: variables.$gap__s
+    padding-block: variables.$gap__s
+    &__hgroup
+        display: flex
+        flex-direction: column
+        //align-items: center
+        margin-bottom: variables.$gap__s
+        border-bottom: 2px solid variables.$color__morado-footer
+    &__title
+        font-weight: 600
+        text-align: start
+        margin-bottom: variables.$gap__xs
+    &__description
+        margin-bottom: variables.$gap__m
+        .cursive
+            color: variables.$color__corporativo
+        &-item
+            margin-top: 0
+        &-date
+            margin-top: 0
+            margin-bottom: variables.$gap__m
+            font-weight: 600
+    &__subtitle
+        font-weight: normal
+        margin-block: variables.$gap__xs
+        font-size: variables.$gap__s
+        color: variables.$color__corporativo
+    &__explication
+        margin-bottom: variables.$gap__s
+    &__ul
+        margin-block: variables.$gap__s
+    &__list
+        margin-block: variables.$gap__xs
+    &__link
+        color: variables.$color__corporativo

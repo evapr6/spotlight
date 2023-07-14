@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <title>Spotlight| Arte Urbano</title>
+        <link
+            rel="icon"
+            type="image/png"
+            href="img/favicon.png"
+        >
+        <!-- (Opcional: Solo Safari) Previsualización en marcadores -->
+        <link
+            rel="apple-touch-icon"
+            href="/img/touch-icon-ipad.png">
+        <link
+            rel="apple-touch-icon"
+            sizes="152x152"
+            href="/img/touch-icon-ipad.png">
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="img/touch-icon-iphone-retina.png"
+        >
+        <link
+            rel="apple-touch-icon"
+            sizes="167x167"
+            href="img/touch-icon-ipad-retina.png"
+        >
+        <!-- (Opcional) Sugiere un color al navegador para personalizar la ventana en general -->
+        <meta name="theme-color" content="#fff">
+        <!-- (Opcional) Sugiere un color al navegador para personalizar la ventana en modo claro -->
+        <meta name="theme-color"
+              content="#F0EDF4"
+              media="(prefers-color-scheme: light)">
+        <!-- (Opcional) Sugiere un color al navegador para personalizar la ventana en modo oscuro -->
+        <meta name="theme-color"
+              content="#765A9A"
+              media="(prefers-color-scheme: dark)">
+        <!-- Bloquea el zoom en smartphones-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <!--Declara quien es el autor. Sin utilidad práctica -->
+        <meta name="author" content="Eva">
+        <!-- Declara palabras claves -->
+        <meta name="keywords" content="html, css, javascript, blog, minimalista, arte, exposiciones, actividades">
+        <!-- Declara la descripción de la web. Es utilizado por los motores de busqueda para la previa -->
+        <meta name="description" content="Web para encontrar exposiciones, actividades y leer acerca del arte">
+        <!-- Open Graph y Twitter card: Declara como se mostrará la previa del enlace si es compartida por Facebook o alguna otra red social -->
+        <meta property="og:image" content="img/miniatura.png">
+        <meta property="og:title" content="Blog simple">
+        <!-- website, video, audio, article, book o profile -->
+        <meta property="og:type" content="website">
+        <meta
+            name="twitter:card"
+            content="Es mi trabajo final, sigueme!"
+        >
+
+        <meta
+            name="twitter:creator"
+            content="@evapeydro6">
+        <!-- Open Graph Imagen completa (Opcional) -->
+
+        <meta property="og:image:type" content="image/jpeg">
+        <meta property="og:image:width" content="400">
+        <meta property="og:image:height" content="300">
+        <meta property="og:image:alt" content="A shiny red apple with a bite taken out">
+
+        <!-- Fuentes-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <!-- Fin Fuentes-->
+        <!--CSS-->
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        >
+        <!-- Tus archivos CSS -->
+        <!--split media-->
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="css/mobile.css"
+            media="all and (max-width: 600px)"
+        >
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="css/desktop.css"
+            media="all and (min-width: 600px)"
+        >
+        <!--split media-->
+        <!--Para el menú hamburguesa-->
+        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <!--Fin funcionalidades del menú hamburguesa-->
+        <!--Slider-->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+        />
+        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+        <link rel="stylesheet" href="sass/desktop/_header.sass">
+        <!--fin slider-->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    </head>
+    <body>
+        <header class="header" x-data="{ open: false }">
+            <div class="container">
+                <a href="index.html" class="header__brand-link">
+                    <img
+                        src="img/spotlight_movil_reducida.png"
+                        alt="Logo Spotlight versión movil"
+                        class="image header__brand-icono"
+                    />
+                </a>
+                <nav class="nav" :class="open ? 'nav--show' : ''">
+                    <ul class="nav__ul">
+                        <li class="nav__item">
+                            <a href="exposiciones.html" class="nav__link">Exposiciones</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="actividades.html" class="nav__link">Actividades</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="arte_urbano.html" class="nav__link">Arte urbano</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="artistas.html" class="nav__link">Artistas</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="blog.html" class="nav__link">Blog</a>
+                        </li>
+                    </ul>
+                </nav>
+                <button class="header__button" aria-hidden="true" @click="open = !open">
+                    <img
+                        :src="open ? 'img/icons/close.webp' : 'img/icons/open.webp'"
+                        alt="Botón de mostrar u ocultar el menú movil"
+                        class="image"
+                    >
+                </button>
+            </div>
+        </header>
+        <main>
+        <!---------------------------hero-------------------------->
+            <section id="inicio" class="hero">
+                <div class="container">
+                    <div class="hero__container">
+                        <hgroup class="hero__hgroup">
+                            <h1 class="hero__title">Arte Urbano</h1>
+                            <p class="hero__description">
+                                Descubre las diferentes murales o arte situado en las calles de tu localidad
+                            </p>
+                        </hgroup>
+                        <!--faltaria buscadores pero no van a tener funcionalidad-->
+                    </div>
+                </div>
+            </section>
+        <!-------Fin Hero -------------------------------------------->
+        <!-------------inicio exposiciones cards--------------------->
+            <section class="urbano">
+                <div class="container">
+                    <hgroup class="urbano__introduction">
+                        <h1><a class="urbano__title-section link" href="exposiciones.html">Murales e instalaciones</a></h1>
+                        <p class="urbano__description">
+                            Descubre los murales que tienes a tu alrederdor
+                        </p>
+                    </hgroup>
+                    <div class="urbano__cards container">
+                        <article class=" urbano__card-long urbano__card-primera">
+                            <img
+                                src="img/arte_urbano/osgat.webp"
+                                alt="Imagen del mural de Ós gat, ubicado en el barrio de Benimacler, Valencia."
+                                class="image urbano__card-long-image"
+                            >
+                            <div class="urbano__card-long-wrapper">
+                                <h2 class="urbano__card-long-title">Ós gat</h2>
+                                <p class="urbano__card-long-place">
+                                    Benimaclet, Valencia
+                                </p>
+                                <nav class="urbano__card-long-button">
+                                    <a href="page_construction.html" class=" button card-long-button button--planificar link">Artista</a>
+                                    <a href="page_construction.html" class="card-long-button  button button--ver link">Ver</a>
+                                </nav>
+                            </div>
+                        </article>
+                        <!-----otra entrada-------------->
+                        <article class="urbano__tarjet urbano__card-segunda">
+                            <img
+                                src="img/arte_urbano/ciutat-Fallera-Valencia-Pichiavo-4.webp"
+                                alt="Imagen de parte del mural de Pichiavo, ubicado en la ciudad fallera de Valencia"
+                                class="image urbano__tarjet-image"
+                            >
+                            <div class="urbano__tarjet-wrapper">
+                                <h2 class="urbano__tarjet-title">Pichiavo</h2>
+                                <p class="urbano__tarjet-place">
+                                    Ciudad Fallera, Valencia
+                                </p>
+                                <nav class="urbano__tarjet-button">
+                                    <a href="page_construction.html" class=" button tarjet-button button--planificar link">Artista</a>
+                                    <a href="arte-urbano-pichiavo.html" class=" button button--ver link">Ver</a>
+                                </nav>
+                            </div>
+                        </article>
+                        <!-----otra entrada-------------->
+                        <article class="urbano__card urbano__card-tercera">
+                            <img
+                                src="img/arte_urbano/xelon-XLF04.webp"
+                                alt="Imagen del mural de Xelon, ubicado en el barrio del Carmen en Valencia"
+                                class="image urbano__card-image"
+                            >
+                            <div class="urbano__card-wrapper">
+                                <h2 class="urbano__card-title">Xelonxlf</h2>
+                                <p class="urbano__card-place">
+                                    Barrio del Carmen, Valencia
+                                </p>
+                                <nav class="urbano__card-button">
+                                    <a href="#" class=" button button--planificar link">Artista</a>
+                                    <a href="#" class=" button button--ver link">Ver</a>
+                                </nav>
+                            </div>
+                        </article>
+                        <!-----otra entrada-------------->
+                        <article class="urbano__card urbano__card-cuarta">
+                            <img
+                                src="img/arte_urbano/deih-fanzara.webp"
+                                alt="Imagen del mural de Deih, en la población de Fanzara"
+                                class="image urbano__card-image"
+                            >
+                            <div class="urbano__card-wrapper">
+                                <h2 class="urbano__card-title">Deih Assange y el criptoarte</h2>
+                                <p class="urbano__card-place">
+                                    Fanzara, España
+                                </p>
+                                <nav class="urbano__card-button">
+                                    <a href="#" class=" button button--planificar link">Artista</a>
+                                    <a href="#" class=" button button--ver link">Ver</a>
+                                </nav>
+                            </div>
+                        </article>
+                        <!-----otra actividad-------------->
+                        <article class="urbano__card urbano__card-quinta">
+                            <img
+                                src="img/arte_urbano/murarl-julieta.webp"
+                                alt="Imagen del mural de la artista julieta en las navaes dek¡l cabañal, Valencia"
+                                class="image urbano__card-image"
+                            >
+                            <div class="urbano__card-wrapper">
+                                <h2 class="urbano__card-title">Julieta xlF</h2>
+                                <p class="urbano__card-place">
+                                    Naves del Cabañal, Valencia
+                                </p>
+                                <nav class="urbano__card-button">
+                                    <a href="#" class=" button button--planificar link">Artista</a>
+                                    <a href="#" class=" button button--ver link">Ver</a>
+                                </nav>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="footer__division-up">
+                <div class="container">
+                    <div class="footer__up">
+                        <div class="footer__group">
+                            <details class="subnav subnav--primero">
+                                <summary class="subnav__title">Spotlight</summary>
+                                <ul class="nav__ul ul-reset">
+                                    <li class="nav__item"><a href="page_construction.html" class="link nav__link">Sobre nosotros</a></li>
+                                    <li class="nav__item"><a href="page_construction.html" class="link nav__link">¿Qué hecemos?</a></li>
+                                    <li class="nav__item"><a href="page_construction.html" class="link nav__link">Equipo</a></li>
+                                    <li class="nav__item"><a href="page_construction.html" class="link nav__link">Contacto</a></li>
+                                </ul>
+                            </details>
+                            <details class="subnav subnav--segundo">
+                                <summary class="subnav__title">Servicios</summary>
+                                <ul class="nav__ul ul-reset">
+                                    <li class="nav__item"><a href="page_construction.html" class="link nav__link">Exposiciones</a></li>
+                                    <li class="nav__item"><a href="page_construction.html" class="link nav__link">Planifica</a></li>
+                                    <li class="nav__item"><a href="arte_urbano.html" class="link nav__link">Arte urbano</a></li>
+                                    <li class="nav__item"><a href="page_construction.html" class="link nav__link">Publicidad</a></li>
+                                    <li class="nav__item"><a href="page_construction.html" class="link nav__link">Anúnciate.</a></li>
+                                </ul>
+                            </details>
+                        </div>
+                        <form class="footer__form">
+                            <div class="footer__form-newsletter">
+                                <label>
+                                    Suscribete a nuesta newsletter
+                                    <input type="email" name="correo" class="form-correo">
+                                </label>
+                                <button  type="submit" class="button button__enviar"> Enviar</button>
+                            </div>
+                            <div class="footer__form-checkbox">
+                                <label>
+                                    <input type="checkbox" name="privacidad" value="">
+                                    Acepto las condiciones de uso y privacidad
+                                </label>
+                            </div>
+                        </form>
+                        <div class="footer__social">
+                            <p class="footer__social-title ">Siguenos</p>
+                            <ul class="ul-reset social">
+                                <li class="social__item">
+                                    <a href="page_construction.html" class="link social__link">
+                                        <img class="image social__icon" src="img/icons/facebook_icon.svg" alt="Facebook">
+                                    </a>
+                                </li>
+                                <li class="social__item">
+                                    <a href="page_construction.html" class="link social__link">
+                                        <img class="image social__icon" src="img/icons/twitter.svg" alt="Twitter">
+                                    </a>
+                                </li>
+                                <li class="social__item">
+                                    <a href="page_construction.html" class="link social__link">
+                                        <img class="image social__icon" src="img/icons/instagram_icon.svg" alt="Instagram">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__division-down">
+                <div class=" footer__down">
+                    <nav class="footer__group-items">
+                        <div class="footer__group-item">
+                            <p><a href="aviso_legal.html" class="link text">Aviso Legal</a></p>
+                            <p><a href="page_construction.html" class="link text">Contacto</a></p>
+                        </div>
+                        <div class="footer__group-item">
+                            <p><a href="cookies.html" class="link text">Politica de Cookies</a></p>
+                            <p><a href="politica_privacidad.html" class="link text">Privacidad</a></p>
+                        </div>
+                        <p class="footer__group-item"><a href="page_construction.html" class="link text">Política de Protección de datos</a></p>
+                    </nav>
+                    <div class="footer__group-finally">
+                        <p>Spotlight, art expericence</p>
+                        <a href="#inicio" class="link">
+                            <img src="img/icons/arrow_up_icon.svg" alt="flecha para llevarte al inicio"
+                                 class="social__icon image">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--footer aperturass-->
+        <script>
+            // Variables
+            const anchuraMovil = 600;
+            const subNavs = document.querySelectorAll('.subnav');
+
+            // Functions
+            function removeAllClickEvents(elem) {
+                const clone = elem.cloneNode(true);
+                elem.parentNode.replaceChild(clone, elem);
+                return clone;
+            }
+
+            function initialSubNavs() {
+                const width = window.innerWidth;
+                if (width < anchuraMovil) {
+                    // Mobile
+                    subNavs.forEach(subNav => {
+                        // Close
+                        subNav.removeAttribute("open");
+                        // Details, enable click on summary
+                        const summary = subNav.querySelector(".subnav__title");
+                        const newDOM = removeAllClickEvents(summary);
+                        newDOM.addEventListener("click", (event) => {
+                            event.preventDefault();
+                            const open = subNav.getAttribute("open");
+                            if (open) {
+                                subNav.removeAttribute("open");
+                            } else {
+                                subNav.setAttribute("open", true);
+                            }
+                        });
+                    });
+                } else {
+                    // Desktop
+                    subNavs.forEach(subNav => {
+                        // Open
+                        subNav.setAttribute("open", true);
+                        // Details, disable click on summary
+                        const summary = subNav.querySelector(".subnav__title");
+                        const newDOM = removeAllClickEvents(summary);
+                        newDOM.addEventListener("click", (event) => {
+                            event.preventDefault();
+                            subNav.setAttribute("open", true);
+                        });
+                    });
+                }
+            }
+
+            // Events
+            window.addEventListener('resize', initialSubNavs);
+
+            // Init
+            initialSubNavs();
+        </script>
+        <!--fin footer aperturas-->
+    </body>
+</html>

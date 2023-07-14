@@ -1,0 +1,558 @@
+@use "base"
+@use "variables"
+@use "typography"
+
+//hero
+.hero
+    margin-inline: variables.$gap__l
+    max-height: 1100px
+    padding-block: 6rem
+    padding-inline: variables.$gap__l
+    box-sizing: border-box
+    background: variables.$color__morado-claro
+    &__hgroup
+        margin-block: variables.$gap__xxl
+    &__container
+        padding-block: variables.$gap__xxl
+    &__tittle
+        text-align: center
+        color: variables.$color__titulo
+        font-size: variables.$gap__xxl
+    &__description
+        text-align: center
+        font-size: variables.$gap__m
+        margin-left: variables.$gap__xs
+        margin-right: variables.$gap__xs
+        color: variables.$color__texto
+    &__swiper
+        max-height: 900px
+        display: flex
+        justify-content: center
+        align-items: center
+        text-align: center
+        &-image
+            text-align: center
+            margin: 0 auto
+        &-title
+            position: absolute
+            top: 0
+            left: 4px
+            font-size: 1.2rem
+            color: variables.$color__morado-claro
+            padding: variables.$gap__xs
+            border-radius: 10px
+            margin-bottom: variables.$gap__xs
+            margin-top: variables.$gap__s
+            background: variables.$color__corporativo
+        &-info
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: flex-end
+        &-event
+            position: absolute
+            bottom: 50px
+            right: 20px
+            margin-bottom: 30px
+            color: variables.$color__morado-medio
+        &-museum
+            position: absolute
+            bottom: 80px
+            right: 20px
+            margin-bottom: 30px
+            color: variables.$color__morado-medio
+// fin hero
+//inicio exposiciones
+.exposiciones
+    margin-inline: auto
+    padding-top: variables.$gap__l
+    &__introduction
+        margin-bottom: variables.$gap__l
+        padding-block: variables.$gap__l
+    &__title-section
+        color: variables.$color__titulo
+        margin-top: 0
+        margin-bottom: 0
+    &__description
+        text-align: center
+        font-size: variables.$gap__m
+        color: variables.$color__texto
+    &__cards
+        display: grid
+        grid-template-columns: repeat(3,1fr)
+        gap: 2.2rem
+    &__card
+        background: variables.$color__morado-claro
+        border-radius: variables.$gap__s
+        padding: variables.$gap__s
+        box-sizing: border-box
+        margin-block: variables.$gap__l
+        transition: .5s
+        box-shadow: 0 0 1rem variables.$color__shadow
+        &:hover
+            transform: scale(1.1)
+    .card
+        &__header
+            display: flex
+            justify-content: space-between
+            align-items: center
+        &__museum
+            margin: .7rem
+            font-size: variables.$gap__s
+            color: variables.$color__corporativo
+        &__estado
+            text-transform: uppercase
+            font-size: .7rem
+            font-weight: 700
+            margin-right: variables.$gap__s
+            padding: variables.$gap__xs variables.$gap__s
+            border-radius: 5px
+            &--proximo
+                color: variables.$color__blanco
+                background: variables.$color__verde
+            &--actual
+                color: variables.$color__corporativo
+                background: variables.$color__gris
+                display: flex
+                align-items: flex-end
+                &-simple
+                    display: inline-flex
+        &__image
+            height: 14rem
+            margin-block: variables.$gap__s
+            margin: 0 auto
+        &__tipo-exposicion
+            font-weight: 300
+            margin: 0
+                top: .25rem
+        &__space
+            display: block
+            padding-block: variables.$gap__s
+            &-doble
+                display: block
+                padding-block: variables.$gap__l
+        &__title-evento
+            font-size: variables.$gap__m
+            color: variables.$color__morado-medio
+        &__description
+            margin-bottom: variables.$gap__s
+            &--hidden
+                display: none
+
+//fin exposiciones
+
+// Inicio actividades
+.actividades
+    margin-inline: auto
+    padding-top: variables.$gap__l
+    &__introduction
+        margin-bottom: variables.$gap__l
+        padding-block: variables.$gap__l
+    &__title-section
+        color: variables.$color__titulo
+        margin-top: 0
+        margin-bottom: 0
+    &__description
+        text-align: center
+        font-size: variables.$gap__m
+        color: variables.$color__texto
+    &__cards
+        display: grid
+        grid-template-columns: repeat(3,1fr)
+        gap: variables.$gap__xl
+
+
+    &__card
+        display: grid
+        max-width: 800px
+        box-sizing: border-box
+        border-top-left-radius: variables.$gap__s
+        border-top-right-radius: variables.$gap__s
+        grid-template-columns: 3fr 1fr
+        grid-template-rows: repeat(3,fit-content(100%))
+        grid-template-areas: "header header" "place price" "title go"
+        background: variables.$color__morado-claro
+        margin-block: variables.$gap__l
+        padding-bottom: variables.$gap__m
+        box-shadow: 0 0 variables.$gap__l variables.$color__shadow
+        &:hover
+            transform: scale(1.1)
+        &-header
+            grid-area: header
+            &-wrapper
+                position: absolute
+                margin-top: variables.$gap__xs
+                margin-left: variables.$gap__xs
+                display: flex
+                align-items: center
+                gap: variables.$gap__xs
+                background: #0006
+                border-radius: 10px
+                padding-inline: .6rem
+                .actividades__card-symbol
+                    height: 32px
+                    max-width: 60px
+                .actividades__card-date
+                    font-family: typography.$fuente__texto
+                    font-weight: bold
+                    font-size: .8rem
+                    text-align: end
+                    color: variables.$color__blanco
+            .actividades__card-image
+                border-top-left-radius: variables.$gap__s
+                border-top-right-radius: variables.$gap__s
+                max-height: 10rem
+                width: 320px
+        &-place
+            grid-area: place
+            font-size: 1.2rem
+            margin-left: variables.$gap__s
+            margin-bottom: variables.$gap__xs
+            //para centrar en eje vertical
+            align-self: center
+            color: variables.$color__corporativo
+        &-price
+            grid-area: price
+            font-size: variables.$gap__m
+            font-weight: 700
+            margin-bottom: variables.$gap__xs
+            margin-right: variables.$gap__s
+            place-self: center
+            color: variables.$color__titulo
+        &-title
+            grid-area: title
+            margin-left: variables.$gap__s
+            font-size: 1.2rem
+            color: variables.$color__morado-medio
+        &-button
+            grid-area: go
+            margin-right: variables.$gap__s
+            place-self: center
+
+//fin actividades
+
+//artistas
+.artistas
+    margin-inline: auto
+    padding-top: variables.$gap__l
+    &__introduction
+        margin-bottom: variables.$gap__l
+        padding-block: variables.$gap__l
+    &__title-section
+        color: variables.$color__titulo
+        margin-top: 0
+        margin-bottom: 0
+    &__description
+        text-align: center
+        font-size: variables.$gap__m
+        color: variables.$color__texto
+    .swiper
+        &-wrapper--artistas
+            width: 30%
+            display: flex
+            align-items: center
+    &__card
+        margin: 0 2em
+        width: 15em
+        height: 90%
+        background: variables.$color__verde-claro
+        border-radius: variables.$gap__s
+        padding: variables.$gap__s variables.$gap__l
+        box-sizing: border-box
+        margin-block: variables.$gap__m
+        transition: .5s
+        box-shadow: 0 0 1rem variables.$color__shadow
+
+    .card
+        padding-block: 4rem
+        &__image
+            max-width: 90%
+            height: 10rem
+            margin-block: variables.$gap__s
+            margin: 0 auto
+            aspect-ratio: 1 / 1
+            border-radius: 50%
+            margin-top: variables.$gap__s
+        &__title
+            text-align: center
+            font-size: variables.$gap__m
+            color: variables.$color__morado-medio
+            margin-bottom: 0
+        &__subtitle
+            text-align: center
+            text-transform: uppercase
+            color: variables.$color__titulo
+            font-size: variables.$gap__s
+            margin-top: variables.$gap__xs
+            margin-bottom: variables.$gap__m
+        &__description
+            text-align: center
+            margin-block: variables.$gap--xxl
+            margin-inline: variables.$gap__s
+        &-button
+            display: flex
+            justify-content: center
+            margin: 0 auto
+            margin-bottom: variables.$gap__s
+
+// Inicio arte urbnao
+.urbano
+    margin-inline: auto
+    padding-top: 4rem
+    &__introduction
+        margin-bottom: variables.$gap__l
+        padding-block: variables.$gap__l
+    &__title-section
+        color: variables.$color__titulo
+        margin-top: 0
+        margin-bottom: 0
+    &__description
+        text-align: center
+        font-size: variables.$gap__m
+        color: variables.$color__texto
+    &__cards
+        display: grid
+        grid-template-columns: repeat(3,1fr)
+        gap: variables.$gap__l
+
+
+    &__card
+        margin-inline: variables.$gap__xs
+        max-width: 800px
+        box-sizing: border-box
+        border-radius: variables.$gap__s
+        background: variables.$color__morado-claro
+        margin-block: variables.$gap__l
+        padding-bottom: variables.$gap__m
+        box-shadow: 0 0 variables.$gap__l variables.$color__shadow
+        &:hover
+            transform: scale(1.1)
+        &-image
+            border-top-left-radius: variables.$gap__s
+            border-top-right-radius: variables.$gap__s
+            max-height: 200px
+            width: 320px
+            margin-bottom: variables.$gap__s
+        &-place
+            margin-left: variables.$gap__s
+            font-size: .8rem
+            color: variables.$color__titulo
+            margin-bottom: 0
+        &-title
+            font-size: variables.$gap__l
+            text-align: start
+            margin-top: variables.$gap__xs
+            margin-left: variables.$gap__s
+        &-button
+            margin-top: variables.$gap__s
+            margin-right: variables.$gap__m
+            display: flex
+            justify-content: flex-end
+            gap: variables.$gap__s
+            padding-bottom: variables.$gap__xs
+
+//fin arte urbano
+//Inicio blog
+.blog
+    margin-inline: auto
+    padding-top: variables.$gap__l
+    &__introduction
+        margin-bottom: variables.$gap__l
+        padding-block: variables.$gap__l
+    &__title-section
+        color: variables.$color__titulo
+        margin-top: 0
+        margin-bottom: 0
+    &__description
+        text-align: center
+        font-size: variables.$gap__m
+        color: variables.$color__texto
+    &__cards
+        display: grid
+        grid-template-columns: 1fr 1fr 1fr
+        grid-template-rows: 1fr 1fr
+        grid-template-areas: "primera segunda segunda" "tercera cuarta quinta"
+        gap: variables.$gap__l
+        .blog__card-primera
+            grid-area: primera
+        .blog__card-segunda
+            grid-area: segunda
+        .blog__card-tercera
+            grid-area: tercera
+        .blog__card-cuarta
+            grid-area: cuarta
+        .blog__card-quinta
+            grid-area: quinta
+    &__tarjet
+        border-radius: .3rem
+        margin-block: variables.$gap--l
+        box-shadow: 0 0 variables.$gap__s variables.$color__shadow
+        display: inline-block
+        position: relative
+        &:hover
+            transform: scale(1.1)
+        &-image
+            text-align: center
+            box-sizing: border-box
+            border-radius: variables.$gap__s
+            max-height: 100vh
+            margin: 0
+            margin-bottom: variables.$gap__xs
+            z-index: -1
+        &-wrapper
+            position: absolute
+            top: 10px
+            left: 20px
+        &-title
+            margin-top: variables.$gap__s
+            font-size: variables.$gap__xl
+            font-weight: normal
+            color: variables.$color__morado-claro
+            font-family: typography.$fuente__titulos
+            margin-bottom: variables.$gap__xs
+        &-place
+            margin-top: variables.$gap__s
+            font-size: variables.$gap__m
+            font-weight: normal
+            color: variables.$color__blanco
+        &-button
+            position: absolute
+            width: 60px
+            top: 400px
+            right: 25px
+            margin: variables.$gap__xs
+            padding-inline: variables.$gap__xs
+
+    &__card
+        margin-inline: variables.$gap__xs
+        //max-width: 400px
+        height: 400px
+        box-sizing: border-box
+        border-radius: variables.$gap__s
+        background: variables.$color__morado-claro
+        margin-block: variables.$gap__l
+        padding-bottom: variables.$gap__m
+        box-shadow: 0 0 variables.$gap__l variables.$color__shadow
+        &:hover
+            transform: scale(1.1)
+        &-wrapper
+            display: grid
+            grid-template-columns: 1fr 1fr
+            grid-template-rows: repeat(2,fit-content(100%))
+            grid-template-areas: "title title" "place button"
+        &-image
+            border-top-left-radius: variables.$gap__s
+            border-top-right-radius: variables.$gap__s
+            max-height: 200px
+            width: 350px
+            margin-bottom: variables.$gap__s
+        &-place
+            grid-area: place
+            text-transform: uppercase
+            margin-left: .8rem
+            font-size: .8rem
+            color: variables.$color__titulo
+            margin-bottom: variables.$gap__s
+        &-title
+            grid-area: title
+            text-align: start
+            font-size: variables.$gap__m
+            margin-top: variables.$gap__s
+            margin-inline: .8rem
+            margin-bottom: variables.$gap__xs
+        &-button
+            grid-area: button
+            margin-top: variables.$gap__l
+            margin-bottom: variables.$gap__xxl
+            margin-left: variables.$gap__l
+
+    .blog__card-long
+        height: 500px
+        box-sizing: border-box
+        border-radius: variables.$gap__s
+        margin-top: variables.$gap__l
+        background: variables.$color__morado-claro
+        &:hover
+            transform: scale(1.1)
+        &-image
+            border-top-left-radius: variables.$gap__s
+            border-top-right-radius: variables.$gap__s
+            width: 350px
+            margin-bottom: variables.$gap__s
+        &-wrapper
+            display: grid
+            grid-template-columns: 1fr 1fr
+            grid-template-rows: repeat(2,fit-content(100%))
+            grid-template-areas: "title title" "place button"
+        &-place
+            grid-area: place
+            text-transform: uppercase
+            margin-left: .8rem
+            font-size: .8rem
+            color: variables.$color__titulo
+            margin-bottom: variables.$gap__s
+        &-title
+            grid-area: title
+            text-align: start
+            font-size: variables.$gap__m
+            margin-top: variables.$gap__s
+            margin-inline: .8rem
+            margin-bottom: variables.$gap__xs
+        &-button
+            grid-area: button
+            margin-top: variables.$gap__l
+            margin-bottom: variables.$gap__xxl
+            margin-left: variables.$gap__l
+
+//Cartel de cookies
+.cookies
+    position: fixed
+    bottom: 0
+    left: 0
+    right: 0
+    margin:
+        left: 60rem
+        right: variables.$gap__l
+        bottom: variables.$gap__s
+    border-radius: variables.$gap__s
+    padding-top: variables.$gap__xxl
+
+    background: variables.$color__morado-medio
+    color: white
+    text-align: center
+    z-index: 999999
+    &__titulo
+        font-size: variables.$gap__m
+        color: variables.$color__blanco
+        text-align: center
+    &__link
+        color: variables.$color__corporativo
+        font-weight: 700
+        text-decoration: underline
+        &:hover
+            color: variables.$color__blanco
+
+.cookies__boton
+    border: 2px solid white
+    padding: .7rem
+    font-size: variables.$gap__s
+    color: white
+    width: variables.$gap__header
+    text-align: center
+    margin-bottom: variables.$gap__l
+    &--no
+        background: variables.$color__blanco
+        color: variables.$color__corporativo
+        border-radius: variables.$gap__s
+        font-weight: bold
+        border: none
+        margin-right: 1rem
+    &--si
+        background: variables.$color__corporativo
+        border-radius: variables.$gap__s
+        font-weight: bold
+        border: none
+
+
+
+

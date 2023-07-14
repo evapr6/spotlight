@@ -1,0 +1,105 @@
+@use "base"
+@use "variables"
+@use "typography"
+
+.hero
+    margin-inline: variables.$gap__l
+    max-height: 1100px
+    padding-block: 8rem
+    padding-inline: variables.$gap__l
+    box-sizing: border-box
+    background: variables.$color__morado-claro
+    &__hgroup
+        margin-block: variables.$gap__xxl
+    &__container
+        padding-block: variables.$gap__xxl
+    &__tittle
+        text-align: center
+        color: variables.$color__titulo
+        font-size: variables.$gap__xxl
+    &__description
+        text-align: center
+        font-size: variables.$gap__m
+        margin-left: variables.$gap__xs
+        margin-right: variables.$gap__xs
+        color: variables.$color__texto
+
+//inicio exposiciones
+.exposiciones
+    margin-inline: auto
+    padding-top: variables.$gap__l
+    &__introduction
+        margin-bottom: variables.$gap__l
+        padding-block: variables.$gap__l
+    &__title-section
+        color: variables.$color__corporativo
+        font-weight: normal
+        margin-top: 0
+        margin-bottom: 0
+    &__description
+        text-align: center
+        font-size: variables.$gap__m
+        color: variables.$color__texto
+    &__cards
+        display: grid
+        grid-template-columns: repeat(3,1fr)
+        gap: variables.$gap__xl
+    &__card
+        background: variables.$color__morado-claro
+        border-radius: variables.$gap__s
+        padding: variables.$gap__s
+        box-sizing: border-box
+        margin-block: variables.$gap__l
+        transition: .5s
+        box-shadow: 0 0 1rem variables.$color__shadow
+    //&:hover
+        rotate: 5deg
+    .card
+        &__header
+            display: flex
+            justify-content: space-between
+            align-items: center
+        &__museum
+            margin: .7rem
+            font-size: variables.$gap__s
+            color: variables.$color__corporativo
+        &__estado
+            text-transform: uppercase
+            font-size: .7rem
+            font-weight: 700
+            margin-right: variables.$gap__s
+            padding: variables.$gap__xs variables.$gap__s
+            border-radius: 5px
+            &--proximo
+                color: variables.$color__blanco
+                background: variables.$color__verde
+            &--actual
+                color: variables.$color__corporativo
+                background: variables.$color__gris
+                display: flex
+                align-items: flex-end
+                &-simple
+                    display: inline-flex
+        &__image
+            height: 14rem
+            margin-block: variables.$gap__s
+            margin: 0 auto
+        &__tipo-exposicion
+            font-weight: 300
+            margin: 0
+                top: .25rem
+        &__space
+            display: block
+            padding-block: variables.$gap__s
+            &-doble
+                display: block
+                padding-block: variables.$gap__l
+        &__title-evento
+            font-size: variables.$gap__m
+            color: variables.$color__morado-medio
+        &__description
+            margin-bottom: variables.$gap__s
+            &--hidden
+                display: none
+
+//fin exposiciones

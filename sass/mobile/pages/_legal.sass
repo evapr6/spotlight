@@ -1,0 +1,52 @@
+@use "base"
+@use "variables"
+@use "typography"
+
+//hero cookies
+.hero
+    padding:
+        top: 8rem
+        left: variables.$gap__s
+        right: variables.$gap__s
+        bottom: variables.$gap__s
+    background: variables.$color__morado-claro
+    &__title
+        color: variables.$color__titulo
+        font-weight: normal
+        font-size: variables.$gap__l
+
+//pagina cookies
+.legal
+    margin-inline: variables.$gap__s
+    padding-block: variables.$gap__s
+    &__group
+        display: flex
+        flex-direction: column
+        //align-items: center
+        margin-bottom: variables.$gap__s
+        border-bottom: 1px solid variables.$color__morado-footer
+    &__title
+        font-weight: 600
+        text-align: start
+        margin-bottom: variables.$gap__xs
+    &__description
+        margin-bottom: variables.$gap__m
+        .cursive
+            color: variables.$color__corporativo
+        &-date
+            margin-top: 0
+            margin-bottom: variables.$gap__m
+    &__destacado
+        font-weight: 600
+        text-transform: uppercase
+        color: variables.$color__morado-medio
+        font-size: 1rem
+    &__ul
+        margin-block: variables.$gap__xs
+    &__list
+        margin-block: variables.$gap__xs
+    &__link
+        color: variables.$color__corporativo
+
+
+

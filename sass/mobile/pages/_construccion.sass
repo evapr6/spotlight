@@ -1,0 +1,23 @@
+@use "base"
+@use "variables"
+@use "typography"
+
+.construccion
+    padding:
+        top: 8rem
+        left: variables.$gap__s
+        right: variables.$gap__s
+        bottom: variables.$gap__l
+    background: variables.$color__morado-footer
+    &__title
+        font-size: variables.$gap__l
+        font-weight: normal
+        color: variables.$color__corporativo
+        margin-block: variables.$gap__l
+    &__text
+        margin: variables.$gap__m
+        font-size: variables.$gap__s
+        &-color
+            color: variables.$color__corporativo
+            font-weight: 500
+            text-align: center

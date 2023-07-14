@@ -1,0 +1,110 @@
+@use "base"
+@use "variables"
+@use "typography"
+
+//hero
+.pichiavo__hero
+    padding:
+        top: variables.$gap__header
+        left: variables.$gap__s
+        right: variables.$gap__s
+        bottom: variables.$gap__l
+    &--group
+        position: absolute
+        top: 9rem
+        left: 47rem
+        background: #fff8
+        width: 300px
+        margin-left: 1rem
+        border-radius: variables.$gap__l
+        padding-block: 0
+        padding-inline: variables.$gap__l
+    &--image
+        opacity: 70%
+    &--title
+        color: variables.$color__titulo
+        font-size: variables.$gap__xxl
+    &--description
+        text-align: center
+        font-size: variables.$gap__m
+        margin-left: variables.$gap__xs
+        margin-right: variables.$gap__xs
+        color: variables.$color__texto
+        padding-bottom: variables.$gap__s
+
+    &--button
+        position: absolute
+        top: 40rem
+        right: 0
+        left: 0
+        text-align: center
+        margin: 0 auto
+        font-size: variables.$gap__s
+
+//pichiavo contenido
+.pichiavo
+    margin-inline: auto
+    padding-top: variables.$gap__l
+    //para el futuro poner contenedor de color a mitad del texto
+    //.container__color
+        background-color: #9F8BBB
+        z-index: 1
+        margin-top: 3rem
+        position: fixed
+        top: 10rem
+    &__mural-container
+        display: flex
+        align-content: space-between
+        flex-direction: row-reverse
+        gap: variables.$gap__xxl
+        margin-bottom: variables.$gap__l
+    &__information
+        &--title
+            text-align: center
+            margin-top: 0
+            color: variables.$color__morado-medio
+        &--text
+            font-weight: 400
+            &-bold
+                font-weight: 700
+                color: variables.$color__corporativo
+    &__swiper
+        margin-top: 10rem
+        width: 500px
+        height: 400px
+    &__artista
+        display: flex
+        justify-content: space-between
+        gap: 4rem
+        margin-bottom: variables.$gap__l
+        &--information
+            width: 500px
+        &--title
+            text-align: center
+            margin-top: variables.$gap__s
+            color: variables.$color__titulo
+        &--text
+            font-weight: 400
+        &--image
+            width: 500px
+            margin-bottom: variables.$gap__header
+    &__group--images
+        display: flex
+        flex-direction: column
+        margin-top: 8rem
+        width: 5000px
+    .artista__link
+        color: variables.$color__corporativo
+        font-weight: 700
+    &__mapa
+        margin-block: variables.$gap__l
+        text-align: center
+
+
+
+
+
+
+
+
+

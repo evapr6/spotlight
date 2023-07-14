@@ -1,0 +1,129 @@
+@use "base"
+@use "variables"
+@use "typography"
+
+//hero
+.hero
+    padding:
+        top: variables.$gap__header
+        left: variables.$gap__s
+        right: variables.$gap__s
+        bottom: variables.$gap__l
+    background: variables.$color__morado-claro
+    &__title
+        color: variables.$color__titulo
+        font-size: variables.$gap__xl
+    &__description
+        text-align: center
+        font-size: variables.$gap__s
+        margin-left: variables.$gap__xs
+        margin-right: variables.$gap__xs
+        color: variables.$color__texto
+        padding-bottom: variables.$gap__m
+    &__swiper
+        padding-top: variables.$gap__l
+        max-height: 500px
+        position: relative
+        display: inline-block
+        padding-bottom: variables.$gap__xxl
+        &-title
+            position: absolute
+            top: 2px
+            left: 4px
+            font-size: variables.$gap__s
+            background: variables.$color__corporativo
+            color: variables.$color__blanco
+            padding: variables.$gap__xs
+            border-radius: 10px
+            margin-bottom: variables.$gap__xs
+            margin-top: variables.$gap__s
+        //como solucionar esto
+        &-info
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: flex-end
+            color: variables.$color__morado-medio
+            border-radius: 10px
+        &-event
+            position: absolute
+            bottom: 80px
+            right: 10px
+            font-size: .9rem
+            margin-bottom: 10px
+        &-museum
+            position: absolute
+            bottom: 100px
+            right: 10px
+            font-size: .7rem
+
+//fin hero
+//exposiciones cards
+.exposiciones
+    display: flex
+    flex-direction: column
+    background: variables.$color__blanco
+    &__introduction
+        padding-block: variables.$gap--xl
+    &__title-section
+        color: variables.$color__corporativo
+        font-weight: normal
+        font-size: 2.2rem
+        margin-top: 0
+    &__description
+        text-align: center
+        font-size: variables.$gap__s
+        color: variables.$color__texto
+    &__cards
+        display: flex
+        flex-direction: column
+        margin-inline: variables.$gap__s
+    &__card
+        background: variables.$color__morado-claro
+        margin-block: 2rem
+        box-shadow: 0 0 1rem variables.$color__shadow
+        border-top-left-radius: variables.$gap__s
+        border-top-right-radius: variables.$gap__s
+        padding: variables.$gap__s
+
+    .card
+        &__header
+            display: flex
+            justify-content: space-between
+            align-items: center
+        &__museum
+            font-size: 1.2rem
+            color: variables.$color__corporativo
+        &__estado
+            text-transform: uppercase
+            font-size: .7rem
+            font-weight: 700
+            padding: variables.$gap__xs variables.$gap__s
+            border-radius: 5px
+            &--proximo
+                color: variables.$color__blanco
+                background: variables.$color__verde
+            &--actual
+                color: variables.$color__corporativo
+                background: variables.$color__gris
+                display: flex
+                align-items: flex-end
+        &__image
+            margin-block: variables.$gap__s
+        &__tipo-exposicion
+            font-weight: 300
+            margin: 0
+                top: .25rem
+        &__title-evento
+            font-size: variables.$gap__m
+            color: variables.$color__morado-medio
+        &__description
+            overflow: hidden
+            text-overflow: ellipsis
+            &--hidden
+                display: none
+
+        &__leer-mas
+            font-size: .8rem
+            color: variables.$color__morado-medio
+

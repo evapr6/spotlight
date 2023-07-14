@@ -1,0 +1,58 @@
+@use "variables"
+.header
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    inset: 0 0 auto
+    padding: .2rem
+    background: variables.$color__blanco
+    box-shadow: 0 0 2rem variables.$color__shadow
+    box-sizing: border-box
+    //para que no salgan las flechas
+    z-index: 999
+    & > .container
+        max-width: 100vw
+        margin-inline: 2rem
+        display: flex
+        justify-content: space-between
+        align-items: center
+        gap: variables.$gap__m
+
+    &__brand-link
+      text-decoration: none
+      &:hover
+        transform: scale(1.1)
+    &__brand-icono
+        min-width: 100px
+    &__brand
+      display: inline-block
+      justify-content: flex-start
+      text-decoration: none
+    &__button
+      display: none
+    .nav
+      display: inline-block
+      &__ul
+        display: flex
+        list-style: none
+        justify-content: flex-start
+      &__link
+        color: black
+        display: inline-block
+        box-sizing: border-box
+        text-decoration: none
+        padding: 1rem
+        &:hover
+          border-bottom: 1px solid variables.$color__morado-medio
+          font-size: 1.2rem
+          background: variables.$color__morado-claro
+          border-radius: 2rem
+          color: variables.$color__corporativo
+        &:active
+            color: variables.$color__corporativo
+
+
+
+
+

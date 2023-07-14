@@ -1,0 +1,89 @@
+@use "base"
+@use "variables"
+@use "typography"
+
+//hero
+.pichiavo__hero
+    padding:
+        top: 5rem
+        left: variables.$gap__s
+        right: variables.$gap__s
+        bottom: variables.$gap__l
+    background-image: url("img/pichiavo/ciutat-fallera-valencia-pichiavo-grande.webp")
+    &--image
+        opacity: 70%
+    &--group
+        position: absolute
+        top: 7rem
+        right: 0
+        left: 0
+        background: #fff8
+        width: 250px
+        margin-left: 4rem
+        border-radius: variables.$gap__l
+        padding-block: 0
+    &--image
+        opacity: 70%
+    &--title
+        color: variables.$color__titulo
+        font-size: variables.$gap__l
+        margin-bottom: .2rem
+        margin-top: variables.$gap__xs
+    &--description
+        text-align: center
+        font-size: variables.$gap__s
+        margin-left: variables.$gap__xs
+        margin-right: variables.$gap__xs
+        color: variables.$color__texto
+        margin-top: .3rem
+        padding-bottom: .2rem
+    &--button
+        position: absolute
+        top: 17rem
+        right: 0
+        left: 0
+        text-align: center
+        margin: 0 auto
+        font-size: variables.$gap__s
+
+//pichiavo contenido
+.pichiavo
+    display: flex
+    flex-direction: column
+    background: variables.$color__blanco
+    margin-inline: variables.$gap__s
+    &__information
+        margin-top: variables.$gap__xl
+        margin-bottom: variables.$gap--xxl
+        &--title
+            color: variables.$color__morado-medio
+            font-size: variables.$gap--l
+            text-align: center
+        &--text
+            margin-inline: variables.$gap--xs
+            &-bold
+                font-weight: 700
+                color: variables.$color__corporativo
+    &__swiper
+        margin-block: variables.$gap--xxl
+    &__artista
+        display: flex
+        flex-direction: column
+        margin-bottom: 2rem
+        &--information
+            width: 500px
+        &--title
+            text-align: center
+            margin-top: 1rem
+        &--text
+            font-weight: 400
+        &--image
+            margin-bottom: 6rem
+    &__group--images
+        display: flex
+        flex-direction: column
+        margin-top: 4rem
+    .artista__link
+        color: variables.$color__corporativo
+        font-weight: 700
+

@@ -1,0 +1,116 @@
+@use "base"
+@use "variables"
+@use "typography"
+
+//hero
+.hero
+    margin-inline: variables.$gap__l
+    max-height: 1100px
+    padding-block: 8rem
+    padding-inline: variables.$gap__l
+    box-sizing: border-box
+    background: variables.$color__morado-claro
+    &__hgroup
+        margin-block: variables.$gap__xxl
+    &__container
+        padding-block: variables.$gap__xxl
+    &__tittle
+        text-align: center
+        color: variables.$color__titulo
+        font-size: variables.$gap__xxl
+    &__description
+        text-align: center
+        font-size: variables.$gap__m
+        margin-left: variables.$gap__xs
+        margin-right: variables.$gap__xs
+        color: variables.$color__texto
+
+// Inicio actividades
+.actividades
+    margin-inline: auto
+    padding-top: variables.$gap__l
+    &__introduction
+        margin-bottom: variables.$gap__l
+        padding-block: variables.$gap__l
+    &__title-section
+        color: variables.$color__corporativo
+        font-weight: normal
+        margin-top: 0
+        margin-bottom: 0
+    &__description
+        text-align: center
+        font-size: variables.$gap__m
+        color: variables.$color__texto
+    &__cards
+        display: grid
+        grid-template-columns: repeat(3,1fr)
+        gap: variables.$gap__xl
+
+    &__card
+        display: grid
+        max-width: 800px
+        box-sizing: border-box
+        border-top-left-radius: variables.$gap__s
+        border-top-right-radius: variables.$gap__s
+        grid-template-columns: 3fr 1fr
+        grid-template-rows: repeat(3,fit-content(100%))
+        grid-template-areas: "header header" "place price" "title go"
+        background: variables.$color__morado-claro
+        margin-block: variables.$gap__l
+        padding-bottom: variables.$gap__m
+        box-shadow: 0 0 variables.$gap__l variables.$color__shadow
+        &:hover
+            transform: scale(1.1)
+        &-header
+            grid-area: header
+            &-wrapper
+                position: absolute
+                margin-top: variables.$gap__xs
+                margin-left: variables.$gap__xs
+                display: flex
+                align-items: center
+                gap: variables.$gap__xs
+                background: #0006
+                border-radius: 10px
+                padding-inline: .6rem
+                .actividades__card-symbol
+                    height: 32px
+                    max-width: 60px
+                .actividades__card-date
+                    font-family: typography.$fuente__texto
+                    font-weight: bold
+                    font-size: .8rem
+                    text-align: end
+                    color: variables.$color__blanco
+            .actividades__card-image
+                border-top-left-radius: variables.$gap__s
+                border-top-right-radius: variables.$gap__s
+                max-height: 10rem
+                width: 320px
+        &-place
+            grid-area: place
+            font-size: 1.2rem
+            margin-left: variables.$gap__s
+            margin-bottom: variables.$gap__xs
+            //para centrar en eje vertical
+            align-self: center
+            color: variables.$color__corporativo
+        &-price
+            grid-area: price
+            font-size: variables.$gap__m
+            font-weight: 700
+            margin-bottom: variables.$gap__xs
+            margin-right: variables.$gap__s
+            place-self: center
+            color: variables.$color__titulo
+        &-title
+            grid-area: title
+            margin-left: variables.$gap__s
+            font-size: 1.2rem
+            color: variables.$color__morado-medio
+        &-button
+            grid-area: go
+            margin-right: variables.$gap__s
+            place-self: center
+
+//fin actividades

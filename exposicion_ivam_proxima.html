@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <title>Spotlight| Exposiciones - Anhelo de luz sun, Otobang Nkanga</title>
+        <link
+            rel="icon"
+            type="image/png"
+            href="img/favicon.png"
+        >
+        <!-- (Opcional: Solo Safari) Previsualización en marcadores -->
+        <link
+            rel="apple-touch-icon"
+            href="/img/touch-icon-ipad.png">
+        <link
+            rel="apple-touch-icon"
+            sizes="152x152"
+            href="/img/touch-icon-ipad.png">
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="img/touch-icon-iphone-retina.png"
+        >
+        <link
+            rel="apple-touch-icon"
+            sizes="167x167"
+            href="img/touch-icon-ipad-retina.png"
+        >
+        <!-- (Opcional) Sugiere un color al navegador para personalizar la ventana en general -->
+        <meta name="theme-color" content="#fff">
+        <!-- (Opcional) Sugiere un color al navegador para personalizar la ventana en modo claro -->
+        <meta name="theme-color"
+              content="#F0EDF4"
+              media="(prefers-color-scheme: light)">
+        <!-- (Opcional) Sugiere un color al navegador para personalizar la ventana en modo oscuro -->
+        <meta name="theme-color"
+              content="#765A9A"
+              media="(prefers-color-scheme: dark)">
+        <!-- Bloquea el zoom en smartphones-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <!--Declara quien es el autor. Sin utilidad práctica -->
+        <meta name="author" content="Eva">
+        <!-- Declara palabras claves -->
+        <meta name="keywords" content="html, css, javascript, blog, minimalista, arte, exposiciones, actividades">
+        <!-- Declara la descripción de la web. Es utilizado por los motores de busqueda para la previa -->
+        <meta name="description" content="Web para encontrar exposiciones, actividades y leer acerca del arte">
+        <!-- Open Graph y Twitter card: Declara como se mostrará la previa del enlace si es compartida por Facebook o alguna otra red social -->
+        <meta property="og:image" content="img/miniatura.png">
+        <meta property="og:title" content="Blog simple">
+        <!-- website, video, audio, article, book o profile -->
+        <meta property="og:type" content="website">
+        <meta
+            name="twitter:card"
+            content="Es mi trabajo final, sigueme!"
+        >
+
+        <meta
+            name="twitter:creator"
+            content="@evapeydro6">
+        <!-- Open Graph Imagen completa (Opcional) -->
+
+        <meta property="og:image:type" content="image/jpeg">
+        <meta property="og:image:width" content="400">
+        <meta property="og:image:height" content="300">
+        <meta property="og:image:alt" content="A shiny red apple with a bite taken out">
+
+        <!-- Fuentes-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <!-- Fin Fuentes-->
+        <!--CSS-->
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        >
+        <!-- Tus archivos CSS -->
+        <!--split media-->
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="css/mobile.css"
+            media="all and (max-width: 600px)"
+        >
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="css/desktop.css"
+            media="all and (min-width: 600px)"
+        >
+        <!--split media-->
+        <!--Para el menú hamburguesa-->
+        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <!--Fin funcionalidades del menú hamburguesa-->
+        <!--Slider-->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+        />
+        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+        <link rel="stylesheet" href="sass/desktop/_header.sass">
+        <!--fin slider-->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+        <!--AOS-->
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <!--fin AOS-->
+    </head>
+    <body>
+        <header class="header" x-data="{ open: false }">
+            <div class="container">
+                <a href="index.html" class="header__brand-link">
+                    <img
+                        src="img/spotlight_movil_reducida.png"
+                        alt="Logo Spotlight versión movil"
+                        class="image header__brand-icono"
+                    />
+                </a>
+                <nav class="nav" :class="open ? 'nav--show' : ''">
+                    <ul class="nav__ul">
+                        <li class="nav__item">
+                            <a href="exposiciones.html" class="nav__link">Exposiciones</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="actividades.html" class="nav__link">Actividades</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="arte_urbano.html" class="nav__link">Arte urbano</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="artistas.html" class="nav__link">Artistas</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="blog.html" class="nav__link">Blog</a>
+                        </li>
+                    </ul>
+                </nav>
+                <button class="header__button" aria-hidden="true" @click="open = !open">
+                    <img
+                        :src="open ? 'img/icons/close.webp' : 'img/icons/open.webp'"
+                        alt="Botón de mostrar u ocultar el menú movil"
+                        class="image"
+                    >
+                </button>
+            </div>
+        </header>
+        <main>
+            <!---------------------------hero-------------------------->
+            <section id="inicio" class="exposiciones__hero">
+                <div class="container">
+                    <div class="exposiciones__hero--container">
+                        <img class="image exposiciones__hero--image" src="img/exposiciones/ivam-social-consequences.webp" alt="Foto general de la exposicion de otobong Nkanga">
+                        <a class="link exposiciones__hero--button button button--ver" href="#artista">Ver artista</a>
+                        <!--faltaria buscadores pero no van a tener funcionalidad-->
+                    </div>
+                </div>
+            </section>
+            <!-------Fin Hero -------------------------------------------->
+            <section class="exposicion">
+                <div class="container__color">
+                    <div class="container">
+                        <div class="exposicion__container">
+                            <article class="exposicion__ficha">
+                                <div class="expposicion__ficha--grupo">
+                                    <h1 class="exposicion__ficha--title"> Anhelo de luz del sur</h1>
+                                    <h2 class="exposicion__ficha--subtitle">Otobong Nkanga.</h2>
+                                    <div class="exposicion__ficha--datos">
+                                        <dl class="exposicion__ficha--right">
+                                            <dt class="exposicion__ficha--item">Ubicación:</dt>
+                                            <dd class="exposicion__ficha--answer">Museo Valenciano de la Ilustración y de la Modernidad</dd>
+                                            <dt class="exposicion__ficha--item">Tipo de exposición:</dt>
+                                            <dd class="exposicion__ficha--answer">Temporal</dd>
+                                            <dt class="exposicion__ficha--item">Franja horaria</dt>
+                                            <dd class="exposicion__ficha--answer"> Martes a sábado de 10 - 14h y de 16 a 20h.
+                                                <p class="exposicion__ficha--answer">
+                                                    Domingo y festivos de 10 a 20h
+                                                </p>
+                                            </dd>
+                                        </dl>
+                                        <dl class="exposicion__ficha--left">
+                                            <dt class="exposicion__ficha--item">Periodo de exposición:</dt>
+                                            <dd class="exposicion__ficha--answer">13 julio 2023 - 07 Enero 2024</dd>
+                                            <dt class="exposicion__ficha--item">Entrada:</dt>
+                                            <dd class="exposicion__ficha--answer">Libre y gratuita</dd>
+                                            <dt class="exposicion__ficha--item">Edad recomendada:</dt>
+                                            <dd class="exposicion__ficha--answer">-</dd>
+                                            <dt class="exposicion__ficha--item">Idioma</dt>
+                                            <dd class="exposicion__ficha--answer">Castellano, Valenciano e Inglés</dd>
+                                        </dl>
+                                    </div>
+                                    <div class="exposicion__ficha--informacion">
+                                        <h3 class="exposicion__ficha--intro">Exposición</h3>
+                                        <div class="exposicion__group--items">
+                                            <img class="image exposicion__ficha--image" src="img/exposiciones/ivam-social-consequences.webp" alt="Foto general de la exposicion de otobong Nkanga">
+                                            <div class="exposicion_group-text">
+                                                <p class="exposicion__ficha--text">
+                                                    Empleando la escultura, el dibujo y la performance, pero también la escritura y los formatos pedagógicos, Otobong Nkanga (Kano, Nigeria, 1974) analiza la noción de ‘tierra’ como una formación geológica y discursiva, a menudo tomando como punto de partida los sistemas y procedimientos mediante los cuales se excavan localmente las materias primas, procesándolas tecnológicamente y distribuyéndolas globalmente. Desde ahí, sigue los hilos que entrelazan los minerales, la cultura material y la construcción del deseo con la redistribución del poder y el saber.
+                                                </p>
+                                                <p class="exposicion__information--text">
+                                                    La exposición monográfica de Nkanga incluirá dibujos, instalaciones, fotografías, esculturas y performances a través de las que la artista examina la relación social y topográfica con nuestro entorno cotidiano. Al explorar la noción de tierra como un lugar de no pertenencia, Nkanga proporciona un significado alternativo a las ideas sociales de identidad. Asimismo, expone las complejidades inherentes de los recursos naturales y sus valores potenciales para provocar narrativas e historias relacionadas con la tierra.
+                                                </p>
+                                                <p id="artista" class="exposicion__information--text">
+                                                    Piedras, telas, especies o plantas son otros materiales que Otobong Nkanga emplea en sus instalaciones, lo que le permite hablar de la tierra y de la gente que la habita. Las obras siempre tienen la intención de ser, metafóricamente, como símbolos del sistema global, involucrando imágenes de migración, transformaciones, apropiación y pérdida.
+                                                </p>
+                                                <p  class="exposicion__information--text">
+                                                    La artista realizará un proyecto específico para la galería 1 del IVAM.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                            <article data-aos="fade-up"
+                                     data-aos-duration="3000" class="exposicion__artista">
+                                <div class="exposicion__artista--information">
+                                    <h3  class="exposicion__artista--title">Otobong Nkanga</h3>
+
+                                    <p class="exposicion__artista--text">
+                                        Otobong Nkanga es una artista visual y artista de performance de Nigeria y residente en Amberes. Cultiva además la instalación, la fotografía, el dibujo y la escultura. En 2015 ganó el Premio Yanghyun. En 2019 fue mención especial en la 58 edición de la Bienal de Arte de Venecia
+                                    </p>
+                                    <p class="exposicion__artista--text">
+                                        Los dibujos, instalaciones, fotografías, esculturas y performances que realiza, examinan la ralación social y topográfica con nuestro entrono cotidiano. AL explorar la noción de la tierra como un lugar de no pertenencia. Nkanga proporciona un significado alternativo a las ideas sociales de identidad. Paradójicamente, saca a la luz las memorias y los impactos históricos provocados por el ser humano y la naturaleza. Ella expone las complejidades inherentes de los recursos como el suelo y la tierra y sus valores potenciales para provocar narrativas e historias relacionadas con la tierra.
+
+                                    </p>
+                                    <p class="exposicion__artista--text">
+                                        Empleando la escultura , el dibhjo y la actuación, pero también la escritura, la publicación y los formatos pedagógicos. Analizando la noción de "tierra" como una formación geológica y discuriva, a menudo tomando como putno de partida los sistemas y procedimientos mediante los cuales se excavan localmente las materias primas, tecnológicamente procesados y distribuidos globlamente. De ahí sigue los hilos que entrelazan los minerales, la cultura material y la construcción del deseo con la redistribución del poder y el saber.
+                                    </p>
+                                    <p class="exposicion__artista--text">
+                                      Knanga plantea preguntas sobre la estructura histórica de un lugar, tanto física como metafísicamente. a menudo se refire a los diferentes objetos y elementos de su trabajo como constelaciones. Las constelaciones son patrones o diagaramas imaginarios que le permiten trazar las intersecciones de la naturaleza, la política, las economías colonialistas y diferentes geografías e historias
+                                    </p>
+                                    <p class="pichiavo__artista--text">
+                                        <a class="link artista__link" href="https://www.instagram.com/otobongnkanga/?hl=es"> @otobongkanga</a>
+                                    </p>
+                                </div>
+                                <img
+                                    src="img/exposiciones/otobong-nkanga-retrato.webp"
+                                    alt="Imagen del retrato de Otobong Nkanga"
+                                    class="exposicion__artista--image image"
+                                >
+                            </article>
+                            <section data-aos="fade-up"
+                                     data-aos-duration="3000" class="exposiciones__recomendaciones">
+                                <h2 class="exposicion__artista--title">También te puede interesar:</h2>
+                                <div class="exposiciones__recomendaciones--cards">
+                                    <article class="exposiciones__card">
+                                        <hgroup class="card__header">
+                                            <h3 class="card__museum">CCC</h3>
+                                            <p class=" card__estado card__estado--actual">Actual</p>
+                                        </hgroup>
+                                        <img
+                                            src="img/exposiciones/ccc_cultura-online-cmccasa-2023.webp"
+                                            alt="Imagen de la epoxición CULTURA ONLINE #CMCVaCasa 2023, en el Centre Cultural del Carmen"
+                                            class="card__image image"
+                                        >
+                                        <p class="card__tipo-exposicion">
+                                            Exposición temporal
+                                        </p>
+                                        <p>
+                                            <time datetime=2023-05-11">13 Mayo 2023–</time><time datetime="2023-07-09">7 Julio 2023</time>
+                                        </p>
+                                        <h2 class="card__title-evento">Cultura Online #CMCVaCasa 2023</h2>
+                                        <p class="card__description" >
+                                            Ofrece al público la posibilidad de conocer en la Sala Ferreres – Goerlich del Centre del Carme Cultura Contemporània los proyectos seleccionados en la convocatoria de Cultura Online #CMCVaCasa 2023.
+                                        </p>
+                                        <div class="container button--grupos">
+                                            <a href="page_construction.html" class="button button--planificar link">Planificar</a>
+                                            <a href="page_construction.html"  class="button button--ver link">Ver</a>
+                                        </div>
+                                    </article>
+                                    <article class= "exposiciones__card" x-data="{ hidden: true }">
+                                        <hgroup class="card__header">
+                                            <h3 class="card__museum">IVAM</h3>
+                                            <p class=" card__estado card__estado--pasada">Pasada</p>
+                                        </hgroup>
+                                        <img
+                                            src="img/exposiciones/performance-Constellation-to-Appease.webp"
+                                            alt="Imagen de la performance “Constellation to Appease”. de Otobong NKanga. "
+                                            class="card__image image"
+                                        >
+                                        <p class="card__tipo-exposicion">
+                                            Exposición temporal
+                                        </p>
+                                        <p>
+                                            <time datetime=2023-07-13">13 julio 2023</time>
+                                        </p>
+                                        <h2 class="card__title-evento">Performance “Constellation to Appease”.Otobong NKanga.</h2>
+                                        <p class="card__description" >
+                                            En respuesta al paisaje y contexto de Cornualles (Cornwall) y se activó en una performance en la Tate St Ives.  <span x-bind:class="hidden ? 'card__description--hidden' : ''"> Nkanga llevó la pieza a la playa en una suerte de ritual dedicado al océano. La obra se transformó, incluyendo plantas recolectadas y otros objetos extraídos del mar que muestran las huellas de la historia geológica y social de Cornualles.</span>
+                                        </p>
+                                        <button class=" button button--leer-mas card__leer-mas" @click="hidden = !hidden">Leer más</button>
+                                        <div class="container button--grupos">
+                                            <a href="page_construction.html" class="button button--planificar link">Planificar</a>
+                                            <a href="page_construction.html"  class="button button--ver link">Ver</a>
+                                        </div>
+                                    </article>
+                                    <article class="exposiciones__card">
+                                        <hgroup class="card__header">
+                                            <h3 class="card__museum">Bombas Gens</h3>
+                                            <p class=" card__estado card__estado--actual">Actual</p>
+                                        </hgroup>
+                                        <img
+                                            src="img/exposiciones/bombas_gens_perfomenace_naturaleza.webp"
+                                            alt="Imagen de la exposición de Carllos Bunga. Performar la naturaleza, en Bombas Gens, centre d'art"
+                                            class="card__image image"
+                                        >
+                                        <p class="card__tipo-exposicion">
+                                            Exposición temporal
+                                        </p>
+                                        <p>
+                                            <time datetime=2023-02-17">17 Febrero 2023–</time><time datetime="2023-10-15">15 Octubre 2023</time>
+                                        </p>
+                                        <h2 class="card__title-evento">Carlos Bunga. Perfomar la naturaleza.</h2>
+                                        <p class="card__description" >
+                                            Primera gran exposición antológica del artista Carlos Bunga  en España que brinda la oportunidad de adentrarse en la compleja y poética obra del autor.
+                                        </p>
+                                        <div class="container button--grupos">
+                                            <a href="page_construction.html" class="button button--planificar link">Planificar</a>
+                                            <a href="page_construction.html"  class="button button--ver link">Ver</a>
+                                        </div>
+                                    </article>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="footer__division-up">
+                <div class="container">
+                    <div class="footer__up">
+                        <div class="footer__group">
+                            <details class="subnav subnav--primero">
+                                <summary class="subnav__title">Spotlight</summary>
+                                <ul class="nav__ul ul-reset">
+                                    <li class="nav__item"><a href="page_construction.html" class="link nav__link">Sobre nosotros</a></li>
+                                    <li class="nav__item"><a href="page_construction.html" class="link nav__link">¿Qué hecemos?</a></li>
+                                    <li class="nav__item"><a href="page_construction.html" class="link nav__link">Equipo</a></li>
+                                    <li class="nav__item"><a href="page_construction.html" class="link nav__link">Contacto</a></li>
+                                </ul>
+                            </details>
+                            <details class="subnav subnav--segundo">
+                                <summary class="subnav__title">Servicios</summary>
+                                <ul class="nav__ul ul-reset">
+                                    <li class="nav__item"><a href="exposiciones.html" class="link nav__link">Exposiciones</a></li>
+                                    <li class="nav__item"><a href="page_construction.html" class="link nav__link">Planifica</a></li>
+                                    <li class="nav__item"><a href="arte_urbano.html" class="link nav__link">Arte urbano</a></li>
+                                    <li class="nav__item"><a href="page_construction.html" class="link nav__link">Publicidad</a></li>
+                                    <li class="nav__item"><a href="page_construction.html" class="link nav__link">Anúnciate.</a></li>
+                                </ul>
+                            </details>
+                        </div>
+                        <form class="footer__form">
+                            <div class="footer__form-newsletter">
+                                <label>
+                                    Suscribete a nuesta newsletter
+                                    <input type="email" name="correo" class="form-correo">
+                                </label>
+                                <button  type="submit" class="button button__enviar"> Enviar</button>
+                            </div>
+                            <div class="footer__form-checkbox">
+                                <label>
+                                    <input type="checkbox" name="privacidad" value="">
+                                    Acepto las condiciones de uso y privacidad
+                                </label>
+                            </div>
+                        </form>
+                        <div class="footer__social">
+                            <p class="footer__social-title ">Siguenos</p>
+                            <ul class="ul-reset social">
+                                <li class="social__item">
+                                    <a href="#" class="link social__link">
+                                        <img class="image social__icon" src="img/icons/facebook_icon.svg" alt="Facebook">
+                                    </a>
+                                </li>
+                                <li class="social__item">
+                                    <a href="#" class="link social__link">
+                                        <img class="image social__icon" src="img/icons/twitter.svg" alt="Twitter">
+                                    </a>
+                                </li>
+                                <li class="social__item">
+                                    <a href="#" class="link social__link">
+                                        <img class="image social__icon" src="img/icons/instagram_icon.svg" alt="Instagram">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__division-down">
+                <div class=" footer__down">
+                    <nav class="footer__group-items">
+                        <div class="footer__group-item">
+                            <p><a href="aviso_legal.html" class="link text">Aviso Legal</a></p>
+                            <p><a href="page_construction.html" class="link text">Contacto</a></p>
+                        </div>
+                        <div class="footer__group-item">
+                            <p><a href="cookies.html" class="link text">Politica de Cookies</a></p>
+                            <p><a href="politica_privacidad.html" class="link text">Privacidad</a></p>
+                        </div>
+                        <p class="footer__group-item"><a href="page_construction.html" class="link text">Política de Protección de datos</a></p>
+                    </nav>
+                    <div class="footer__group-finally">
+                        <p>Spotlight, art expericence</p>
+                        <a href="#inicio" class="link">
+                            <img src="img/icons/arrow_up_icon.svg" alt="flecha para llevarte al inicio"
+                                 class="social__icon image">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--animaciones-->
+        <script>
+            AOS.init();
+        </script>
+        <!-- fin animaciones-->
+        <!--footer aperturass-->
+        <script>
+            // Variables
+            const anchuraMovil = 600;
+            const subNavs = document.querySelectorAll('.subnav');
+
+            // Functions
+            function removeAllClickEvents(elem) {
+                const clone = elem.cloneNode(true);
+                elem.parentNode.replaceChild(clone, elem);
+                return clone;
+            }
+
+            function initialSubNavs() {
+                const width = window.innerWidth;
+                if (width < anchuraMovil) {
+                    // Mobile
+                    subNavs.forEach(subNav => {
+                        // Close
+                        subNav.removeAttribute("open");
+                        // Details, enable click on summary
+                        const summary = subNav.querySelector(".subnav__title");
+                        const newDOM = removeAllClickEvents(summary);
+                        newDOM.addEventListener("click", (event) => {
+                            event.preventDefault();
+                            const open = subNav.getAttribute("open");
+                            if (open) {
+                                subNav.removeAttribute("open");
+                            } else {
+                                subNav.setAttribute("open", true);
+                            }
+                        });
+                    });
+                } else {
+                    // Desktop
+                    subNavs.forEach(subNav => {
+                        // Open
+                        subNav.setAttribute("open", true);
+                        // Details, disable click on summary
+                        const summary = subNav.querySelector(".subnav__title");
+                        const newDOM = removeAllClickEvents(summary);
+                        newDOM.addEventListener("click", (event) => {
+                            event.preventDefault();
+                            subNav.setAttribute("open", true);
+                        });
+                    });
+                }
+            }
+
+            // Events
+            window.addEventListener('resize', initialSubNavs);
+
+            // Init
+            initialSubNavs();
+        </script>
+    <!--fin footer aperturas-->
+    </body>
+</html>

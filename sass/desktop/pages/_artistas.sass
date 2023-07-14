@@ -1,0 +1,90 @@
+@use "base"
+@use "variables"
+@use "typography"
+
+//hero
+.hero
+    margin-inline: variables.$gap__l
+    max-height: 1100px
+    padding-block: 6rem
+    padding-inline: variables.$gap__l
+    box-sizing: border-box
+    background: variables.$color__morado-claro
+    &__hgroup
+        margin-block: variables.$gap__xxl
+    &__container
+        padding-block: variables.$gap__xxl
+    &__tittle
+        text-align: center
+        color: variables.$color__titulo
+        font-size: variables.$gap__xxl
+    &__description
+        text-align: center
+        font-size: variables.$gap__m
+        margin-left: variables.$gap__xs
+        margin-right: variables.$gap__xs
+        color: variables.$color__texto
+
+//artistas
+.artistas
+    margin-inline: auto
+    padding-top: variables.$gap__l
+    &__introduction
+        margin-bottom: variables.$gap__l
+        padding-block: variables.$gap__l
+    &__title-section
+        color: variables.$color__corporativo
+        font-weight: normal
+        margin-top: 0
+        margin-bottom: 0
+    &__description
+        text-align: center
+        font-size: variables.$gap__m
+        color: variables.$color__texto
+    &__cards
+        display: grid
+        grid-template-columns: repeat(3,1fr)
+        gap: variables.$gap__m
+    &__card
+        margin: 0 2em
+        width: 15em
+        height: 90%
+        padding-block: 4rem
+        background: variables.$color__verde-claro
+        border-radius: variables.$gap__s
+        padding: variables.$gap__s
+        box-sizing: border-box
+        margin-block: variables.$gap__l
+        transition: .5s
+        box-shadow: 0 0 1rem variables.$color__shadow
+        &:hover
+            transform: scale(1.1)
+        &-image
+            max-width: 90%
+            height: 10rem
+            margin-block: variables.$gap__s
+            margin: 0 auto
+            aspect-ratio: 1 / 1
+            border-radius: 50%
+            margin-top: variables.$gap__s
+        &-title
+            text-align: center
+            font-size: variables.$gap__m
+            color: variables.$color__morado-medio
+            margin-bottom: 0
+        &-subtitle
+            text-align: center
+            text-transform: uppercase
+            color: variables.$color__titulo
+            font-size: variables.$gap__s
+            margin-top: variables.$gap__xs
+            margin-bottom: variables.$gap__m
+        &-description
+            text-align: center
+            margin-block: variables.$gap--xxl
+            margin-inline: variables.$gap__s
+        &-button
+            display: flex
+            justify-content: center
+            margin: 0 auto
+            margin-bottom: variables.$gap__s

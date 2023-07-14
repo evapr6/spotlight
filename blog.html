@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <title>Spotlight| Blog</title>
+        <link
+            rel="icon"
+            type="image/png"
+            href="img/favicon.png"
+        >
+        <!-- (Opcional: Solo Safari) Previsualización en marcadores -->
+        <link
+            rel="apple-touch-icon"
+            href="/img/touch-icon-ipad.png">
+        <link
+            rel="apple-touch-icon"
+            sizes="152x152"
+            href="/img/touch-icon-ipad.png">
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="img/touch-icon-iphone-retina.png"
+        >
+        <link
+            rel="apple-touch-icon"
+            sizes="167x167"
+            href="img/touch-icon-ipad-retina.png"
+        >
+        <!-- (Opcional) Sugiere un color al navegador para personalizar la ventana en general -->
+        <meta name="theme-color" content="#fff">
+        <!-- (Opcional) Sugiere un color al navegador para personalizar la ventana en modo claro -->
+        <meta name="theme-color"
+              content="#F0EDF4"
+              media="(prefers-color-scheme: light)">
+        <!-- (Opcional) Sugiere un color al navegador para personalizar la ventana en modo oscuro -->
+        <meta name="theme-color"
+              content="#765A9A"
+              media="(prefers-color-scheme: dark)">
+        <!-- Bloquea el zoom en smartphones-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <!--Declara quien es el autor. Sin utilidad práctica -->
+        <meta name="author" content="Eva">
+        <!-- Declara palabras claves -->
+        <meta name="keywords" content="html, css, javascript, blog, minimalista, arte, exposiciones, actividades">
+        <!-- Declara la descripción de la web. Es utilizado por los motores de busqueda para la previa -->
+        <meta name="description" content="Web para encontrar exposiciones, actividades y leer acerca del arte">
+        <!-- Open Graph y Twitter card: Declara como se mostrará la previa del enlace si es compartida por Facebook o alguna otra red social -->
+        <meta property="og:image" content="img/miniatura.png">
+        <meta property="og:title" content="Blog simple">
+        <!-- website, video, audio, article, book o profile -->
+        <meta property="og:type" content="website">
+        <meta
+            name="twitter:card"
+            content="Es mi trabajo final, sigueme!"
+        >
+
+        <meta
+            name="twitter:creator"
+            content="@evapeydro6">
+        <!-- Open Graph Imagen completa (Opcional) -->
+
+        <meta property="og:image:type" content="image/jpeg">
+        <meta property="og:image:width" content="400">
+        <meta property="og:image:height" content="300">
+        <meta property="og:image:alt" content="A shiny red apple with a bite taken out">
+
+        <!-- Fuentes-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <!-- Fin Fuentes-->
+        <!--CSS-->
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        >
+        <!-- Tus archivos CSS -->
+        <!--split media-->
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="css/mobile.css"
+            media="all and (max-width: 600px)"
+        >
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="css/desktop.css"
+            media="all and (min-width: 600px)"
+        >
+        <!--split media-->
+        <!--Para el menú hamburguesa-->
+        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <!--Fin funcionalidades del menú hamburguesa-->
+        <!--Slider-->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+        />
+        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+        <link rel="stylesheet" href="sass/desktop/_header.sass">
+        <!--fin slider-->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+        <!--aos-->
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <!--fin aos-->
+    </head>
+    <body>
+        <header class="header" x-data="{ open: false }">
+            <div class="container">
+                <a href="index.html" class="header__brand-link">
+                    <img
+                        src="img/spotlight_movil_reducida.png"
+                        alt="Logo Spotlight versión movil"
+                        class="image header__brand-icono"
+                    />
+                </a>
+                <nav class="nav" :class="open ? 'nav--show' : ''">
+                    <ul class="nav__ul">
+                        <li class="nav__item">
+                            <a href="exposiciones.html" class="nav__link">Exposiciones</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="actividades.html" class="nav__link">Actividades</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="arte_urbano.html" class="nav__link">Arte urbano</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="artistas.html" class="nav__link">Artistas</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="blog.html" class="nav__link">Blog</a>
+                        </li>
+                    </ul>
+                </nav>
+                <button class="header__button" aria-hidden="true" @click="open = !open">
+                    <img
+                        :src="open ? 'img/icons/close.webp' : 'img/icons/open.webp'"
+                        alt="Botón de mostrar u ocultar el menú movil"
+                        class="image"
+                    >
+                </button>
+            </div>
+        </header>
+        <main>
+    <!---------------------------hero-------------------------->
+            <section id="inicio" class="hero">
+                <div class="container">
+                    <div class="hero__container">
+                        <hgroup class="hero__hgroup">
+                            <h1 class="hero__title">Blog</h1>
+                            <p class="hero__description">
+                                Descubre noticias, más información  y curiosidades sobre obras, artistas y el arte
+                            </p>
+                        </hgroup>
+                        <!--faltaria buscadores pero no van a tener funcionalidad-->
+                    </div>
+                </div>
+            </section>
+    <!-------Fin Hero -------------------------------------------->
+            <section data-aos="fade-up"
+                     data-aos-anchor-placement="top-bottom" class="blog">
+                <div class="container">
+                    <hgroup class="blog__introduction">
+                        <h1 class="blog__title-section"><a class="blog__title-section link" href="blog.html">Sabias que...</a></h1>
+                        <p class="blog__description">
+                           Puedes encontrar muchas noticias y curiosidades sobre el arte
+                        </p>
+                    </hgroup>
+                    <div class="blog__cards container">
+                        <article class=" blog__card-long blog__card-primera">
+                            <img
+                                src="img/blog/IMG_4-original.webp"
+                                alt="Imagen de la entrada de blog de lo que es y como funciona un midjourney."
+                                class="image blog__card-long-image"
+                            >
+                            <div class="blog__card-long-wrapper">
+                                <h2 class="blog__card-long-title">Midjourney: Qué es y cómo funciona</h2>
+                                <p class="blog__card-long-place">
+                                    Domestika
+                                </p>
+                                <a href="page_construction.html" class="blog__card-long-button button button--go link">leer</a>
+                            </div>
+                        </article>
+                        <!-----otra entrada-------------->
+                        <article class="blog__tarjet blog__card-segunda">
+                            <img
+                                src="img/blog/palauet_nolla.webp"
+                                alt="Imagen del Palauet de Nolla ya restaurado"
+                                class="image blog__tarjet-image"
+                            >
+                            <div class="blog__tarjet-wrapper">
+                                <h2 class="blog__tarjet-title">Restauración del Palauet de Nolla de Meliana</h2>
+                                <p class="blog__tarjet-place">
+                                    ARAE
+                                </p>
+                                <a href="page_construction.html" class="blog__tarjet-button button button--go link">Leer</a>
+                            </div>
+                        </article>
+                        <!-----otra entrada-------------->
+                        <article class="blog__card blog__card-tercera">
+                            <img
+                                src="img/blog/ola_.webp"
+                                alt="Imagen de la entrada de blog, de Katsushika Hokusai (1760-1849)"
+                                class="image blog__card-image"
+                            >
+                            <div class="blog__card-wrapper">
+                                <h2 class="blog__card-title">Katsushika Hokusai (1760-1849)</h2>
+                                <p class="blog__card-place">
+                                    Anónimo
+                                </p>
+                                <a href="page_construction.html" class="blog__card-button button button--go link">leer</a>
+                            </div>
+                        </article>
+                        <!-----otra entrada-------------->
+                        <article class="blog__card blog__card-cuarta">
+                            <img
+                                src="img/blog/julian.webp"
+                                alt="Imagen de la entrada de blog, de Julian Assange y el criptoarte"
+                                class="image blog__card-image"
+                            >
+                            <div class="blog__card-wrapper">
+                                <h2 class="blog__card-title">Julian Assange y el criptoarte</h2>
+                                <p class="blog__card-place">
+                                    Blog contemporáneo
+                                </p>
+                                <a href="page_construction.html" class="blog__card-button button button--go link">leer</a>
+                            </div>
+                        </article>
+                        <!-----otra actividad-------------->
+                        <article class="blog__card blog__card-quinta">
+                            <img
+                                src="img/blog/nstalacion-artística_upscaled.webp"
+                                alt="Imagen de la entrada de blog, instalación artística"
+                                class="image blog__card-image"
+                            >
+                            <div class="blog__card-wrapper">
+                                <h2 class="blog__card-title">Instalación artística: el medio como composición</h2>
+                                <p class="blog__card-place">
+                                    Blog contemporáneo
+                                </p>
+                                <a href="page_construction.html" class="blog__card-button button button--go link">leer</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+            <section  class="blog__line hidden">
+                <div class="container">
+                    <article data-aos="fade-up"
+                         data-aos-anchor-placement="top-bottom" class="blog__line-container hidden">
+                        <img src="img/blog/IMG_4-original.webp"
+                             alt="magen de la entrada de blog de lo que es y como funciona un midjourney."
+                             class="image blog__line-image"
+                        >
+                        <hgroup class="blog__line-hgroup">
+                            <h2 class="blog__line-title">Midjourney: Qué es y cómo funciona</h2>
+                            <p class="blog__line-subtitle">Domestika</p>
+                        </hgroup>
+                            <p class="blog__line-description">
+                                Con Midjourney volvemos a hablar de herramientas de inteligencia artificial. En este caso, de un sistema de aprendizaje automático para la generación de imágenes a partir de texto: text to image. En realidad, Midjourney nace primero como laboratorio independiente dedicado a la investigación de inteligencia artificial y que ha bautizado a su proyecto de IA con el mismo nombre.
+                            </p>
+                        <a href="page_construction.html" class="button button--go blog__line-button link">Leer</a>
+                    </article>
+                    <article class="blog__line-reverse-container hidden">
+                        <img src="img/blog/palauet_nolla.webp"
+                             alt="magen de la entrada de blog de lo que es y como funciona un midjourney."
+                             class="image blog__line-reverse-image"
+                        >
+                        <hgroup class="blog__line-reverse-hgroup">
+                            <h2 class="blog__line-reverse-title">Restauración del Palauet de Nolla de Meliana</h2>
+                            <p class="blog__line-reverse-subtitle">ARAE</p>
+                        </hgroup>
+                        <p class="blog__line-reverse-description">
+                            El Palauet Nolla es un edificio emblemático, tanto para Meliana como para toda la comarca. Símbolo de la famosa fábrica de mosaicos Nolla, esta antigua alquería del s.XVII transformada en showroom de la empresa cerámica ha recibido la visita de numerosos personajes ilustres de la segunda mitad del s.XIX.
+                        </p>
+                        <a href="page_construction.html" class="button button--go blog__line-reverse-button link">Leer</a>
+                    </article>
+                </div>
+            </section>
+            <div class="container-button">
+                <button class="button--ver ver-mas-btn">Ver más</button>
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="footer__division-up">
+                <div class="container">
+                    <div class="footer__up">
+                        <div class="footer__group">
+                            <details class="subnav subnav--primero">
+                                <summary class="subnav__title">Spotlight</summary>
+                                <ul class="nav__ul ul-reset">
+                                    <li class="nav__item"><a href="page_construction.html" class="link nav__link">Sobre nosotros</a></li>
+                                    <li class="nav__item"><a href="page_construction.html" class="link nav__link">¿Qué hecemos?</a></li>
+                                    <li class="nav__item"><a href="page_construction.html" class="link nav__link">Equipo</a></li>
+                                    <li class="nav__item"><a href="page_construction.html" class="link nav__link">Contacto</a></li>
+                                </ul>
+                            </details>
+                            <details class="subnav subnav--segundo">
+                                <summary class="subnav__title">Servicios</summary>
+                                <ul class="nav__ul ul-reset">
+                                    <li class="nav__item"><a href="exposiciones.html" class="link nav__link">Exposiciones</a></li>
+                                    <li class="nav__item"><a href="page_construction.html" class="link nav__link">Planifica</a></li>
+                                    <li class="nav__item"><a href="arte_urbano.html" class="link nav__link">Arte urbano</a></li>
+                                    <li class="nav__item"><a href="page_construction.html" class="link nav__link">Publicidad</a></li>
+                                    <li class="nav__item"><a href="page_construction.html" class="link nav__link">Anúnciate.</a></li>
+                                </ul>
+                            </details>
+                        </div>
+                        <form class="footer__form">
+                            <div class="footer__form-newsletter">
+                                <label>
+                                    Suscribete a nuesta newsletter
+                                    <input type="email" name="correo" class="form-correo">
+                                </label>
+                                <button  type="submit" class="button button__enviar">Enviar</button>
+                            </div>
+                            <div class="footer__form-checkbox">
+                                <label>
+                                    <input type="checkbox" name="privacidad" value="">
+                                    Acepto las condiciones de uso y privacidad
+                                </label>
+                            </div>
+                        </form>
+                        <div class="footer__social">
+                            <p class="footer__social-title ">Siguenos</p>
+                            <ul class="ul-reset social">
+                                <li class="social__item">
+                                    <a href="page_construction.html" class="link social__link">
+                                        <img class="image social__icon" src="img/icons/facebook_icon.svg" alt="Facebook">
+                                    </a>
+                                </li>
+                                <li class="social__item">
+                                    <a href="page_construction.html" class="link social__link">
+                                        <img class="image social__icon" src="img/icons/twitter.svg" alt="Twitter">
+                                    </a>
+                                </li>
+                                <li class="social__item">
+                                    <a href="page_construction.html" class="link social__link">
+                                        <img class="image social__icon" src="img/icons/instagram_icon.svg" alt="Instagram">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__division-down">
+                <div class=" footer__down">
+                    <nav class="footer__group-items">
+                        <div class="footer__group-item">
+                            <p><a href="aviso_legal.html" class="link text">Aviso Legal</a></p>
+                            <p><a href="page_construction.html" class="link text">Contacto</a></p>
+                        </div>
+                        <div class="footer__group-item">
+                            <p><a href="cookies.html" class="link text">Politica de Cookies</a></p>
+                            <p><a href="politica_privacidad.html" class="link text">Privacidad</a></p>
+                        </div>
+                        <p class="footer__group-item"><a href="page_construction.html" class="link text">Política de Protección de datos</a></p>
+                    </nav>
+                    <div class="footer__group-finally">
+                        <p>Spotlight, art expericence</p>
+                        <a href="#inicio" class="link">
+                            <img src="img/icons/arrow_up_icon.svg" alt="flecha para llevarte al inicio"
+                                 class="social__icon image">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--botón ver más-->
+        <script>
+            const verMasBtn = document.querySelector('.ver-mas-btn');
+            const hiddenImgs = document.querySelectorAll('.hidden');
+
+            verMasBtn.addEventListener('click', function() {
+                hiddenImgs.forEach(function(img) {
+                    img.classList.remove('hidden');
+                });
+
+                verMasBtn.style.display = 'none';
+            });
+        </script>
+        <!-- fin botón ver más-->
+        <!--aos-->
+        <script>
+            AOS.init();
+        </script>
+        <!--aos-->
+        <!--footer aperturass-->
+        <script>
+            // Variables
+            const anchuraMovil = 600;
+            const subNavs = document.querySelectorAll('.subnav');
+
+            // Functions
+            function removeAllClickEvents(elem) {
+                const clone = elem.cloneNode(true);
+                elem.parentNode.replaceChild(clone, elem);
+                return clone;
+            }
+
+            function initialSubNavs() {
+                const width = window.innerWidth;
+                if (width < anchuraMovil) {
+                    // Mobile
+                    subNavs.forEach(subNav => {
+                        // Close
+                        subNav.removeAttribute("open");
+                        // Details, enable click on summary
+                        const summary = subNav.querySelector(".subnav__title");
+                        const newDOM = removeAllClickEvents(summary);
+                        newDOM.addEventListener("click", (event) => {
+                            event.preventDefault();
+                            const open = subNav.getAttribute("open");
+                            if (open) {
+                                subNav.removeAttribute("open");
+                            } else {
+                                subNav.setAttribute("open", true);
+                            }
+                        });
+                    });
+                } else {
+                    // Desktop
+                    subNavs.forEach(subNav => {
+                        // Open
+                        subNav.setAttribute("open", true);
+                        // Details, disable click on summary
+                        const summary = subNav.querySelector(".subnav__title");
+                        const newDOM = removeAllClickEvents(summary);
+                        newDOM.addEventListener("click", (event) => {
+                            event.preventDefault();
+                            subNav.setAttribute("open", true);
+                        });
+                    });
+                }
+            }
+
+            // Events
+            window.addEventListener('resize', initialSubNavs);
+
+            // Init
+            initialSubNavs();
+        </script>
+        <!--fin footer aperturas-->
+    </body>
+</html>

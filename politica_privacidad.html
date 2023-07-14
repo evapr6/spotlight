@@ -1,0 +1,597 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <title>Spotlight| Política de privacidad de datos</title>
+        <link
+            rel="icon"
+            type="image/png"
+            href="img/favicon.png"
+        >
+        <!-- (Opcional: Solo Safari) Previsualización en marcadores -->
+        <link
+            rel="apple-touch-icon"
+            href="/img/touch-icon-ipad.png">
+        <link
+            rel="apple-touch-icon"
+            sizes="152x152"
+            href="/img/touch-icon-ipad.png">
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="img/touch-icon-iphone-retina.png"
+        >
+        <link
+            rel="apple-touch-icon"
+            sizes="167x167"
+            href="img/touch-icon-ipad-retina.png"
+        >
+        <!-- (Opcional) Sugiere un color al navegador para personalizar la ventana en general -->
+        <meta name="theme-color" content="#fff">
+        <!-- (Opcional) Sugiere un color al navegador para personalizar la ventana en modo claro -->
+        <meta name="theme-color"
+              content="#F0EDF4"
+              media="(prefers-color-scheme: light)">
+        <!-- (Opcional) Sugiere un color al navegador para personalizar la ventana en modo oscuro -->
+        <meta name="theme-color"
+              content="#765A9A"
+              media="(prefers-color-scheme: dark)">
+        <!-- Bloquea el zoom en smartphones-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <!--Declara quien es el autor. Sin utilidad práctica -->
+        <meta name="author" content="Eva">
+        <!-- Declara palabras claves -->
+        <meta name="keywords" content="html, css, javascript, blog, minimalista, arte, exposiciones, actividades">
+        <!-- Declara la descripción de la web. Es utilizado por los motores de busqueda para la previa -->
+        <meta name="description" content="Web para encontrar exposiciones, actividades y leer acerca del arte">
+        <!-- Open Graph y Twitter card: Declara como se mostrará la previa del enlace si es compartida por Facebook o alguna otra red social -->
+        <meta property="og:image" content="img/miniatura.png">
+        <meta property="og:title" content="Blog simple">
+        <!-- website, video, audio, article, book o profile -->
+        <meta property="og:type" content="website">
+        <meta
+            name="twitter:card"
+            content="Es mi trabajo final, sigueme!"
+        >
+
+        <meta
+            name="twitter:creator"
+            content="@evapeydro6">
+        <!-- Open Graph Imagen completa (Opcional) -->
+
+        <meta property="og:image:type" content="image/jpeg">
+        <meta property="og:image:width" content="400">
+        <meta property="og:image:height" content="300">
+        <meta property="og:image:alt" content="A shiny red apple with a bite taken out">
+
+        <!-- Fuentes-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <!-- Fin Fuentes-->
+        <!--CSS-->
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        >
+        <!-- Tus archivos CSS -->
+        <!--split media-->
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="css/mobile.css"
+            media="all and (max-width: 600px)"
+        >
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="css/desktop.css"
+            media="all and (min-width: 600px)"
+        >
+        <!--split media-->
+        <!--Para el menú hamburguesa-->
+        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <!--Fin funcionalidades del menú hamburguesa-->
+        <!--Slider-->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+        />
+        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+        <link rel="stylesheet" href="sass/desktop/_header.sass">
+        <!--fin slider-->
+        <!--slider artistas-->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+        <!--fin slider artistas-->
+        <!--AOS-->
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <!--fin AOS-->
+    </head>
+    <body>
+    <header class="header" x-data="{ open: false }">
+        <div class="container">
+            <a href="index.html" class="header__brand-link">
+                <img
+                    src="img/spotlight_movil_reducida.png"
+                    alt="Logo Spotlight versión movil"
+                    class="image header__brand-icono"
+                />
+            </a>
+            <nav class="nav" :class="open ? 'nav--show' : ''">
+                <ul class="nav__ul">
+                    <li class="nav__item">
+                        <a href="exposiciones.html" class="nav__link">Exposiciones</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="actividades.html" class="nav__link">Actividades</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="arte_urbano.html" class="nav__link">Arte urbano</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="artistas.html" class="nav__link">Artistas</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="blog.html" class="nav__link">Blog</a>
+                    </li>
+                </ul>
+            </nav>
+            <button class="header__button" aria-hidden="true" @click="open = !open">
+                <img
+                    :src="open ? 'img/icons/close.webp' : 'img/icons/open.webp'"
+                    alt="Botón de mostrar u ocultar el menú movil"
+                    class="image"
+                >
+            </button>
+        </div>
+    </header>
+    <main>
+        <div>
+            <section id="inicio" class="hero">
+                <div class="container">
+                    <hgroup class="heor__hgroup">
+                        <h1 class="hero__title">POLÍTICA DE PRIVACIAD</h1>
+                        <p class="hero__description">
+                           <strong class="strong">Spotlight</strong> ha adecuado esta web a las exigencias de la Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de Carácter Personal (LOPD), y al Real Decreto 1720/2007, de 21 de diciembre, conocido como el Reglamento de desarrollo de la LOPD. Cumple también con el Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo de 27 de abril de 2016 relativo a la protección de las personas físicas (RGPD), así como con la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y Comercio Electrónico (LSSICE o LSSI).
+                        </p>
+                    </hgroup>
+                </div>
+            </section>
+            <section class="privacidad">
+                <div class="container">
+                    <div class="privacidad__hgroup">
+                        <h2 class="privacidad__title">Responsable del tratamiento de tus datos personales</h2>
+                        <ul class="privacidad__ul">
+                            <li class="privacidad__list">Identidad responsable: <strong class="strong">Spotlight</strong>
+                            </li>
+                            <li class="privacidad__list">NIF/CIF: 65243679
+                            </li>
+                            <li class="privacidad__list">Dirección: Calle falsa 123
+                            </li>
+                        </ul>
+                        <p class="privacidad__description">
+                            A efectos de lo previsto en el Reglamento General de Protección de Datos antes citado, los datos personales que me envíes a través de los formularios de la web, recibirán el tratamiento de datos de “Usuarios de la web y suscriptores”. Para el tratamiento de datos de mis usuarios, implemento todas las medidas técnicas y organizativas de seguridad establecidas en la legislación vigente.
+                        </p>
+                    </div>
+                    <div class="privacidad__hgroup">
+                        <h2 class="privacidad__title">¿Cómo hemos obtenido tus datos?</h2>
+                        <p class="privacidad__description">
+                            Los datos personales que tratamos en <strong class="strong">Spotlight</strong> proceden de
+                        </p>
+                        <ul class="privacidad__ul">
+                            <li class="privacidad__list">Formulario de acceso a la web.
+                            </li>
+                            <li class="privacidad__list">Formulario de contaco.
+                            </li>
+                            <li class="privacidad__list">Formulario de registro
+                            </li>
+                            <li class="privacidad__list">Formulario de modificiacion de datos.
+                            </li>
+                            <li class="privacidad__list">Formulario de baja.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="privacidad__hgroup">
+                        <h2 class="privacidad__title">Derechos de usuarios</h2>
+                        <p class="privacidad__description">
+                            Cualquier persona tiene derecho a obtener confirmación sobre si en <strong class="strong">Spotlight</strong> estoy tratando datos personales que me conciernen, o no.
+                        </p>
+                        <p class="privacidad__description">
+                            Las personas interesadas tienen derecho a
+                        </p>
+                        <ul class="privacidad__ul">
+                            <li class="privacidad__list">Solicitar el acceso a los datos personales realitvos al interesado.
+                            </li>
+                            <li class="privacidad__list">Solicitar su rectificación o supresión.
+                            </li>
+                            <li class="privacidad__list">Solicitar la limitación de su tratamiento.
+                            </li>
+                            <li class="privacidad__list">Oponerse al tratamiento.
+                            </li>
+                            <li class="privacidad__list">Solicitar la portabilidad de los datos.
+                            </li>
+                        </ul>
+                        <p class="privacidad__description">
+                            Los interesados podrán <strong class="strong">acceder</strong> a sus datos personales, así como a solicitar la <strong class="strong">rectificación</strong> de los datos inexactos o, en su caso, solicitar su <strong class="strong">supresión</strong> cuando, entre otros motivos, los datos ya no sean necesarios para los fines que fueron recogidos. En determinadas circunstancias, los interesados podrán solicitar la limitación del tratamiento de sus datos, en cuyo caso únicamente los conservaré para el ejercicio o la defensa de reclamacione
+                        </p>
+                        <p class="privacidad__description">
+                            En determinadas circunstancias y por motivos relacionados con su situación particular, los interesados podrán oponerse al tratamiento de sus datos. <strong class="strong">Spotlight</strong>dejará de tratar los datos, salvo por motivos legítimos imperiosos, o el ejercicio o la defensa de posibles reclamaciones. Cómo interesado, tienes derecho a recibir los datos personales que te incumban, que me hayas facilitado y en un formato estructurado, de uso común y lectura mecánica, y a transmitirlos a otro responsable del tratamiento cuando:
+                        </p>
+                        <ul class="privacidad__ul">
+                            <li class="privacidad__list">El tratamiento esté basado en el consentimiento.
+                            </li>
+                            <li class="privacidad__list">Los datos hayan sido facilitados por la persona interesada.
+                            </li>
+                            <li class="privacidad__list">El tratamiento se efectúe por medios automatizados.
+                            </li>
+                        </ul>
+                        <p class="privacidad__description">
+                            Al ejercer tu derecho a la portabilidad de los datos, tendrás derecho a que los datos personales se transmitan directamente de responsable a responsable cuando sea técnicamente posible. Los interesados también tendrán derecho a la tutela judicial efectiva y a presentar una reclamación ante la autoridad de control, en este caso, la Agencia Española de Protección de Datos, si consideran que el tratamiento de datos personales que le conciernen infringe el Reglamento.
+                        </p>
+                    </div>
+                    <div class="privacidad__hgroup">
+                        <h2 class="privacidad__title">Finalidad de sus datos personales</h2>
+                        <p class="privacidad__description">
+                            Cuando un usuario se conecta con esta web por ejemplo para mandar un correo al titular, registrarse, suscribirse o realizar alguna contratación, está facilitando información de carácter personal de la que es responsable <strong class="strong">Spotlight</strong>. Esa información puede incluir datos de carácter personal como pueden ser tu dirección IP, nombre, dirección física, dirección de correo electrónico, número de teléfono, y otra información. Al facilitar esta información, el usuario da su consentimiento para que su información sea recopilada, utilizada, gestionada y almacenada por spotlight.com, sólo como se describe en el Aviso Legal y en la presente Política de Privacidad. En <strong class="strong">Spotlight</strong> existen diferentes sistemas de captura de información personal y trato la información que me facilitan las personas interesadas con el siguiente fin por cada sistema de captura (formularios).
+                        </p>
+                        <dl>
+                            <dt class="privacidad__subtitle">• Fromulario de contacto:</dt>
+                            <dd class="cookies__page-explication">
+                                Solicitamos los siguientes datos personales: Nombre, Email y opcionalmente, tu teléfono, para responder a los requerimientos de los usuarios de spotlight.com. Por ejemplo, podemos utilizar esos datos para responder a tu solicitud y dar respuesta a las dudas, quejas, comentarios o inquietudes que puedas tener relativas a la información incluida en la web, los servicios que se prestan a través de la web, el tratamiento de sus datos personales, cuestiones referentes a los textos legales incluidos en la web, así como cualesquiera otras consultas que puedas tener y que no estén sujetas a las condiciones de contratación. Te informo que los datos que nos facilitas estarán ubicados en los servidores de Godaddy dentro de la UE..
+                            </dd>
+                            <dt class="cookies__page-subtitle">• Fromulario de registro:</dt>
+                            <dd class="cookies__page-explication">
+                                En este caso, solicitamos los siguientes datos personales: Usuario, contraseña, nombre, apellidos, género, DNI/Pasaporte, fecha de nacimiento, email, móvil, provincia, localidad, código postal y dirección completa para gestionar el beneficio de las promociones. Te informo que los datos que nos facilitas estarán ubicados en los servidores de Godaddy dentro de la UE
+                            </dd>
+                            <dt class="cookies__page-subtitle">• Fromulario de acceso a la web:</dt>
+                            <dd class="cookies__page-explication">
+                                Para acceder a los apartados ocultos para usuarios no registrados en la web, se deben facilitar los datos de usuario y contraseña facilitados en el formulario de registro. Te informo que los datos que nos facilitas estarán ubicados en los servidores de Godaddy dentro de la UE.
+                            </dd>
+                            <dt class="cookies__page-subtitle">• Fromulario de venta:</dt>
+                            <dd class="cookies__page-explication">
+                                El usuario dispone de diferentes formularios de venta sujetos a las condiciones de contratación especificadas para cada servicio donde se le requerirán datos de pago que serán recabados y gestionados por las pasarelas de pagos utilizadas por la web. En este caso PayPal (www.paypal.com) y/o Stripe (www.stripe.com)
+                            </dd>
+                            <dt class="cookies__page-subtitle">• Fromulario de modificación de datos:</dt>
+                            <dd class="cookies__page-explication">
+                                En este caso, solicitamos de forma opcional alguno o la totalidad de los siguientes datos personales, según sean unos u otros los datos a modificar: Nombre, apellidos, género, DNI/Pasaporte, fecha de nacimiento, email, móvil, provincia, localidad, código postal y dirección completa para modificar los datos facilitados en el formulario de registro para actualizarlos en la base de datos si éstos son erróneos o han quedado desfasados. Te informo que los datos que nos facilitas estarán ubicados en los servidores de Godaddy dentro de la UE.
+                            </dd>
+                            <dt class="cookies__page-subtitle">• Fromulario de baja:</dt>
+                            <dd class="cookies__page-explication">
+                                En este caso, solicitamos el email de registro para dar de baja al usuario y borrar todos los datos del usuario que <strong class="strong">Spotlight</strong> tuviera registrados, de forma opcional se podrá incluir un mensaje y valorar la experiencia. Te informo que los datos que nos facilitas estarán ubicados en los servidores de Godaddy (proveedor de <strong class="strong">Spotlight</strong>) dentro de la UE.
+                            </dd>
+                        </dl>
+                        <p class="privacidad__description">
+                            Existen otras finalidades por la que trato sus datos personales:
+                        </p>
+                        <dl>
+                            <dt class="privacidad__subtitle">• Fromulario de contacto:</dt>
+                            <dd calss="cookies__page-explication">
+                                Solicitamos los siguientes datos personales: Nombre, Email y opcionalmente, tu teléfono, para responder a los requerimientos de los usuarios de spotlight.com. Por ejemplo, podemos utilizar esos datos para responder a tu solicitud y dar respuesta a las dudas, quejas, comentarios o inquietudes que puedas tener relativas a la información incluida en la web, los servicios que se prestan a través de la web, el tratamiento de sus datos personales, cuestiones referentes a los textos legales incluidos en la web, así como cualesquiera otras consultas que puedas tener y que no estén sujetas a las condiciones de contratación. Te informo que los datos que nos facilitas estarán ubicados en los servidores de Godaddy dentro de la UE..
+                            </dd>
+                            <dt class="cookies__page-subtitle">• Fromulario de registro:</dt>
+                            <dd class="cookies__page-explication">
+                                En este caso, solicitamos los siguientes datos personales: Usuario, contraseña, nombre, apellidos, género, DNI/Pasaporte, fecha de nacimiento, email, móvil, provincia, localidad, código postal y dirección completa para gestionar el beneficio de las promociones. Te informo que los datos que nos facilitas estarán ubicados en los servidores de Godaddy dentro de la UE
+                            </dd>
+                            <dt class="cookies__page-subtitle">• Fromulario de acceso a la web:</dt>
+                            <dd class="cookies__page-explication">
+                                Para acceder a los apartados ocultos para usuarios no registrados en la web, se deben facilitar los datos de usuario y contraseña facilitados en el formulario de registro. Te informo que los datos que nos facilitas estarán ubicados en los servidores de Godaddy dentro de la UE.
+                            </dd>
+                            <dt class="cookies__page-subtitle">• Fromulario de venta:</dt>
+                            <dd class="cookies__page-explication">
+                                El usuario dispone de diferentes formularios de venta sujetos a las condiciones de contratación especificadas para cada servicio donde se le requerirán datos de pago que serán recabados y gestionados por las pasarelas de pagos utilizadas por la web. En este caso PayPal (www.paypal.com) y/o Stripe (www.stripe.com)
+                            </dd>
+                            <dt class="cookies__page-subtitle">• Fromulario de modificación de datos:</dt>
+                            <dd class="cookies__page-explication">
+                                En este caso, solicitamos de forma opcional alguno o la totalidad de los siguientes datos personales, según sean unos u otros los datos a modificar: Nombre, apellidos, género, DNI/Pasaporte, fecha de nacimiento, email, móvil, provincia, localidad, código postal y dirección completa para modificar los datos facilitados en el formulario de registro para actualizarlos en la base de datos si éstos son erróneos o han quedado desfasados. Te informo que los datos que nos facilitas estarán ubicados en los servidores de Godaddy dentro de la UE.
+                            </dd>
+                            <dt class="cookies__page-subtitle">• Fromulario de baja:</dt>
+                            <dd class="cookies__page-explication">
+                                En este caso, solicitamos el email de registro para dar de baja al usuario y borrar todos los datos del usuario que <strong class="strong">Spotlight</strong> tuviera registrados, de forma opcional se podrá incluir un mensaje y valorar la experiencia. Te informo que los datos que nos facilitas estarán ubicados en los servidores de Godaddy (proveedor de <strong class="strong">Spotlight</strong>) dentro de la UE.
+                            </dd>
+                        </dl>
+                        <p class="privacidad__description">
+                            Existen otras finalidades por la que trato sus datos personales:
+                        </p>
+                        <ul class="privacidad__ul">
+                            <li class="privacidad__list">Para garantizar el cumplimiento de las condiciones de uso y la ley aplicable. Esto puede incluir el desarrollo de herramientas y algoritmos que ayudan a esta web a garantizar la confidencialidad de los datos personales que recoge
+                            </li>
+                            <li class="privacidad__list">LPara apoyar y mejorar los servicios que ofrece esta web.
+                            </li>
+                            <li class="privacidad__list">También se recogen otros datos no identificativos que se obtienen mediante algunas cookies que se descargan en el ordenador del usuario cuando navega en esta web que detallo en la política de cookies.
+                            </li>
+                            <li class="privacidad__list">Para gestionar las redes sociales. <strong class="strong">Spotlight</strong> puede tener presencia en redes sociales. El tratamiento de los datos que se lleve a cabo de las personas que se hagan seguidoras en las redes sociales de las páginas oficiales de spotlight.com], se regirá por este apartado. Así como por aquellas condiciones de uso, políticas de privacidad y normativas de acceso que pertenezcan a la red social que proceda en cada caso y aceptadas previamente por el usuario de <strong class="strong">Spotlight</strong>. Tratará sus datos con las finalidades de administrar correctamente su presencia en la red social, informando de actividades, productos o servicios de <strong class="strong">Spotlight</strong>. Así como para cualquier otra finalidad que las normativas de las redes sociales permitan. En ningún caso utilizaré los perfiles de seguidores en redes sociales para enviar publicidad de manera individual.
+                            </li>
+                        </ul>
+                        <p class="privacidad__description">
+                            De acuerdo a lo establecido en el reglamento general de protección de datos europeo (RGPD) 2016/679, <strong class="strong">Spotlight</strong> con domicilio c/falsa 123 en <a href="#" class="privacidad__link">spotlight.com</a> Será responsable del tratamiento de los datos correspondientes a Usuarios de la web y suscriptores. <strong class="strong">Spotlight</strong> no vende, alquila ni cede datos de carácter personal que puedan identificar al usuario, ni lo hará en el futuro, a terceros sin el consentimiento previo. Sin embargo, en algunos casos se pueden realizar colaboraciones con otros profesionales, en esos casos, se requerirá consentimiento a los usuarios informando sobre la identidad del colaborador y la finalidad de la colaboración. Siempre se realizará con los más estrictos estándares de seguridad.
+                        </p>
+                    </div>
+                    <div class="privacidad__hgroup">
+                        <h2 class="privacidad__title">Remarketing</h2>
+                        <p class="privacidad__description">
+                            La función de remarketing nos permite llegar a las personas que hayan visitado <a href="#" class="privacidad__link">spotlight.com</a> anteriormente y asociar una audiencia determinada a un mensaje concreto. El remarketing es un método para conseguir que los usuarios que han visitado este sitio vuelvan a hacerlo. Como usuario de <strong class="strong">Spotlight</strong> te informo que estamos recopilando información para esta función de remarketing en spotlight.com.
+                        </p>
+                        <p class="privacidad__description">
+                            La información que recopilo gracias a esta función es recogida por las cookies de Facebook. Puedes conocer los datos que recopilan estas cookies en las siguientes políticas de privacidad de cada servicio:
+                        </p>
+                        <dl>
+                            <dt class="privacidad__subtitle">• Facebook:</dt>
+                            <dd class="cookies__page-explication">
+                                Si no quiere que su información sea recopilada por estas cookies, puede inhabilitar el uso de cookies de Google a través de la Configuración de anuncios de Google. También puedes inhabilitar el uso de cookies de un proveedor tercero a través de la página de inhabilitación de Network Advertising Initiative.
+                                <p>
+                                    Este tipo de servicios permite interactuar con redes sociales u otras plataformas externas directamente desde las páginas de esta web. Las interacciones y la información obtenida por esta web siempre estarán sometidas a la configuración de privacidad del usuario en cada red social. En caso de que se instale un servicio que permita interactuar con redes sociales, es posible que, aunque los usuarios no utilicen el servicio, éste recoja datos de tráfico web relativos a las páginas en las que estén instalados.
+                                </p>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="privacidad__hgroup">
+                        <h2 class="privacidad__title">Facebook ads</h2>
+                        <p class="privacidad__description">
+                            En <strong class="strong">Spotlight</strong>  utilizo Facebook ads, la plataforma de publicidad de Facebook, que nos permite crear campañas y anuncios. Al generar un anuncio, se puede segmentar el público por:
+                        </p>
+                        <ul class="privacidad__ul">
+                            <li class="privacidad__list">Datos demográficos (edad, sexo, etc.)
+                            </li>
+                            <li class="privacidad__list">Intereses (actividades, aficiones, etc.)
+                            </li>
+                            <li class="privacidad__list">Lo que compran en internet y por otros canales.
+                            </li>
+                        </ul>
+                        <p class="privacidad__description">
+                            Los datos obtenidos a través de Facebook ads están sujetos a esta política de privacidad desde el momento en que el usuario deja sus datos en el formulario de esta web para unirse al boletín de suscripciones. En ningún caso se utilizará la información procedente de Facebook con una finalidad diferente.
+                        </p>
+                    </div>
+                    <hgroup class="privacidad__hgroup">
+                        <h2 class="privacidad__title">Legimitación para el tratamiento de sus datos</h2>
+                        <p class="privacidad__description">
+                            La base legal para el tratamiento de sus datos es: el consentimiento. Para contactar o realizar comentarios en esta web se requiere el consentimiento con esta política de privacidad. La oferta prospectiva o comercial de productos y servicios está basada en el consentimiento que se le solicita, sin que en ningún caso la retirada de este consentimiento condicione la ejecución del contrato de suscripción.
+                        </p>
+                    </hgroup>
+                    <div class="privacidad__hgroup">
+                        <h2 class="privacidad__title">Categoría de los datos recogidos</h2>
+                        <p class="privacidad__description">
+                            Las categorías de datos que se tratan son datos identificativos.
+                      </p>
+                        <p class="privacidad__description">
+                            En ningún caso se tratan categorías de datos especialmente protegido.
+                        </p>
+                    </div>
+                    <hgroup class="privacidad__hgroup">
+                        <h2 class="privacidad__title">¿Por cuánto tiempo conservaré sus datos?</h2>
+                        <p class="privacidad__description">
+                            Los datos personales proporcionados se conservarán hasta que el interesado solicite su supresión de forma expresa.
+                        </p>
+                    </hgroup>
+                    <div class="privacidad__hgroup">
+                        <h2 class="privacidad__title">¿A qué destinatarios se comunicaará sus datos?</h2>
+                        <p class="privacidad__description">
+                            A los estrictamente necesarios para el desarrollo de la actividad, <a href="#" class="privacidad__link">spotlight.com</a>, comparte datos con los siguientes prestadores bajo sus correspondientes condiciones de privacidad:
+                        </p>
+                        <dl>
+                            <dt class="privacidad__subtitle">• Google Analytics:</dt>
+                            <dd class="cookies__page-explication">
+                                Un servicio analítico de web prestado por Google, Inc., una compañía de Delaware cuya oficina principal está en 1600 Amphitheatre Parkway, Mountain View (California), CA 94043, Estados Unidos (“Google”). Google Analytics utiliza “cookies”, que son archivos de texto ubicados en tu ordenador, para ayudar a <a href="#" class="privacidad__link">spotlight.com</a> a analizar el uso que hacen los usuarios del sitio web. La información que genera la cookie acerca de su uso de spotlight.com (incluyendo tu dirección IP) será directamente transmitida y archivada por Google en los servidores de Estados Unidos.
+                            </dd>
+                            <dt class="cookies__page-subtitle">• Hosting:</dt>
+                            <dd class="cookies__page-explication">
+                                Godaddy, con domicilio en EEUU. Más información en: www.godaddy.com trata los datos con la finalidad de realizar sus servicios de hosting a <strong class="strong">Spotlight</strong>.
+                            </dd>
+                            <dt class="cookies__page-subtitle">• Plataforma web:</dt>
+                            <dd class="cookies__page-explication">
+                                Automattic Inc., con domicilio en EEUU. Más información en: https://es.wordpress.com/ (Automattic Inc.). Automattic Inc. trata los datos con la finalidad de realizar sus servicios de plataforma web a <strong class="strong">Spotlight</strong>.
+                            </dd>
+                            <dt class="cookies__page-subtitle">• Email marketing:</dt>
+                            <dd class="cookies__page-explication">
+                                Mailchimp, con domicilio en EEUU. Más información en: www.mailchimp.com. Mailchimp trata los datos con la finalidad de realizar sus servicios de email marketing a <strong class="strong">Spotlight</strong>. Wishpond con domicilio en Canadá trata los datos con la finalidad de realizar servicios de email marketing, análisis y concursos. Más información en www.wishpond.com
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="privacidad__hgroup">
+                        <h2 class="privacidad__title">Navegación</h2>
+                        <p class="privacidad__description">
+                            Al navegar por <a href="#" class="privacidad__link">spotlight.com</a> se pueden recoger datos no identificables, que pueden incluir, direcciones IP, ubicación geográfica (aproximadamente), un registro de cómo se utilizan los servicios y sitios, y otros datos que no pueden ser utilizados para identificar al usuario. Entre los datos no identificativos están también los relacionados a tus hábitos de navegación a través de servicios de terceros. Esta web utiliza los siguientes servicios de análisis de terceros:
+                        </p>
+                        <ul class="privacidad__ul">
+                            <li class="privacidad__list">Google Analytics.
+                            </li>
+                            <li class="privacidad__list">Pixel de Facebook.
+                            </li>
+                        </ul>
+                        <p class="privacidad__description">
+                            Esta información se emplea para analizar tendencias, administrar el sitio, rastrear los movimientos de los usuarios alrededor del sitio y para recopilar información demográfica sobre la base de usuarios en su conjunto
+                        </p>
+                    </div>
+                    <div class="privacidad__hgroup">
+                        <h2 class="privacidad__title">Secreto y seguridad de los datos</h2>
+                        <p class="privacidad__description">
+                            <strong class="strong">Spotlight</strong> se compromete en el uso y tratamiento de los datos incluidos personales de los usuarios, respetando su confidencialidad y a utilizarlos de acuerdo con la finalidad del mismo, así como a dar cumplimiento a su obligación de guardarlos y adaptar todas las medidas para evitar la alteración, pérdida, tratamiento o acceso no autorizado, de conformidad con lo establecido en la normativa vigente de protección de datos. <strong class="strong">Spotlight</strong> no puede garantizar la absoluta inexpugnabilidad de la red Internet y por tanto la violación de los datos mediante accesos fraudulentos a ellos por parte de terceros
+                        </p>
+                        <p class="privacidad__description">
+                            Con respecto a la confidencialidad del procesamiento, <strong class="strong">Spotlight</strong> se asegurará de que cualquier persona que esté autorizada por <strong class="strong">Spotlight</strong> para procesar los datos del cliente (incluido su personal, colaboradores y prestadores), estará bajo la obligación apropiada de confidencialidad (ya sea un deber contractual o legal). Cuando se presente algún incidente de seguridad, al darse cuenta el titular legítimo de <strong class="strong">Spotlight</strong>, deberá notificar al Cliente sin demoras indebidas y deberá proporcionar información oportuna relacionada con el Incidente de Seguridad tal como se conozca o cuando el Cliente lo solicite razonablemente
+                        </p>
+                    </div>
+                    <hgroup class="privacidad__hgroup">
+                        <h2 class="privacidad__title">Exactitud y veracidad de los datos</h2>
+                        <p class="privacidad__description">
+                            Como usuario, eres el único responsable de la veracidad y corrección de los datos que remitas a spotlight.com exonerando a <strong class="strong">Spotlight</strong>, de cualquier responsabilidad al respecto. Los usuarios garantizan y responden, en cualquier caso, de la exactitud, vigencia y autenticidad de los datos personales facilitados, y se comprometen a mantenerlos debidamente actualizados. El usuario acepta proporcionar información completa y correcta en el formulario de contacto o suscripción
+                        </p>
+                    </hgroup>
+                    <hgroup class="privacidad__hgroup">
+                        <h2 class="privacidad__title">Aceptación y consentiemiento</h2>
+                        <p class="privacidad__description">
+                            El usuario declara haber sido informado de las condiciones sobre protección de datos de carácter personal, aceptando y consintiendo el tratamiento de los mismos por parte de <strong class="strong">Spotlight</strong> en la forma y para las finalidades indicadas en esta política de privacidad.
+                        </p>
+                    </hgroup>
+                    <hgroup class="privacidad__hgroup">
+                        <h2 class="privacidad__title">Revocabilidad</h2>
+                        <p class="privacidad__description">
+                            El consentimiento prestado, tanto para el tratamiento como para la cesión de los datos de los interesados, es revocable en cualquier momento comunicándolo a <strong class="strong">Spotlight</strong> en los términos establecidos en esta Política para el ejercicio de los derechos ARCO. Esta revocación en ningún caso tendrá carácter retroactivo.
+                        </p>
+                    </hgroup>
+                    <hgroup class="privacidad__hgroup">
+                        <h2 class="privacidad__title">Cambios en la política de privacidad</h2>
+                        <p class="privacidad__description">
+                            <strong class="strong">Spotlight</strong> se reserva el derecho a modificar la presente política para adaptarla a novedades legislativas o jurisprudenciales, así como a prácticas de la industria. En dichos supuestos, <strong class="strong">Spotlight</strong> anunciará en esta página los cambios introducidos con razonable antelación a su puesta en práctica.
+                        </p>
+                    </hgroup>
+                    <div class="privacidad__hgroup">
+                        <h2 class="privacidad__title">Correos comerciales</h2>
+                        <p class="privacidad__description">
+                            De acuerdo con la LSSICE, <a href="#" class="privacidad__link">spotlight.com</a> no realiza prácticas de SPAM, por lo que no envía correos comerciales por vía electrónica que no hayan sido previamente solicitados o autorizados por el usuario. Conforme a lo dispuesto en la Ley 34/2002 de Servicios de la Sociedad de la Información y de comercio electrónico,<a href="#" class="privacidad__link">spotlight.com</a>  se compromete a no enviar comunicaciones de carácter comercial sin identificarlas debidamente.
+                        </p>
+                        <p class="privacidad__description-date">
+                            Documento revisado el 6 de Julio del 2023
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer__division-up">
+            <div class="container">
+                <div class="footer__up">
+                    <div class="footer__group">
+                        <details class="subnav subnav--primero">
+                            <summary class="subnav__title">Spotlight</summary>
+                            <ul class="nav__ul ul-reset">
+                                <li class="nav__item"><a href="page_construction.html" class="link nav__link">Sobre nosotros</a></li>
+                                <li class="nav__item"><a href="page_construction.html" class="link nav__link">¿Qué hecemos?</a></li>
+                                <li class="nav__item"><a href="page_construction.html" class="link nav__link">Equipo</a></li>
+                                <li class="nav__item"><a href="page_construction.html" class="link nav__link">Contacto</a></li>
+                            </ul>
+                        </details>
+                        <details class="subnav subnav--segundo">
+                            <summary class="subnav__title">Servicios</summary>
+                            <ul class="nav__ul ul-reset">
+                                <li class="nav__item"><a href="exposiciones.html" class="link nav__link">Exposiciones</a></li>
+                                <li class="nav__item"><a href="page_construction.html" class="link nav__link">Planifica</a></li>
+                                <li class="nav__item"><a href="arte_urbano.html" class="link nav__link">Arte urbano</a></li>
+                                <li class="nav__item"><a href="page_construction.html" class="link nav__link">Publicidad</a></li>
+                                <li class="nav__item"><a href="page_construction.html" class="link nav__link">Anúnciate.</a></li>
+                            </ul>
+                        </details>
+                    </div>
+                    <form class="footer__form">
+                        <div class="footer__form-newsletter">
+                            <label>
+                                Suscribete a nuesta newsletter
+                                <input type="email" name="correo" class="form-correo">
+                            </label>
+                            <button  type="submit" class="button button__enviar"> Enviar</button>
+                        </div>
+                        <div class="footer__form-checkbox">
+                            <label>
+                                <input type="checkbox" name="privacidad" value="">
+                                Acepto las condiciones de uso y privacidad
+                            </label>
+                        </div>
+                    </form>
+                    <div class="footer__social">
+                        <p class="footer__social-title ">Siguenos</p>
+                        <ul class="ul-reset social">
+                            <li class="social__item">
+                                <a href="page_construction.html" class="link social__link">
+                                    <img class="image social__icon" src="img/icons/facebook_icon.svg" alt="Facebook">
+                                </a>
+                            </li>
+                            <li class="social__item">
+                                <a href="page_construction.html" class="link social__link">
+                                    <img class="image social__icon" src="img/icons/twitter.svg" alt="Twitter">
+                                </a>
+                            </li>
+                            <li class="social__item">
+                                <a href="page_construction.html" class="link social__link">
+                                    <img class="image social__icon" src="img/icons/instagram_icon.svg" alt="Instagram">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__division-down">
+            <div class="footer__down">
+                <nav class="footer__group-items">
+                    <div class="footer__group-item">
+                        <p><a href="aviso_legal.html" class="text link">Aviso Legal</a></p>
+                        <p><a href="page_construction.html" class="link text">Contacto</a></p>
+                    </div>
+                    <div class="footer__group-item">
+                        <p><a href="cookies.html" class="text link">Politica de Cookies</a></p>
+                        <p><a href="politica_privacidad.html" class="link text">Privacidad</a></p>
+                    </div>
+                    <p class="footer__group-item"><a href="page_construction.html" class="text link">Política de Protección de datos</a></p>
+                </nav>
+                <div class="footer__group-finally">
+                    <p>Spotlight, art expericence</p>
+                    <a href="#inicio" class="link">
+                        <img src="img/icons/arrow_up_icon.svg" alt="flecha para llevarte al inicio"
+                             class="social__icon image">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--footer aperturass-->
+    <script>
+        // Variables
+        const anchuraMovil = 600;
+        const subNavs = document.querySelectorAll('.subnav');
+
+        // Functions
+        function removeAllClickEvents(elem) {
+            const clone = elem.cloneNode(true);
+            elem.parentNode.replaceChild(clone, elem);
+            return clone;
+        }
+
+        function initialSubNavs() {
+            const width = window.innerWidth;
+            if (width < anchuraMovil) {
+                // Mobile
+                subNavs.forEach(subNav => {
+                    // Close
+                    subNav.removeAttribute("open");
+                    // Details, enable click on summary
+                    const summary = subNav.querySelector(".subnav__title");
+                    const newDOM = removeAllClickEvents(summary);
+                    newDOM.addEventListener("click", (event) => {
+                        event.preventDefault();
+                        const open = subNav.getAttribute("open");
+                        if (open) {
+                            subNav.removeAttribute("open");
+                        } else {
+                            subNav.setAttribute("open", true);
+                        }
+                    });
+                });
+            } else {
+                // Desktop
+                subNavs.forEach(subNav => {
+                    // Open
+                    subNav.setAttribute("open", true);
+                    // Details, disable click on summary
+                    const summary = subNav.querySelector(".subnav__title");
+                    const newDOM = removeAllClickEvents(summary);
+                    newDOM.addEventListener("click", (event) => {
+                        event.preventDefault();
+                        subNav.setAttribute("open", true);
+                    });
+                });
+            }
+        }
+
+        // Events
+        window.addEventListener('resize', initialSubNavs);
+
+        // Init
+        initialSubNavs();
+    </script>
+    <!--fin footer aperturas-->
+    </body>
+</html>

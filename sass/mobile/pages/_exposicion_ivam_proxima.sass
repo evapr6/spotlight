@@ -1,0 +1,129 @@
+@use "base"
+@use "variables"
+@use "typography"
+
+//hero
+.exposiciones__hero
+    padding:
+        top: 5rem
+        left: variables.$gap__s
+        right: variables.$gap__s
+        bottom: variables.$gap__l
+    background-image: url("img/pichiavo/ciutat-fallera-valencia-pichiavo-grande.webp")
+    &--image
+        opacity: 70%
+    &--group
+        position: absolute
+        top: 7rem
+        right: 0
+        left: 0
+        background: #fff8
+        width: 250px
+        margin-left: 4rem
+        border-radius: variables.$gap__l
+        padding-block: 0
+    &--image
+        opacity: 70%
+    &--button
+        position: absolute
+        top: 24rem
+        right: 0
+        left: 0
+        text-align: center
+        margin: 0 auto
+        font-size: variables.$gap__s
+
+//contenido
+.exposicion
+    display: flex
+    flex-direction: column
+    background: variables.$color__blanco
+    margin-inline: variables.$gap__s
+    margin-top: variables.$gap__s
+    &__ficha
+        &--title
+            color: variables.$color__titulo
+            font-size: variables.$gap--xl
+            text-align: center
+            margin-bottom: variables.$gap__xs
+        &--subtitle
+            color: variables.$color__corporativo
+            font-size: variables.$gap__m
+            text-align: center
+            font-weight: 500
+            text-transform: uppercase
+            margin-top: variables.$gap__xs
+        &--datos
+            border-top: .3rem solid variables.$color__morado-medio
+            margin-block: variables.$gap__m
+            display: flex
+            flex-direction: column
+            background: #FBF9F9
+            padding-inline: variables.$gap__s
+        &--right
+            margin-top: variables.$gap__s
+        &--item
+            font-weight: 700
+            color: variables.$color__corporativo
+            margin-top: variables.$gap__xs
+        &--answer
+            margin-top: variables.$gap__xs
+        &--left
+            margin-top: variables.$gap__xs
+        &__information
+            margin-top: variables.$gap__xl
+            margin-bottom: variables.$gap--xxl
+        &--intro
+            text-align: center
+            color: variables.$color__titulo
+        &--text
+            margin-inline: variables.$gap--xs
+            &-bold
+                font-weight: 700
+                color: variables.$color__corporativo
+    &__artista
+        display: flex
+        flex-direction: column
+        margin-block: variables.$gap__l
+        &--information
+            width: 500px
+        &--title
+            text-align: center
+            margin-right: 10rem
+            margin-top: variables.$gap__l
+            color: variables.$color__morado-medio
+        &--text
+            font-weight: 400
+        &--image
+            margin-bottom: variables.$gap__header
+    .artista__link
+        color: variables.$color__corporativo
+        font-weight: 700
+
+.card
+    &__header
+        display: flex
+        justify-content: space-between
+        align-items: center
+    &__museum
+        font-size: 1.2rem
+        color: variables.$color__corporativo
+    &__estado
+        text-transform: uppercase
+        font-size: .7rem
+        font-weight: 700
+        padding: variables.$gap__xs variables.$gap__s
+        border-radius: 5px
+        &--proximo
+            color: variables.$color__blanco
+            background: variables.$color__verde
+        &--actual
+            color: variables.$color__corporativo
+            background: variables.$color__gris
+            display: flex
+            align-items: flex-end
+        &--pasada
+            color: variables.$color__blanco
+            background: variables.$color__rojo
+
+

@@ -1,0 +1,100 @@
+@use "variables"
+@use "base"
+.footer
+    &__division-up
+        background: #FBF9F9
+        border-top: 1px solid variables.$color__morado-claro
+        border-top-left-radius: 10px
+        border-top-right-radius: 10px
+        padding-top: variables.$gap__s
+        color: variables.$color__titulo
+    &__up
+        display: grid
+        grid-template-columns: 1fr 1fr 1fr
+        grid-template-areas: "informacion social newsletter"
+        gap: variables.$gap--xxl
+    &__group
+        grid-area: informacion
+        display: flex
+        justify-content: space-between
+        .subnav
+            text-decoration: none
+            &__title
+                text-align: center
+                margin-block: 1px
+                padding-block: variables.$gap--xs
+                font-weight: bold
+                padding-inline: variables.$gap__xs
+                //&::-webkit-details-marker
+                    display: none
+                //&::marker
+                    content: ""
+        .nav
+            &__ul
+                display: flex
+                flex-direction: column
+                margin: 0
+            &__link
+                display: block
+                text-align: center
+                padding-block: variables.$gap--xs
+                &:hover
+                    border-bottom: 1px solid variables.$color__corporativo
+    &__form
+        grid-area: newsletter
+        margin-block: variables.$gap__header
+        box-sizing: border-box
+        .form-correo
+            margin-block: variables.$gap__xs
+            border-radius: 5px
+            border: 1px solid #F0EDF4
+            padding: .8rem
+        .button__enviar
+            padding-block: .8rem
+            padding-inline: variables.$gap__xs
+            background: variables.$color__corporativo
+            color: variables.$color__blanco
+            font-weight: bold
+            border-radius: 5px
+            border: 0
+    &__social
+        box-sizing: border-box
+        grid-area: social
+        text-align: center
+    &__social-title
+        text-transform: uppercase
+        margin-top: variables.$gap__xs
+        font-size: variables.$gap--s
+    .social
+        margin-left: 5.5rem
+        gap: variables.$gap--s
+        &__icon
+            width: variables.$gap--m
+    &__division-down
+        background: variables.$color__morado-footer
+        padding-block: variables.$gap--m
+    &__down
+        padding-top: variables.$gap--s
+        margin-inline: 4rem
+        display: grid
+        grid-template-columns: 2fr 1fr
+        grid-template-areas: "legal  copy"
+    &__group-item
+        grid-area: legal
+        display: inline-flex
+        flex-wrap: nowrap
+        gap: variables.$gap--l
+        margin-right: variables.$gap--l
+        .text
+            &:hover
+                border-bottom: 1px solid variables.$color__corporativo
+    &__group-finally
+        grid-area: copy
+        display: inline-flex
+        justify-content: flex-end
+        gap: variables.$gap--l
+
+
+
+
+

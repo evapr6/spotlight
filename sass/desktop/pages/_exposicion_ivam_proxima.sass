@@ -1,0 +1,160 @@
+@use "base"
+@use "variables"
+@use "typography"
+
+//hero
+.exposiciones__hero
+    padding:
+        top: 5rem
+        left: variables.$gap__s
+        right: variables.$gap__s
+        bottom: variables.$gap__l
+    background: variables.$color__morado-claro
+    &--image
+        opacity: 70%
+        text-align: center
+    &--button
+        position: absolute
+        bottom: 11rem
+        right: 0
+        left: 0
+        text-align: center
+        margin: 0 auto
+        font-size: variables.$gap__s
+
+//pichiavo contenido
+.exposicion
+    background: variables.$color__blanco
+    margin-inline: variables.$gap__s
+    &__ficha
+        &__grupo
+        &--title
+            color: variables.$color__titulo
+            font-size: variables.$gap--xl
+            text-align: center
+            margin-bottom: variables.$gap__xs
+        &--subtitle
+            color: variables.$color__corporativo
+            font-size: variables.$gap__m
+            text-align: center
+            font-weight: 500
+            text-transform: uppercase
+            margin-top: variables.$gap__xs
+        &--datos
+            border-top: .3rem solid variables.$color__morado-medio
+            margin-block: variables.$gap__m
+            display: flex
+            flex-direction: row
+            justify-content: space-between
+            background: #FBF9F9
+            padding-inline: variables.$gap__s
+            padding-bottom: variables.$gap__xs
+        &--right
+            margin-top: variables.$gap__s
+            margin-left: variables.$gap__s
+        &--item
+            font-weight: 700
+            color: variables.$color__corporativo
+            margin-top: variables.$gap__xs
+        &--answer
+            margin-top: variables.$gap__xs
+        &--left
+            margin-top: variables.$gap__xs
+            margin-right: variables.$gap__m
+        &__information
+            margin-top: variables.$gap__xl
+            margin-bottom: variables.$gap--xxl
+        &--intro
+            text-align: center
+            color: variables.$color__titulo
+        &--text
+            margin-inline: variables.$gap--xs
+            &-bold
+                font-weight: 700
+                color: variables.$color__corporativo
+        &--image
+            margin-top: 5rem
+            width: 500px
+            height: 400px
+    &__group
+        &--items
+            display: flex
+            align-content: space-between
+            flex-direction: row
+
+.exposicion__artista
+    padding-top: variables.$gap__l
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    margin-bottom: variables.$gap__l
+    &--title
+        text-align: center
+        margin-top: 0
+        color: variables.$color__morado-medio
+    &--image
+        width: 490px
+        height: 400px
+        margin-left: variables.$gap__l
+        margin-top: 8rem
+    .artista__link
+        color: variables.$color__corporativo
+        font-weight: 700
+
+.exposiciones__recomendaciones
+    &--cards
+        display: grid
+        grid-template-columns: repeat(3,1fr)
+        gap: 2.2rem
+
+.card
+    &__header
+        display: flex
+        justify-content: space-between
+        align-items: center
+    &__museum
+        margin: .7rem
+        font-size: variables.$gap__s
+        color: variables.$color__corporativo
+    &__estado
+        text-transform: uppercase
+        font-size: .7rem
+        font-weight: 700
+        margin-right: variables.$gap__s
+        padding: variables.$gap__xs variables.$gap__s
+        border-radius: 5px
+        &--proximo
+            color: variables.$color__blanco
+            background: variables.$color__verde
+        &--actual
+            color: variables.$color__corporativo
+            background: variables.$color__gris
+            display: flex
+            align-items: flex-end
+            &-simple
+                display: inline-flex
+        &--pasada
+            color: variables.$color__blanco
+            background: variables.$color__rojo
+    &__image
+        height: 14rem
+        margin-block: variables.$gap__s
+        margin: 0 auto
+    &__tipo-exposicion
+        font-weight: 300
+        margin: 0
+            top: .25rem
+    &__space
+        display: block
+        padding-block: variables.$gap__s
+        &-doble
+            display: block
+            padding-block: variables.$gap__l
+    &__title-evento
+        font-size: variables.$gap__m
+        color: variables.$color__morado-medio
+    &__description
+        margin-bottom: variables.$gap__s
+        &--hidden
+            display: none
+

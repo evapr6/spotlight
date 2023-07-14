@@ -1,0 +1,1255 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <title>Spotlight</title>
+        <link
+                rel="icon"
+                type="image/png"
+                href="img/favicon.png"
+        >
+        <!-- (Opcional: Solo Safari) Previsualización en marcadores -->
+        <link
+                rel="apple-touch-icon"
+                href="/img/touch-icon-ipad.png">
+        <link
+                rel="apple-touch-icon"
+                sizes="152x152"
+                href="/img/touch-icon-ipad.png">
+        <link
+                rel="apple-touch-icon"
+                sizes="180x180"
+                href="img/touch-icon-iphone-retina.png"
+        >
+        <link
+                rel="apple-touch-icon"
+                sizes="167x167"
+                href="img/touch-icon-ipad-retina.png"
+        >
+        <!-- (Opcional) Sugiere un color al navegador para personalizar la ventana en general -->
+        <meta name="theme-color" content="#fff">
+        <!-- (Opcional) Sugiere un color al navegador para personalizar la ventana en modo claro -->
+        <meta name="theme-color"
+              content="#F0EDF4"
+              media="(prefers-color-scheme: light)">
+        <!-- (Opcional) Sugiere un color al navegador para personalizar la ventana en modo oscuro -->
+        <meta name="theme-color"
+              content="#765A9A"
+              media="(prefers-color-scheme: dark)">
+        <!-- Bloquea el zoom en smartphones-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <!--Declara quien es el autor. Sin utilidad práctica -->
+        <meta name="author" content="Eva">
+        <!-- Declara palabras claves -->
+        <meta name="keywords" content="html, css, javascript, blog, minimalista, arte, exposiciones, actividades">
+        <!-- Declara la descripción de la web. Es utilizado por los motores de busqueda para la previa -->
+        <meta name="description" content="Web para encontrar exposiciones, actividades y leer acerca del arte">
+        <!-- Open Graph y Twitter card: Declara como se mostrará la previa del enlace si es compartida por Facebook o alguna otra red social -->
+        <meta property="og:image" content="img/miniatura.png">
+        <meta property="og:title" content="Blog simple">
+        <!-- website, video, audio, article, book o profile -->
+        <meta property="og:type" content="website">
+        <meta
+                name="twitter:card"
+                content="Es mi trabajo final, sigueme!"
+        >
+
+        <meta
+                name="twitter:creator"
+                content="@evapeydro6">
+        <!-- Open Graph Imagen completa (Opcional) -->
+
+        <meta property="og:image:type" content="image/jpeg">
+        <meta property="og:image:width" content="400">
+        <meta property="og:image:height" content="300">
+        <meta property="og:image:alt" content="A shiny red apple with a bite taken out">
+
+        <!-- Fuentes-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <!-- Fin Fuentes-->
+        <!--CSS-->
+        <link
+                rel="stylesheet"
+                type="text/css"
+                href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        >
+        <!-- Tus archivos CSS -->
+        <!--split media-->
+        <link
+                rel="stylesheet"
+                type="text/css"
+                href="css/mobile.css"
+                media="all and (max-width: 600px)"
+        >
+        <link
+                rel="stylesheet"
+                type="text/css"
+                href="css/desktop.css"
+                media="all and (min-width: 600px)"
+        >
+        <!--split media-->
+        <!--Para el menú hamburguesa-->
+        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <!--Fin funcionalidades del menú hamburguesa-->
+        <!--Slider-->
+        <link
+                rel="stylesheet"
+                href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+        />
+        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+        <link rel="stylesheet" href="sass/desktop/_header.sass">
+        <!--fin slider-->
+        <!--slider artistas-->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+        <!--fin slider artistas-->
+        <!--AOS-->
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <!--fin AOS-->
+  </head>
+    <body>
+        <header class="header" x-data="{ open: false }">
+            <div class="container">
+                <a href="index.html" class="header__brand-link">
+                    <img
+                         src="img/spotlight_movil_reducida.png"
+                         alt="Logo Spotlight versión movil"
+                         class="image header__brand-icono"
+                    />
+                </a>
+                <nav class="nav" :class="open ? 'nav--show' : ''">
+                 <ul class="nav__ul">
+                     <li class="nav__item">
+                         <a href="exposiciones.html" class="nav__link">Exposiciones</a>
+                     </li>
+                     <li class="nav__item">
+                         <a href="actividades.html" class="nav__link">Actividades</a>
+                     </li>
+                     <li class="nav__item">
+                         <a href="arte_urbano.html" class="nav__link">Arte urbano</a>
+                     </li>
+                     <li class="nav__item">
+                         <a href="artistas.html" class="nav__link">Artistas</a>
+                     </li>
+                     <li class="nav__item">
+                         <a href="blog.html" class="nav__link">Blog</a>
+                     </li>
+                 </ul>
+             </nav>
+                <button class="header__button" aria-hidden="true" @click="open = !open">
+                 <img
+                         :src="open ? 'img/icons/close.webp' : 'img/icons/open.webp'"
+                         alt="Botón de mostrar u ocultar el menú movil"
+                         class="image"
+                 >
+                </button>
+            </div>
+        </header>
+        <main>
+            <section id="inicio" class="hero">
+                <div class="container">
+                    <div class="hero__container">
+                         <hgroup class="hero__hgroup">
+                             <h1 class="hero__title">¿Apasionado del arte?</h1>
+                             <p class="hero__description">
+                                 Descubre las diferentes exposiciones, actividades y artistas actuales :)
+                             </p>
+                         </hgroup>
+                     <!-- Slider main container -->
+                        <div class="swiper hero__swiper">
+                         <!-- Additional required wrapper -->
+                            <div class="swiper-wrapper">
+                             <!-- Slides -->
+                             <div class="swiper-slide hero__swiper">
+                                 <h2 class="hero__swiper-title">Exposiciones</h2>
+                                 <a href="page_construction.html" class="link">
+                                     <img
+                                          src="img/exposiciones/caixa-forum-lanube-ia.webp"
+                                          alt="Imagen de la exposición La nube ia, en el caixa forum"
+                                          class="hero__swiper-image image"
+                                     >
+                                     <div class="hero__swiper-info">
+                                         <h3 class="hero__swiper-event">La Nube{IA}</h3>
+                                         <p class="hero__swiper-museum">
+                                             Caixa Forum
+                                         </p>
+                                     </div>
+                                 </a>
+                             </div>
+                             <div class="swiper-slide hero__swiper">
+                                 <h2 class="hero__swiper-title">Actividades</h2>
+                                 <a href="page_construction.html" class="link">
+                                     <img
+                                             src="img/actividades/actividad-vino.webp"
+                                             alt="Imagen de la actividad de pintar un cuadro con pintura fluoerescente incluyendo vino, en the art wine house"
+                                             class="hero__swiper-image image"
+                                     >
+                                     <div class="hero__swiper-info">
+                                         <h3 class="hero__swiper-event">Vino y arte</h3>
+                                         <p class="hero__swiper-museum">
+                                            The art Wine House
+                                         </p>
+                                     </div>
+                                 </a>
+                             </div>
+                             <div class="swiper-slide hero__swiper">
+                                 <h2 class="hero__swiper-title">Arte urbano</h2>
+                                 <a href="page_construction.html">
+                                     <img
+                                             src="img/arte_urbano/scrif_arte.webp"
+                                             alt="Imagen de la exposición La nube ia, en el caixa forum"
+                                             class="hero__swiper-image image"
+                                     >
+                                     <div class="hero__swiper-info">
+                                         <h3 class="hero__swiper-event"> Escif</h3>
+                                     </div>
+                                 </a>
+                             </div>
+                             <div class="swiper-slide hero__swiper">
+                                 <h2 class="hero__swiper-title">Noticias</h2>
+                                 <a href="page_construction.html" class="link">
+                                     <img
+                                             src="img/blog/blog-madrid-atemporal.webp"
+                                             alt="Imagen de la noticia madrid atemoporal"
+                                             class="hero__swiper-image image"
+                                     >
+                                     <div class="hero__swiper-info">
+                                         <h3 class="hero__swiper-event">Madrid atemporal</h3>
+                                     </div>
+                                 </a>
+                             </div>
+                             <div class="swiper-slide hero__swiper">
+                                 <h2 class="hero__swiper-title">Artistas</h2>
+                                 <a href="page_construction.html" class="link">
+                                     <img
+                                             src="img/artist/palmera-vir.webp"
+                                             alt="Imagen de Palnmera Vir"
+                                             class="hero__swiper-image image"
+                                     >
+                                     <div class="hero__swiper-info">
+                                         <h3 class="hero__swiper-event">Palmera Vir</h3>
+                                     </div>
+                                 </a>
+                             </div>
+                         </div>
+                         <!-- If we need pagination -->
+                            <div class="swiper-pagination"></div>
+                         <!-- If we need scrollbar -->
+                            <div class="swiper-scrollbar"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    <!-------Fin Hero -------------------------->
+    <!------ Exposiciones ---------------------------->
+            <section  data-aos="fade-left"
+               data-aos-anchor="#example-anchor"
+               data-aos-offset="500"
+               data-aos-duration="800" class="exposiciones">
+                <div class="container">
+                    <hgroup class="exposiciones__introduction">
+                        <h1><a class="exposiciones__title-section link" href="exposiciones.html">Exposiciones</a></h1>
+                        <p class="exposiciones__description">
+                            Descubre las diferentes exposicones más destacadas de este mes!
+                        </p>
+                    </hgroup>
+                    <div class="exposiciones__cards">
+                        <article class="exposiciones__card">
+                            <hgroup class="card__header">
+                                <h3 class="card__museum">IVAM</h3>
+                                <p class=" card__estado card__estado--proximo">Próximamente</p><!--para estados de la exposición-->
+                            </hgroup>
+                            <img
+                                    src="img/exposiciones/ivam-social-consequences.webp"
+                                    alt="Imagen de la exposición Anhelo de luz del sun Otobang Nkanga, en el Ivam"
+                                    class="card__image image"
+                            >
+                            <p class="card__tipo-exposicion">
+                                Exposición temporal
+                            </p>
+                            <p>
+                                <time datetime=2023-07-13">13 Julio 2023–</time><time datetime="2024-01-07">7 Enero 2024</time>
+                            </p>
+                            <h2 class="card__title-evento">Anhelo de luz del sun Otobang Nkanga</h2>
+                            <p class="card__description" >
+                                Empleando la escultura, el dibujo y la performance, pero también la escritura y los formatos pedagógicos,Otobong Nkanga (Kano, Nigeria, 1974)analiza la noción de ‘tierra’ como una formación geológica y discursiva.
+                            </p>
+                           <!-- <button class="button button--leer-mas">Leer más</button>-->
+                            <div class="container button--grupos">
+                                <a href="page_construction.html" class="button button--planificar link">Planificar</a>
+                                <a href="exposicion_ivam_proxima.html"  class="button button--ver link">Ver</a>
+                            </div>
+                        </article>
+                        <article class="exposiciones__card" x-data="{ hidden: true }">
+                            <hgroup class="card__header">
+                                <h3 class="card__museum">IVAM</h3>
+                                <p class=" card__estado card__estado--actual">Actual</p><!--para estados de la exposición-->
+                            </hgroup>
+                            <img src="img/exposiciones/ivam-la_nave.webp"
+                                    alt="Imagen de la exposición La nave, en el Ivam"
+                                    class="card__image image"
+                            >
+                            <p class="card__tipo-exposicion">
+                                Exposición temporal
+                            </p>
+                            <p>
+                                <time datetime=2023-03-09">9 Marzo 2023–</time><time datetime="2023-08-20">20 Agosto 2023</time>
+                            </p>
+                            <h2 class="card__title-evento">La Nave 1984-1991</h2>
+                            <p class="card__description">
+                                La Nave fue un colectivo de diseñadores que nació de la fusión de los estudios Caps i Mans y Enebece (NBC), dando acogida a once profesionales de diferentes disciplinas, desde diseñadores
+                                <span x-bind:class="hidden ? 'card__description--hidden' : ''">industriales y gráficos hasta artistas visuales, arquitectos y aparejadores: Eduardo Albors, Paco Bascuñán, José Juan Belda, Carlos Bento, Lorenzo Company, Sandra Figuerola, Marisa Gallén, Luis González, Luis Lavernia, Nacho Lavernia y Daniel Nebot</span>
+                            </p>
+                            <button class=" button button--leer-mas card__leer-mas" @click="hidden = !hidden">Leer más</button>
+                            <span class="card__space"></span>
+                            <nav class="container button--grupos">
+                                <a href="page_construction.html" class="button button--planificar link">Planificar</a>
+                                <a href="page_construction.html"  class="button button--ver link">Ver</a>
+                            </nav>
+                        </article>
+                        <article class="exposiciones__card">
+                            <hgroup class="card__header">
+                                <h3 class="card__museum">CCC</h3>
+                                <p class=" card__estado card__estado--actual">Actual</p>
+                            </hgroup>
+                            <img
+                                    src="img/exposiciones/ccc_cultura-online-cmccasa-2023.webp"
+                                    alt="Imagen de la epoxición CULTURA ONLINE #CMCVaCasa 2023, en el Centre Cultural del Carmen"
+                                    class="card__image image"
+                            >
+                            <p class="card__tipo-exposicion">
+                                Exposición temporal
+                            </p>
+                            <p>
+                                <time datetime=2023-05-11">13 Mayo 2023–</time><time datetime="2023-07-09">7 Julio 2023</time>
+                            </p>
+                            <h2 class="card__title-evento">Cultura Online #CMCVaCasa 2023</h2>
+                            <p class="card__description" >
+                                Ofrece al público la posibilidad de conocer en la Sala Ferreres – Goerlich del Centre del Carme Cultura Contemporània los proyectos seleccionados en la convocatoria de Cultura Online #CMCVaCasa 2023.
+                            </p>
+                            <div class="container button--grupos">
+                                <a href="page_construction.html" class="button button--planificar link">Planificar</a>
+                                <a href="page_construction.html"  class="button button--ver link">Ver</a>
+                            </div>
+                        </article>
+                        <article class="exposiciones__card">
+                            <hgroup class="card__header">
+                                <h3 class="card__museum">Bombas Gens</h3>
+                                <p class=" card__estado card__estado--actual">Actual</p>
+                            </hgroup>
+                            <img
+                                    src="img/exposiciones/bombas_gens_perfomenace_naturaleza.webp"
+                                    alt="Imagen de la exposición de Carllos Bunga. Performar la naturaleza, en Bombas Gens, centre d'art"
+                                    class="card__image image"
+                            >
+                            <p class="card__tipo-exposicion">
+                                Exposición temporal
+                            </p>
+                            <p>
+                                <time datetime=2023-02-17">17 Febrero 2023–</time><time datetime="2023-10-15">15 Octubre 2023</time>
+                            </p>
+                            <h2 class="card__title-evento">Carlos Bunga. Perfomar la naturaleza.</h2>
+                            <p class="card__description" >
+                                Primera gran exposición antológica del artista Carlos Bunga  en España que brinda la oportunidad de adentrarse en la compleja y poética obra del autor.
+                            </p>
+                            <div class="container button--grupos">
+                                <a href="page_construction.html" class="button button--planificar link">Planificar</a>
+                                <a href="page_construction.html"  class="button button--ver link">Ver</a>
+                            </div>
+                        </article>
+                        <article class="exposiciones__card">
+                            <hgroup class="card__header">
+                                <h3 class="card__museum">Muvim</h3>
+                                <p class=" card__estado card__estado--actual">Actual</p>
+                            </hgroup>
+                            <img
+                                    src="img/exposiciones/muvin_el_que_no_esta_escrit.webp"
+                                    alt="Imagen de la exposición lo que no esta escrito, en el Muvin"
+                                    class="card__image image"
+                            >
+                            <p class="card__tipo-exposicion">
+                                Exposición temporal
+                            </p>
+                            <p>
+                                <time datetime=2023-06-15">Desde el 15 Junio 2023</time>
+                            </p>
+                            <h2 class="card__title-evento"><em>El que no està escrit</em></h2>
+                            <p class="card__description" >
+                                Exposición que reune un total de 40 obras que experiemntan a través de las formas no visibles de las letrass: la contraforma, el espacio entre los carácteres o el interlineado.
+                            </p>
+                            <span class="card__space"></span>
+                            <div class="container button--grupos">
+                                <a href="#" class="button button--planificar link">Planificar</a>
+                                <a href="#"  class="button button--ver link">Ver</a>
+                            </div>
+                        </article>
+                        <article class="exposiciones__card">
+                            <hgroup class="card__header">
+                                <h3 class="card__museum">Muvim</h3>
+                                <p class="card__estado card__estado--actual">Actual</p><!--para estados de la exposición-->
+                            </hgroup>
+                            <img
+                                    src="img/exposiciones/muvim_aventura_del_pensamiento.webp"
+                                    alt="Imagen de la exposición la aventura del pensamiento, en el Muvin"
+                                    class="card__image image"
+                            >
+                            <p class="card__tipo-exposicion">
+                                Exposición permanente
+                            </p>
+                            <span class="card__space"></span>
+                            <h2 class="card__title-evento">La aventura del pensamiento</h2>
+                            <p class="card__description" >
+                                Exposición didáctica que re requiere reserva. Grupos máximos de 20 personas.
+                            </p>
+                            <span class="card__space-doble"></span>
+                            <div class="container button--grupos">
+                                <a href="page_construction.html" class="button button--planificar link">Planificar</a>
+                                <a href="page_construction.html"  class="button button--ver link">Ver</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+    <!-------fin sección exposiciones------------------------->
+    <!--------inicio sección actividades------------------------>
+            <section data-aos="fade-up"
+              data-aos-duration="3000" class="actividades">
+                 <div class="container">
+                     <hgroup class="actividades__introduction">
+                         <h1 class="actividades__title-section"><a class="actividades__title-section link" href="actividades.html">Actividades</a></h1>
+                         <p class="actividades__description">
+                             ¿No sabes qué hacer? Te proponemos actividades que te pueden interesar
+                         </p>
+                     </hgroup>
+                     <div class="actividades__cards container">
+                         <article class="actividades__card">
+                             <div class="actividades__card-header">
+                                 <div class="actividades__card-header-wrapper">
+                                     <img
+                                         src="img/icons/calendario.webp"
+                                             alt="icono de un calendario"
+                                             class="image actividades__card-symbol"
+                                     >
+                                     <p class="actividades__card-date">LUNES A VIERNES 10 - 14, 17-20H</p>
+                                 </div>
+                                 <img
+                                         src="img/actividades/pinta-tu-pieza.webp"
+                                         alt="Imagen de la actividad pinta tu pìeza , en el taller taulellet"
+                                         class="image actividades__card-image"
+                                 >
+                             </div>
+                             <p class="actividades__card-place">
+                                 Taulellet
+                             </p>
+                             <p class="actividades__card-price">
+                                 25€
+                             </p>
+                             <h2 class="actividades__card-title">Pinta tu pieza</h2>
+                             <a href="#" class="actividades__card-button button button--go link">Ir</a>
+                         </article>
+            <!-----otra actividad-------------->
+                         <article class="actividades__card">
+                             <div class="actividades__card-header">
+                                 <div class="actividades__card-header-wrapper">
+                                     <img
+                                             src="img/icons/calendario.webp"
+                                             alt="icono de un calendario"
+                                             class="image actividades__card-symbol"
+                                     >
+                                     <p class="actividades__card-date">
+                                         <time  datetime="2023-07-07">7 Julio 2023</time>
+                                     </p>
+                                 </div>
+                                 <img
+                                         src="img/actividades/bombas-gens-actividaded-bailar.webp"
+                                         alt="Imagen de la actividad “let's dance!”, danza del mueso, en Bombas Gens"
+                                         class="image actividades__card-image"
+                                 >
+                             </div>
+                             <p class="actividades__card-place">
+                                 Bombas Gens
+                             </p>
+                             <p class="actividades__card-price">
+                                 Gratis
+                             </p>
+                             <h2 class="actividades__card-title">6º Aniversario: “Let’s dance!”, danza en el museo.</h2>
+                             <a href="#" class="actividades__card-button button button--go link">Ir</a>
+                         </article>
+             <!-----otra actividad-------------->
+                         <article class="actividades__card">
+                             <div class="actividades__card-header">
+                                 <div class="actividades__card-header-wrapper">
+                                     <img
+                                             src="img/icons/calendario.webp"
+                                             alt="icono de un calendario"
+                                             class="image actividades__card-symbol"
+                                     >
+                                     <p class="actividades__card-date">
+                                         <time  datetime="2023-06-30">30 Junio</time><time  datetime="2023-07-20">06, 13 y 20 Julio 2023</time>
+                                     </p>
+                                 </div>
+                                 <img
+                                         src="img/actividades/ivam-obra-viva.webp"
+                                         alt="Imagen de la actividad IVAM Estiu. IVAM En viu, en el IVAM"
+                                         class="image actividades__card-image"
+                                 >
+                             </div>
+                             <p class="actividades__card-place">
+                                 IVAM
+                             </p>
+                             <p class="actividades__card-price">
+                                 Gratis
+                             </p>
+                             <h2 class="actividades__card-title">IVAM Estiu. IVAM En viu</h2>
+                             <a href="#" class="actividades__card-button button button--go link">Ir</a>
+                        </article>
+             <!--------otra actividad------------>
+                         <article class="actividades__card">
+                             <div class="actividades__card-header">
+                                 <div class="actividades__card-header-wrapper">
+                                     <img
+                                             src="img/icons/calendario.webp"
+                                             alt="icono de un calendario"
+                                             class="image actividades__card-symbol"
+                                     >
+                                     <p class="actividades__card-date">
+                                         <time datetime="2023-07-15">15</time><time datetime="2023-07-16"> y 16 Julio 2023</time>
+                                     </p>
+                                 </div>
+                                 <img
+                                         src="img/actividades/arae_barracas-valencianas_3.webp"
+                                         alt="Imagen de la actividad de creacion de barracas tradicionales, en ARAE"
+                                         class="image actividades__card-image"
+                                 >
+                             </div>
+                             <p class="actividades__card-place">
+                                 ARAE
+                             </p>
+                             <p class="actividades__card-price">
+                                5€
+                             </p>
+                             <h2 class="actividades__card-title">Taller de barracas valencianas</h2>
+                             <a href="#" class="actividades__card-button button button--go link">Ir</a>
+                         </article>
+             <!--------otra actividad------------>
+                         <article class="actividades__card">
+                             <div class="actividades__card-header">
+                                 <div class="actividades__card-header-wrapper">
+                                     <img
+                                             src="img/icons/calendario.webp"
+                                             alt="icono de un calendario"
+                                             class="image actividades__card-symbol"
+                                     >
+                                     <p class="actividades__card-date">
+                                         <time datetime="2023-07-15">15 y</time><time datetime="2023-07-29">29 Julio 2023</time>
+                                     </p>
+                                 </div>
+                                 <img
+                                         src="img/actividades/cajon-de-sonidos.webp"
+                                         alt="Imagen de la actividad cajón de sonidos, en Caixa Forum"
+                                         class="image actividades__card-image"
+                                 >
+                             </div>
+                             <p class="actividades__card-place">
+                                 Caixa Forum
+                             </p>
+                             <p class="actividades__card-price">
+                                 4€
+                             </p>
+                             <h2 class="actividades__card-title">Cajón de sonidos.</h2>
+                             <a href="#" class="actividades__card-button button button--go link">Ir</a>
+                         </article>
+             <!--------otra actividad------------>
+                         <article class="actividades__card">
+                             <div class="actividades__card-header">
+                                 <div class="actividades__card-header-wrapper">
+                                     <img
+                                             src="img/icons/calendario.webp"
+                                             alt="icono de un calendario"
+                                             class="image actividades__card-symbol"
+                                     >
+                                     <p class="actividades__card-date">
+                                         <time  datetime="2023-07-02">2 Julio 2023</time>
+                                     </p>
+                                 </div>
+                                 <img
+                                         src="img/actividades/bed_ccc_pictronats_edicio_collage.webp"
+                                         alt="Imagen de la actividad BED CCCC. PICTRONATS EDICIÓ COLLAGE, en el centre cultural del carmen"
+                                         class="image actividades__card-image"
+                                 >
+                             </div>
+                             <p class="actividades__card-place">
+                                CCC
+                             </p>
+                             <p class="actividades__card-price">
+                                 4€
+                             </p>
+                             <h2 class="actividades__card-title">BED CCCC.<em>Pictronats</em> edición <em>collage</em>.</h2>
+                             <a href="#" class="actividades__card-button button button--go link">Ir</a>
+                         </article>
+                     </div>
+                 </div>
+            </section>
+    <!--fin sección actividades-->
+    <!--inicio sección artistas-->
+            <section  data-aos="fade-right"
+               data-aos-offset="300"
+               data-aos-easing="ease-in-sine" class="artistas">
+             <div class="container">
+                 <hgroup class="artistas__introduction">
+                     <h1><a class="artistas__title-section link" href="artistas.html">Artistas</a></h1>
+                     <p class="artistas__description">
+                         ¿Busca a tus artistas favoritos y descubre muchos más.
+                     </p>
+                 </hgroup>
+                 <section  class="mySwiper swiper--artistas">
+                     <div class=" swiper-wrapper swiper-wrapper--artistas">
+                         <div class="swiper-slide artistas__card">
+                             <img
+                                     src="img/artist/naranjalidad.webp"
+                                     alt="Imagen de la artista naranjalidad"
+                                     class="card__image image"
+                             >
+                             <h2 class="card__title">Naranjalidad</h2>
+                             <p class="card__subtitle" >
+                                 Ilustradora
+                             </p>
+                             <p class="card__description">
+                                 Ilustradora de elementos orgánicos, predominando las técnicas tradicionales.
+                             </p>
+                             <a href="page_construction.html" class="card-button button button--go link">Seguir</a>
+                         </div>
+                         <div class="swiper-slide artistas__card">
+                             <img
+                                     src="img/artist/bJota_Blindfold.webp"
+                                     alt="Imagen del logo del artista Jota Blindfold"
+                                     class="card__image image"
+                             >
+                             <h2 class="card__title">Jota Blindfold</h2>
+                             <p class="card__subtitle" >
+                                 Artista multidisciplinar
+                             </p>
+                             <p class="card__description">
+                                 Obras mayoritariamente digitales, más oscuras, donde predominan colores fuertes.
+                             </p>
+                             <a href="page_construction.html" class="card-button button button--ver link">Seguir</a>
+                         </div>
+                         <div class="swiper-slide artistas__card">
+                             <img
+                                     src="img/artist/palmera-vir.webp"
+                                     alt="Imagen de la artista Palmera Vir"
+                                     class="card__image image"
+                             >
+                             <h2 class="card__title">Palmera Vir</h2>
+                             <p class="card__subtitle" >
+                                 Ilustradora
+                             </p>
+                             <p class="card__description">
+                                 Ilustradora Valenciana que recrea escenas y espacios típicos valencianos.
+                             </p>
+                             <a href="page_construction.html" class="card-button button button--ver link">Seguir</a>
+                         </div>
+                         <div class="swiper-slide artistas__card">
+                             <img
+                                     src="img/artist/lola_vendeta_2.webp"
+                                     alt="Imagen de la artista Lola Vendeta"
+                                     class="card__image image"
+                             >
+                             <h2 class="card__title">Lola Vendeta</h2>
+                             <p class="card__subtitle" >
+                                 Ilustradora
+                             </p>
+                             <p class="card__description">
+                                 Ilustradora digital, recerea escenas feministas haciendo un recalco a diferentes situaciones que se encuentra una mujer.
+                             </p>
+                             <a href="page_construction.html" class="card-button button button--ver link">Seguir</a>
+                         </div>
+                         <div class="swiper-slide artistas__card">
+                             <img
+                                     src="img/artist/Nunezimage.webp"
+                                     alt="Imagen del artista Nunezimage"
+                                     class="card__image image"
+                             >
+                             <h2 class="card__title">Nunezimage</h2>
+                             <p class="card__subtitle" >
+                                 Fotografo
+                             </p>
+                             <p class="card__description">
+                                 Fotografía de retratos y paisajes mayoritariamente de lugares subdesarrollados.
+                             </p>
+                             <a href="page_construction.html" class="card-button button button--ver link">Seguir</a>
+                         </div>
+                         <div class="swiper-slide artistas__card">
+                             <img
+                                     src="img/artist/lidia_cao.webp"
+                                     alt="Imagen de la artista lidia cao"
+                                     class="card__image image"
+                             >
+                             <h2 class="card__title">Lidia Cao</h2>
+                             <p class="card__subtitle" >
+                                 Muralista
+                             </p>
+                             <p class="card__description">
+                                 Especializada en ilutración de murales, mostrando la parte emocional de las personas.
+                             </p>
+                             <a href="#" class="card-button button button--ver link">Seguir</a>
+                         </div>
+                         <div class="swiper-slide artistas__card">
+                             <img
+                                     src="img/artist/cropped-unpreti_07.jpg"
+                                     alt="Imagen de la artista Kapi Michalska"
+                                     class="card__image image"
+                             >
+                             <h2 class="card__title">Kapi Michalska</h2>
+                             <p class="card__subtitle" >
+                                 Pintora
+                             </p>
+                             <p class="card__description">
+                                 Especialista en retratos con pintura al óleo.
+                             </p>
+                             <a href="#" class="card-button button button--ver link">Seguir</a>
+                         </div>
+                     </div>
+                     <!-- If we need pagination -->
+                     <div class="swiper-pagination-mySwiper"></div>
+                 </section>
+             </div>
+            </section>
+    <!--fin sección artistas-->
+    <!--Inicio sección Arte urbano-->
+            <section class="urbano">
+               <div class="container">
+                   <hgroup class="urbano__introduction">
+                       <h1 class="urbano__title-section"><a class="urbano__title-section link" href="arte_urbano.html">Arte Urbano</a></h1>
+                       <p class="urbano__description">
+                          Descubre el arte que te puedes encontrar cerca de ti
+                       </p>
+                   </hgroup>
+                   <div  data-aos="fade-up"
+                         data-aos-duration="3000" class="urbano__cards container">
+                       <article class="urbano__card">
+                           <img
+                                   src="img/arte_urbano/ciutat-Fallera-Valencia-Pichiavo-4.webp"
+                                   alt="Imagen de parte del mural de Pichiavo, ubicado en la ciudad fallera de Valencia"
+                                   class="image urbano__card-image"
+                           >
+                           <div class="urbano__card-wrapper">
+                               <p class="urbano__card-place">
+                                   Ciudad Fallera, Valencia
+                               </p>
+                               <h2 class="urbano__card-title">Pichiavo</h2>
+                               <nav class="urbano__card-button">
+                                   <a href="page_construction.html" class=" button button--planificar link">Artista</a>
+                                   <a href="arte-urbano-pichiavo.html" class=" button button--ver link">Ver</a>
+                                </nav>
+                           </div>
+                       </article>
+                       <!-----otra obra-------------->
+                       <article class="urbano__card">
+                           <img
+                               src="img/arte_urbano/murarl-julieta.webp"
+                               alt="Imagen del mural de la artista julieta en las navaes dek¡l cabañal, Valencia"
+                               class="image urbano__card-image"
+                           >
+                           <div class="urbano__card-wrapper">
+                               <p class="urbano__card-place">
+                                   Naves del Cabañal, Valencia
+                               </p>
+                               <h2 class="urbano__card-title">Julieta xlF</h2>
+                               <nav class="urbano__card-button">
+                                   <a href="page_construction.html" class=" button button--planificar link">Artista</a>
+                                   <a href="page_construction.html" class=" button button--ver link">Ver</a>
+                               </nav>
+                           </div>
+                       </article>
+                       <!-----otra obra-------------->
+                       <article class="urbano__card">
+                           <img
+                               src="img/arte_urbano/deih-fanzara.webp"
+                               alt="Imagen del mural de Deih, en la población de Fanzara"
+                               class="image urbano__card-image"
+                           >
+                           <div class="urbano__card-wrapper">
+                               <p class="urbano__card-place">
+                                   Fanzara, España
+                               </p>
+                               <h2 class="urbano__card-title">Deih</h2>
+                               <nav class="urbano__card-button">
+                                   <a href="page_construction.html" class=" button button--planificar link">Artista</a>
+                                   <a href="page_construction.html" class=" button button--ver link">Ver</a>
+                               </nav>
+                           </div>
+                       </article>
+                       <!--------otra obra------------>
+                       <article class="urbano__card">
+                           <img
+                               src="img/arte_urbano/xelon-XLF04.webp"
+                               alt="Imagen del mural de Xelon, ubicado en el barrio del Carmen en Valencia"
+                               class="image urbano__card-image"
+                           >
+                           <div class="urbano__card-wrapper">
+                               <p class="urbano__card-place">
+                                   Barrio del Carmen, Valencia
+                               </p>
+                               <h2 class="urbano__card-title">Xelonxlf</h2>
+                               <nav class="urbano__card-button">
+                                   <a href="page_construction.html" class=" button button--planificar link">Artista</a>
+                                   <a href="page_construction.html" class=" button button--ver link">Ver</a>
+                               </nav>
+                           </div>
+                       </article>
+                       <!--------otra obra------------>
+                       <article class="urbano__card">
+                           <img
+                               src="img/arte_urbano/osgat.webp"
+                               alt="Imagen del mural de Ós gat, ubicado en el barrio de Benimacler, Valencia."
+                               class="image urbano__card-image"
+                           >
+                           <div class="urbano__card-wrapper">
+                               <p class="urbano__card-place">
+                                   Benimaclet, Valencia
+                               </p>
+                               <h2 class="urbano__card-title">Ós gat</h2>
+                               <nav class="urbano__card-button">
+                                   <a href="page_construction.html" class=" button button--planificar link">Artista</a>
+                                   <a href="page_construction.html" class=" button button--ver link">Ver</a>
+                               </nav>
+                           </div>
+                       </article>
+                       <!--------otra obra------------>
+                       <article class="urbano__card">
+                           <img
+                               src="img/arte_urbano/primark.webp"
+                               alt="Imagen del mural contra la explotación infatil de Scrif, ubicado enfrente del primark de Valencia"
+                               class="image urbano__card-image"
+                           >
+                           <div class="urbano__card-wrapper">
+                               <p class="urbano__card-place">
+                                   Plaza de toros(zona Xátiva), Valencia
+                               </p>
+                               <h2 class="urbano__card-title">Scrif</h2>
+                               <nav class="urbano__card-button">
+                                   <a href="page_construction.html" class=" button button--planificar link">Artista</a>
+                                   <a href="page_construction.html" class=" button button--ver link">Ver</a>
+                               </nav>
+                           </div>
+                       </article>
+                   </div>
+               </div>
+            </section>
+    <!--fin sección arte urbano-->
+    <!--incio sección blog-->
+            <section data-aos="fade-right"
+                data-aos-offset="300"
+                data-aos-easing="ease-in-sine" class="blog">
+               <div class="container">
+                   <hgroup class="blog__introduction">
+                       <h1 class="blog__title-section"><a class="blog__title-section link" href="blog.html">Blog</a></h1>
+                       <p class="blog__description">
+                           Descubre noticias, más información  y curiosidades sobre obras, artistas y el arte.
+                       </p>
+                   </hgroup>
+                   <div class="blog__cards container">
+                       <article class=" blog__card-long blog__card-primera">
+                           <img
+                               src="img/blog/IMG_4-original.webp"
+                               alt="Imagen de la entrada de blog, de Katsushika Hokusai (1760-1849)"
+                               class="image blog__card-long-image"
+                           >
+                           <div class="blog__card-long-wrapper">
+                               <h2 class="blog__card-long-title">Midjourney: Qué es y cómo funciona</h2>
+                               <p class="blog__card-long-place">
+                                   Domestika
+                               </p>
+                               <a href="page_construction.html" class="blog__card-long-button button button--go link">leer</a>
+                           </div>
+                       </article>
+                       <!-----otra entrada-------------->
+                       <article class="blog__tarjet blog__card-segunda">
+                           <img
+                               src="img/blog/palauet_nolla.webp"
+                               alt="Imagen del Palauet de Nolla ya restaurado"
+                               class="image blog__tarjet-image"
+                           >
+                           <div class="blog__tarjet-wrapper">
+                               <h2 class="blog__tarjet-title">Restauración del Palauet de Nolla de Meliana</h2>
+                               <p class="blog__tarjet-place">
+                                   ARAE
+                               </p>
+                               <a href="page_construction.html" class="blog__tarjet-button button button--go link">Leer</a>
+                           </div>
+                       </article>
+                       <!-----otra entrada-------------->
+                       <article class="blog__card blog__card-tercera">
+                           <img
+                               src="img/blog/ola_.webp"
+                               alt="Imagen de la entrada de blog, de Katsushika Hokusai (1760-1849)"
+                               class="image blog__card-image"
+                           >
+                           <div class="blog__card-wrapper">
+                               <h2 class="blog__card-title">Katsushika Hokusai (1760-1849)</h2>
+                               <p class="blog__card-place">
+                                   Anónimo
+                               </p>
+                               <a href="page_construction.html" class="blog__card-button button button--go link">leer</a>
+                           </div>
+                       </article>
+                       <!-----otra entrada-------------->
+                       <article class="blog__card blog__card-cuarta">
+                           <img
+                               src="img/blog/julian.webp"
+                               alt="Imagen de la entrada de blog, de Julian Assange y el criptoarte"
+                               class="image blog__card-image"
+                           >
+                           <div class="blog__card-wrapper">
+                               <h2 class="blog__card-title">Julian Assange y el criptoarte</h2>
+                               <p class="blog__card-place">
+                                   Blog contemporáneo
+                               </p>
+                               <a href="page_construction.html" class="blog__card-button button button--go link">leer</a>
+                           </div>
+                       </article>
+                       <!-----otra actividad-------------->
+                       <article class="blog__card blog__card-quinta">
+                           <img
+                                   src="img/blog/nstalacion-artística_upscaled.webp"
+                                   alt="Imagen de la entrada de blog, instalación artística"
+                                   class="image blog__card-image"
+                           >
+                           <div class="blog__card-wrapper">
+                               <h2 class="blog__card-title">Instalación artística: el medio como composición</h2>
+                               <p class="blog__card-place">
+                                   Blog contemporáneo
+                               </p>
+                               <a href="page_construction.html" class="blog__card-button button button--go link">leer</a>
+                           </div>
+                       </article>
+                   </div>
+               </div>
+           </section>
+    <!--fin sección blog-->
+    <!--------cookies------->
+            <section class="cookies">
+               <h2 class="cookies__titulo">Aviso de Cookies</h2>
+               <p class="cookies__texto">
+                   Usamos cookies para mejorar tu experiencia en la web, consulta <a class="link cookies__link " href="cookies.html">aquí</a> las política de cookies.
+               </p>
+                <p class="cookies__texto">
+                    ¿Aceptas nuestras Cookies?
+                </p>
+               <div class="cookies__botones">
+                   <button class="cookies__boton cookies__boton--no">No</button>
+                   <button class="cookies__boton cookies__boton--si">Si</button>
+               </div>
+            </section>
+       <!-- No borrar, aquí se generarán todas las etiquetas <script> si acepta el usuario -->
+            <div id="nuevosScripts"></div>
+    <!-------- fin cookies------->
+        </main>
+        <footer class="footer">
+            <div class="footer__division-up">
+                <div class="container">
+                   <div class="footer__up">
+                       <div class="footer__group">
+                           <details class="subnav subnav--primero">
+                               <summary class="subnav__title">Spotlight</summary>
+                               <ul class="nav__ul ul-reset">
+                                   <li class="nav__item"><a href="#" class="link nav__link">Sobre nosotros</a></li>
+                                   <li class="nav__item"><a href="#" class="link nav__link">¿Qué hecemos?</a></li>
+                                   <li class="nav__item"><a href="#" class="link nav__link">Equipo</a></li>
+                                   <li class="nav__item"><a href="3" class="link nav__link">Contacto</a></li>
+                               </ul>
+                           </details>
+                           <details class="subnav subnav--segundo">
+                           <summary class="subnav__title">Servicios</summary>
+                           <ul class="nav__ul ul-reset">
+                               <li class="nav__item"><a href="exposiciones.html" class="link nav__link">Exposiciones</a></li>
+                               <li class="nav__item"><a href="page_construction.html" class="link nav__link">Planifica</a></li>
+                               <li class="nav__item"><a href="arte_urbano.html" class="link nav__link">Arte urbano</a></li>
+                               <li class="nav__item"><a href="page_construction.html" class="link nav__link">Publicidad</a></li>
+                               <li class="nav__item"><a href="page_construction.html" class="link nav__link">Anúnciate.</a></li>
+                           </ul>
+                           </details>
+                       </div>
+                       <form class="footer__form">
+                           <div class="footer__form-newsletter">
+                               <label>
+                                   Suscribete a nuesta newsletter
+                                   <input type="email" name="correo" class="form-correo">
+                               </label>
+                               <button  type="submit" class="button button__enviar"> Enviar</button>
+                           </div>
+                           <div class="footer__form-checkbox">
+                               <label>
+                                   <input type="checkbox" name="privacidad" value="">
+                                   Acepto las condiciones de uso y privacidad
+                               </label>
+                           </div>
+                       </form>
+                       <div class="footer__social">
+                           <p class="footer__social-title ">
+                               Siguenos
+                           </p>
+                           <ul class="ul-reset social">
+                               <li class="social__item">
+                                   <a href="page_construction.html" class="link social__link">
+                                       <img class="image social__icon" src="img/icons/facebook_icon.svg" alt="Facebook">
+                                   </a>
+                               </li>
+                               <li class="social__item">
+                                   <a href="page_construction.html" class="link social__link">
+                                       <img class="image social__icon" src="img/icons/twitter.svg" alt="Twitter">
+                                   </a>
+                               </li>
+                               <li class="social__item">
+                                   <a href="page_construction.html" class="link social__link">
+                                       <img class="image social__icon" src="img/icons/instagram_icon.svg" alt="Instagram">
+                                   </a>
+                               </li>
+                           </ul>
+                       </div>
+                   </div>
+                </div>
+            </div>
+            <div class="footer__division-down">
+                <div class="footer__down">
+                    <nav class="footer__group-items">
+                        <div class="footer__group-item">
+                            <p><a href="aviso_legal.html" class="text link">Aviso Legal</a></p>
+                            <p><a class="link text">Contacto</a></p>
+                        </div>
+                        <div class="footer__group-item">
+                            <p><a href="cookies.html" class="text link">Politica de Cookies</a></p>
+                            <p><a href="politica_privacidad.html" class="link text">Privacidad</a></p>
+                        </div>
+                        <p class="footer__group-item"><a href="#" class="text link">Política de Protección de datos</a></p>
+                    </nav>
+                    <div class="footer__group-finally">
+                        <p>Spotlight, art expericence</p>
+                        <a href="#inicio" class="link">
+                            <img src="img/icons/arrow_up_icon.svg" alt="flecha para llevarte al inicio"
+                                 class="social__icon image">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--para funcionar el slider -->
+        <script>
+                new Swiper('.swiper', {
+                 // Optional parameters
+                 direction: 'horizontal',
+                 loop: true,
+
+                 //segundos
+                 autoplay: {
+                     delay: 5000,
+                 },
+
+                 // If we need pagination
+                 pagination: {
+                 el: '.swiper-pagination',
+                 },
+
+                 // Navigation arrows
+                 navigation: {
+                 nextEl: '.swiper-button-next',
+                 prevEl: '.swiper-button-prev',
+                 },
+
+                 // And if we need scrollbar
+                 scrollbar: {
+                 el: '.swiper-scrollbar',
+                 },
+                 });
+            </script>
+        <script>
+                new Swiper(".mySwiper", {
+                    effect: "coverflow",
+                    grabCursor: true,
+                    centeredSlides: true,
+                    slidesPerView: "auto",
+                    coverflowEffect: {
+                        rotate: 0,
+                        stretch: 0,
+                        depth: 300,
+                        modifier: 1,
+                        slideShadows: false,
+                    },
+
+                    pagination: {
+                        el: ".swiper-pagination-mySwiper",
+                    },
+                });
+            </script>
+        <!-- fin slider-->
+        <!--cartel cookies-->
+        <script defer>
+            let cookies = () => {
+                //======================================================================
+                // COOKIES
+                //======================================================================
+                //-----------------------------------------------------
+                // Configuración
+                //-----------------------------------------------------
+                const urlsScriptsCookies = ['https://analytics.google.com', 'https://facebook.com'];
+
+                function contenidoScriptsCookies () {
+                    ////////////  ¿Google Analítics? /////////////
+                    ////////////  ¿Facebook Pixel? /////////////
+                    ////////////  ¿Admob? /////////////
+                    ////////////  etc  /////////////
+                }
+                //-----------------------------------------------------
+                // Variables
+                //-----------------------------------------------------
+                const seccionCookie = document.querySelector('section.cookies');
+                const cookieSi = document.querySelector('.cookies__boton--si');
+                const cookieNo = document.querySelector('.cookies__boton--no');
+                const nuevosScripts = document.querySelector('#nuevosScripts');
+
+                //-----------------------------------------------------
+                // Funciones
+                //-----------------------------------------------------
+
+                /**
+                 * Método que oculta la sección de Cookie para siempre
+                 */
+                function ocultarCookie() {
+                    // Borra la sección de cookies en el HTML
+                    seccionCookie.remove();
+                }
+
+                /**
+                 * Método que marca las cookies como aceptadas
+                 */
+                function aceptarCookies() {
+                    // Oculta el HTML de cookies
+                    ocultarCookie();
+                    // Guarda que ha aceptado
+                    localStorage.setItem('cookie', true);
+                    // Tu codigo a ejecutar si aceptan las cookies
+                    ejecutarSiAcepta();
+                }
+
+                /**
+                 * Método que marca las cookies como denegadas
+                 */
+                function denegarCookies() {
+                    // Oculta el HTML de cookies
+                    ocultarCookie();
+                    // Guarda que ha aceptado
+                    localStorage.setItem('cookie', false);
+                }
+
+                /**
+                 * Método que ejecuta tu código si aceptan las cookies
+                 */
+                function ejecutarSiAcepta() {
+                    // Crea los <script>
+                    urlsScriptsCookies.forEach((url) => {
+                        const nuevoScript = document.createElement('script');
+                        nuevoScript.setAttribute('src', url);
+                        nuevosScripts.appendChild(nuevoScript);
+                    });
+                    // Lanza los códigos
+                    contenidoScriptsCookies();
+                }
+
+                /**
+                 * Método que inicia la lógica
+                 */
+                function iniciar() {
+                    // Comprueba si en el pasado el usuario ha marcado una opción
+                    if (localStorage.getItem('cookie') !== null) {
+                        if(localStorage.getItem('cookie') === 'true') {
+                            // Aceptó
+                            aceptarCookies();
+                        } else {
+                            // No aceptó
+                            denegarCookies();
+                        }
+                    }
+                }
+
+                //-----------------------------------------------------
+                // Eventos
+                //-----------------------------------------------------
+                cookieSi.addEventListener('click',aceptarCookies, false);
+                cookieNo.addEventListener('click',denegarCookies, false);
+
+                return {
+                    iniciar: iniciar
+                }
+            };
+
+            // Activa el código. Comenta si quieres desactivarlo.
+            cookies().iniciar();
+        </script>
+        <!--fin cartel cookies-->
+        <!--footer aperturass-->
+            <script>
+                // Variables
+                const anchuraMovil = 600;
+                const subNavs = document.querySelectorAll('.subnav');
+
+                // Functions
+                function removeAllClickEvents(elem) {
+                    const clone = elem.cloneNode(true);
+                    elem.parentNode.replaceChild(clone, elem);
+                    return clone;
+                }
+
+                function initialSubNavs() {
+                    const width = window.innerWidth;
+                    if (width < anchuraMovil) {
+                        // Mobile
+                        subNavs.forEach(subNav => {
+                            // Close
+                            subNav.removeAttribute("open");
+                            // Details, enable click on summary
+                            const summary = subNav.querySelector(".subnav__title");
+                            const newDOM = removeAllClickEvents(summary);
+                            newDOM.addEventListener("click", (event) => {
+                                event.preventDefault();
+                                const open = subNav.getAttribute("open");
+                                if (open) {
+                                    subNav.removeAttribute("open");
+                                } else {
+                                    subNav.setAttribute("open", true);
+                                }
+                            });
+                        });
+                    } else {
+                        // Desktop
+                        subNavs.forEach(subNav => {
+                            // Open
+                            subNav.setAttribute("open", true);
+                            // Details, disable click on summary
+                            const summary = subNav.querySelector(".subnav__title");
+                            const newDOM = removeAllClickEvents(summary);
+                            newDOM.addEventListener("click", (event) => {
+                                event.preventDefault();
+                                subNav.setAttribute("open", true);
+                            });
+                        });
+                    }
+                }
+
+                // Events
+                window.addEventListener('resize', initialSubNavs);
+
+                // Init
+                initialSubNavs();
+            </script>
+        <!--fin footer aperturas-->
+        <!--Aos-->
+        <script>
+            AOS.init();
+        </script><!--fin Aos-->
+    </body>
+</html>

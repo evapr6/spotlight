@@ -1,0 +1,571 @@
+@use "base"
+@use "variables"
+@use "typography"
+
+//hero
+.hero
+    padding:
+        top: variables.$gap__header
+        left: variables.$gap__s
+        right: variables.$gap__s
+        bottom: variables.$gap__s
+    background: variables.$color__morado-claro
+    &__title
+        color: variables.$color__titulo
+        font-size: variables.$gap__xl
+    &__description
+        text-align: center
+        font-size: variables.$gap__s
+        margin-left: variables.$gap__xs
+        margin-right: variables.$gap__xs
+        color: variables.$color__texto
+        padding-bottom: variables.$gap__m
+    &__swiper
+        padding-top: variables.$gap__l
+        max-height: 500px
+        position: relative
+        display: inline-block
+        padding-bottom: variables.$gap__xxl
+        &-title
+            position: absolute
+            top: 2px
+            left: 4px
+            font-size: variables.$gap__s
+            background: variables.$color__corporativo
+            color: variables.$color__blanco
+            padding: variables.$gap__xs
+            border-radius: 10px
+            margin-bottom: variables.$gap__xs
+            margin-top: variables.$gap__s
+        &-info
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: flex-end
+            color: variables.$color__morado-medio
+            border-radius: 10px
+        &-event
+            position: absolute
+            bottom: 80px
+            right: 10px
+            font-size: .9rem
+            margin-bottom: 10px
+        &-museum
+            position: absolute
+            bottom: 100px
+            right: 10px
+            font-size: .7rem
+//fin hero
+
+//Sección exposiciones repertir en todas las secciones
+.exposiciones
+    display: flex
+    flex-direction: column
+    background: variables.$color__blanco
+    &__introduction
+        padding-block: variables.$gap--xl
+    &__title-section
+        color: variables.$color__titulo
+        font-size: 2.2rem
+        margin-top: 0
+    &__description
+        text-align: center
+        font-size: variables.$gap__s
+        color: variables.$color__texto
+    &__cards
+        display: flex
+        flex-direction: column
+        margin-inline: variables.$gap__s
+    &__card
+        background: variables.$color__morado-claro
+        margin-block: variables.$gap__l
+        box-shadow: 0 0 variables.$gap__s variables.$color__shadow
+        border-top-left-radius: variables.$gap__s
+        border-top-right-radius: variables.$gap__s
+        padding: variables.$gap__s
+
+    .card
+        &__header
+            display: flex
+            justify-content: space-between
+            align-items: center
+        &__museum
+            font-size: 1.2rem
+            color: variables.$color__corporativo
+        &__estado
+            text-transform: uppercase
+            font-size: .7rem
+            font-weight: 700
+            padding: variables.$gap__xs variables.$gap__s
+            border-radius: 5px
+            &--proximo
+                color: variables.$color__blanco
+                background: variables.$color__verde
+            &--actual
+                color: variables.$color__corporativo
+                background: variables.$color__gris
+                display: flex
+                align-items: flex-end
+        &__image
+            margin-block: variables.$gap__s
+        &__tipo-exposicion
+            font-weight: 300
+            margin: 0
+                top: .25rem
+        &__title-evento
+            font-size: variables.$gap__m
+            color: variables.$color__morado-medio
+        &__description
+            overflow: hidden
+            text-overflow: ellipsis
+            &--hidden
+                display: none
+
+        &__leer-mas
+            font-size: .8rem
+            color: variables.$color__morado-medio
+
+//Sección actividades
+.actividades
+    display: flex
+    flex-direction: column
+    background: variables.$color__blanco
+    & > .container
+        width: 100vw
+    &__introduction
+     padding-block: variables.$gap--xl
+    &__title-section
+        color: variables.$color__titulo
+        font-size: 2.2rem
+        margin-top: 0
+    &__description
+        text-align: center
+        font-size: variables.$gap__s
+        color: variables.$color__texto
+    &__cards
+        display: flex
+        flex-direction: column
+        margin-inline: variables.$gap__s
+    &__card
+        display: grid
+        max-width: 800px
+        border-radius: variables.$gap__s
+        grid-template-columns: 3fr 1fr
+        grid-template-rows: repeat(3,fit-content(100%))
+        grid-template-areas: "header header" "place price" "title go"
+        gap: variables.$gap__xs
+        background: variables.$color__morado-claro
+        margin-block: variables.$gap__l
+        padding-bottom: variables.$gap__m
+        box-shadow: 0 0 variables.$gap__l variables.$color__shadow
+        &-header
+            grid-area: header
+            &-wrapper
+                position: absolute
+                margin-top: variables.$gap__xs
+                margin-left: variables.$gap__xs
+                display: flex
+                align-items: center
+                gap: variables.$gap__xs
+                background: #0006
+                border-radius: 10px
+                padding-inline: .6rem
+                .actividades__card-symbol
+                    height: 32px
+                    max-width: 60px
+                .actividades__card-date
+                    font-family: typography.$fuente__texto
+                    font-weight: bold
+                    font-size: .8rem
+                    text-align: end
+                    color: variables.$color__blanco
+            .actividades__card-image
+                border-top-left-radius: variables.$gap__s
+                border-top-right-radius: variables.$gap__s
+                min-height: 100px
+
+        &-place
+            grid-area: place
+            font-size: 1.2rem
+            margin-left: variables.$gap__l
+            margin-bottom: variables.$gap__xs
+             //para centrar en eje vertical
+            align-self: center
+            color: variables.$color__corporativo
+        &-price
+            grid-area: price
+            font-size: variables.$gap__m
+            font-weight: 700
+            margin-bottom: variables.$gap__xs
+            margin-right: variables.$gap__s
+            place-self: center
+            color: variables.$color__titulo
+        &-title
+            grid-area: title
+            margin-left: variables.$gap__l
+            font-size: 1.2rem
+            color: variables.$color__morado-medio
+        &-button
+            grid-area: go
+            margin-right: variables.$gap__s
+            place-self: center
+
+
+//fin actividades
+//inicio artistas
+.artistas
+    display: flex
+    flex-direction: column
+    background: variables.$color__blanco
+    & > .container
+        width: 100vw
+    &__introduction
+        padding-block: variables.$gap--xl
+    &__title-section
+        color: variables.$color__titulo
+        font-size: 2.2rem
+        margin-top: 0
+    &__description
+        text-align: center
+        font-size: variables.$gap__s
+        color: variables.$color__texto
+    .swiper
+        &--artistas
+            padding-top: variables.$gap__l
+            max-height: 800px
+            position: relative
+            display: inline-block
+            padding-bottom: variables.$gap__xxl
+            &-wrapper-artistas
+                width: 100%
+                margin-inline: variables.$gap__s
+                box-sizing: border-box
+                display: flex
+                align-items: center
+            .artistas__card
+                margin-inline: variables.$gap__s
+                margin: 0 2em
+                width: 320px
+                height: 100%
+                background: variables.$color__verde-claro
+                padding: variables.$gap__s variables.$gap__l
+                box-sizing: border-box
+                margin-block: variables.$gap__m
+                box-shadow: 0 0 variables.$gap__s variables.$color__shadow
+                border-radius: variables.$gap__s
+
+                display: flex
+                align-items: center
+                flex-direction: column
+    .card
+        padding-block: 4rem
+        &__image
+            max-width: 80%
+            height: 14rem
+            margin-block: variables.$gap__s
+            margin: 0 auto
+            aspect-ratio: 1 / 1
+            border-radius: 50%
+            margin-top: variables.$gap__s
+        &__title
+            text-align: center
+            font-size: variables.$gap__m
+            color: variables.$color__morado-medio
+            margin-bottom: 0
+        &__subtitle
+            text-align: center
+            text-transform: uppercase
+            color: variables.$color__titulo
+            font-size: variables.$gap__s
+            margin-top: variables.$gap__xs
+            margin-bottom: variables.$gap__m
+        &__description
+            text-align: center
+            margin-block: variables.$gap--xxl
+            margin-inline: variables.$gap__s
+        &-button
+            display: flex
+            justify-content: center
+            margin: 0 auto
+            margin-bottom: variables.$gap__s
+
+//arte urbano
+.urbano
+    &__container
+        display: flex
+        flex-direction: column
+        background: variables.$color__blanco
+    &__introducción
+        padding-block: variables.$gap--xl
+    &__title-section
+        color: variables.$color__titulo
+        font-size: 2.2rem
+        margin-top: 0
+    &__description
+        text-align: center
+        font-size: variables.$gap__s
+        color: variables.$color__texto
+    &__cards
+        margin-top: variables.$gap__l
+        display: flex
+        flex-direction: column
+        margin-inline: variables.$gap__s
+    &__card
+        display: flex
+        flex-direction: column
+        border-radius: variables.$gap__s
+        background: variables.$color__morado-claro
+        margin-block: variables.$gap--l
+        box-shadow: 0 0 variables.$gap__s variables.$color__shadow
+        &-image
+            box-sizing: border-box
+            border-top-left-radius: variables.$gap__s
+            border-top-right-radius: variables.$gap__s
+            max-height: 100vh
+            margin: 0
+            //width: 320px
+            margin-bottom: variables.$gap__xs
+        &-wrapper
+            display: grid
+            grid-template-columns: 2fr 1fr
+            //grid-template-rows: repeat(2,fit-content(100%))
+            grid-template-areas: "place place" "title button"
+        &-place
+            grid-area: place
+            margin-left: .8rem
+            font-size: variables.$gap__s
+            color: variables.$color__titulo
+            margin-bottom: 0
+        &-title
+            grid-area: title
+            text-align: start
+            margin-top: variables.$gap__l
+            margin-left: .8rem
+        &-button
+            grid-area: button
+            margin-top: variables.$gap__l
+            margin-right: variables.$gap__xs
+            display: flex
+            justify-content: flex-end
+            gap: variables.$gap__s
+            padding-bottom: variables.$gap__l
+
+//blog
+.blog
+    &__container
+        display: flex
+        flex-direction: column
+        background: variables.$color__blanco
+    &__introducción
+        padding-block: variables.$gap--xl
+    &__title-section
+        color: variables.$color__titulo
+        font-size: 2.2rem
+        margin-top: 0
+    &__description
+        text-align: center
+        font-size: variables.$gap__s
+        color: variables.$color__texto
+    &__cards
+        margin-top: variables.$gap__l
+        display: flex
+        flex-direction: column
+        margin-inline: variables.$gap__s
+
+    &__tarjet
+        display: flex
+        flex-direction: column
+        border-radius: .3rem
+        margin-block: variables.$gap--l
+        box-shadow: 0 0 variables.$gap__s variables.$color__shadow
+        position: relative
+        &-image
+            text-align: center
+            box-sizing: border-box
+            border-radius: variables.$gap__s
+            max-height: 100vh
+            margin: 0
+            //width: 320px
+            margin-bottom: variables.$gap__xs
+            z-index: -1
+        &-wrapper
+            position: absolute
+            top: 10px
+            left: 10px
+        &-title
+            font-size: variables.$gap__m
+            font-weight: normal
+            color: variables.$color__morado-claro
+            font-family: typography.$fuente__titulos
+            margin-bottom: variables.$gap__xs
+        &-place
+            margin-top: variables.$gap__xs
+            font-size: variables.$gap__s
+            font-weight: normal
+            color: variables.$color__blanco
+        &-button
+            position: absolute
+            min-width: 35px
+            top: 200px
+            right: 10px
+            margin: variables.$gap__xs
+
+    &__card
+        display: flex
+        flex-direction: column
+        border-radius: variables.$gap__s
+        background: variables.$color__morado-claro
+        margin-block: variables.$gap--l
+        box-shadow: 0 0 variables.$gap__s variables.$color__shadow
+        &-image
+            box-sizing: border-box
+            border-top-left-radius: variables.$gap__s
+            border-top-right-radius: variables.$gap__s
+            //height: 200px
+            margin: 0
+            width: 500px
+            margin-bottom: variables.$gap__xs
+        &-wrapper
+            display: grid
+            grid-template-columns: 2fr 1fr
+            grid-template-rows: repeat(2,fit-content(100%))
+            grid-template-areas: "title title" "place button"
+        &-place
+            grid-area: place
+            margin-left: .8rem
+            font-size: variables.$gap__s
+            color: variables.$color__titulo
+            margin-bottom: variables.$gap__l
+        &-title
+            grid-area: title
+            font-size: variables.$gap__m
+            text-align: start
+            margin-top: variables.$gap__xs
+            margin-left: .8rem
+            margin-bottom: variables.$gap__xs
+        &-button
+            grid-area: button
+            margin-bottom: variables.$gap__l
+            display: flex
+            justify-content: flex-end
+            gap: variables.$gap__m
+
+    .blog__card-long
+        height: 510px
+        box-sizing: border-box
+        border-radius: variables.$gap__s
+        margin-top: variables.$gap__l
+        background: variables.$color__morado-claro
+        &:hover
+            transform: scale(1.1)
+        &-image
+            border-top-left-radius: variables.$gap__s
+            border-top-right-radius: variables.$gap__s
+            margin-bottom: variables.$gap__s
+            width: 400px
+        &-wrapper
+            display: grid
+            grid-template-columns: 1fr 1fr
+            grid-template-rows: repeat(2,fit-content(100%))
+            grid-template-areas: "title title" "place button"
+        &-place
+            grid-area: place
+            text-transform: uppercase
+            margin-left: .8rem
+            font-size: .8rem
+            color: variables.$color__titulo
+            margin-bottom: variables.$gap__s
+        &-title
+            grid-area: title
+            text-align: start
+            font-size: variables.$gap__m
+            margin-top: variables.$gap__s
+            margin-inline: .8rem
+            margin-bottom: variables.$gap__xs
+        &-button
+            grid-area: button
+            margin-top: variables.$gap__l
+            margin-bottom: variables.$gap__xxl
+            margin-left: variables.$gap__xxl
+
+//Cartel cookies
+.cookies
+    position: fixed
+    bottom: 0
+    left: 0
+    right: 0
+    margin: 0 auto
+        left: .5rem
+        right: .5rem
+        bottom: 1rem
+    border-radius: variables.$gap__s
+    padding-block: variables.$gap__l
+    background: variables.$color__morado-medio
+    color: white
+    text-align: center
+    z-index: 999999
+    &__titulo
+        font-size: variables.$gap__m
+        color: variables.$color__blanco
+        text-align: center
+    &__texto
+        margin-inline: .5rem
+    &__link
+        color: variables.$color__corporativo
+        font-weight: 700
+        text-decoration: underline
+
+
+
+.cookies__boton
+    border: 2px solid white
+    padding: .7rem
+    font-size: variables.$gap__s
+    color: white
+    width: variables.$gap__header
+    text-align: center
+    margin-top: 1rem
+    margin-bottom: variables.$gap__l
+    &--no
+        background: variables.$color__blanco
+        color: variables.$color__corporativo
+        border-radius: variables.$gap__s
+        font-weight: bold
+        border: none
+        margin-right: 1rem
+    &--si
+        background: variables.$color__corporativo
+        border-radius: variables.$gap__s
+        font-weight: bold
+        border: none
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

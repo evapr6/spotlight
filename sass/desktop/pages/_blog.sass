@@ -1,0 +1,247 @@
+@use "base"
+@use "variables"
+@use "typography"
+
+//hero
+.hero
+    margin-inline: variables.$gap__l
+    max-height: 1100px
+    padding-block: 6rem
+    padding-inline: variables.$gap__l
+    box-sizing: border-box
+    background: variables.$color__morado-claro
+    &__hgroup
+        margin-block: variables.$gap__xxl
+    &__container
+        padding-block: variables.$gap__xxl
+    &__tittle
+        text-align: center
+        color: variables.$color__titulo
+        font-size: variables.$gap__xxl
+    &__description
+        text-align: center
+        font-size: variables.$gap__m
+        margin-left: variables.$gap__xs
+        margin-right: variables.$gap__xs
+        color: variables.$color__texto
+
+
+//Inicio blog
+.blog
+    margin-inline: auto
+    padding-top: variables.$gap__l
+    border-bottom: 1px solid variables.$color__morado-footer
+    &__introduction
+        margin-bottom: variables.$gap__l
+        padding-block: variables.$gap__l
+    &__title-section
+        color: variables.$color__corporativo
+        font-weight: normal
+        margin-top: 0
+        margin-bottom: 0
+    &__description
+        text-align: center
+        font-size: variables.$gap__m
+        color: variables.$color__texto
+    &__cards
+        display: grid
+        grid-template-columns: 1fr 1fr 1fr
+        grid-template-rows: 1fr 1fr
+        grid-template-areas: "primera segunda segunda" "tercera cuarta quinta"
+        gap: variables.$gap__l
+        .blog__card-primera
+            grid-area: primera
+        .blog__card-segunda
+            grid-area: segunda
+        .blog__card-tercera
+            grid-area: tercera
+        .blog__card-cuarta
+            grid-area: cuarta
+        .blog__card-quinta
+            grid-area: quinta
+    &__tarjet
+        border-radius: .3rem
+        margin-block: variables.$gap--l
+        box-shadow: 0 0 variables.$gap__s variables.$color__shadow
+        display: inline-block
+        position: relative
+        &:hover
+            transform: scale(1.1)
+        &-image
+            text-align: center
+            box-sizing: border-box
+            border-radius: variables.$gap__s
+            max-height: 100vh
+            margin: 0
+            margin-bottom: variables.$gap__xs
+            z-index: -1
+        &-wrapper
+            position: absolute
+            top: 10px
+            left: 20px
+        &-title
+            margin-top: variables.$gap__s
+            font-size: variables.$gap__xl
+            font-weight: normal
+            color: variables.$color__morado-claro
+            font-family: typography.$fuente__titulos
+            margin-bottom: variables.$gap__xs
+        &-place
+            margin-top: variables.$gap__s
+            font-size: variables.$gap__m
+            font-weight: normal
+            color: variables.$color__blanco
+        &-button
+            position: absolute
+            width: 60px
+            top: 400px
+            right: 25px
+            margin: variables.$gap__xs
+            padding-inline: variables.$gap__xs
+
+    &__card
+        margin-inline: variables.$gap__xs
+        //max-width: 400px
+        height: 400px
+        box-sizing: border-box
+        border-radius: variables.$gap__s
+        background: variables.$color__morado-claro
+        margin-block: variables.$gap__l
+        padding-bottom: variables.$gap__m
+        box-shadow: 0 0 variables.$gap__l variables.$color__shadow
+        &:hover
+            transform: scale(1.1)
+        &-wrapper
+            display: grid
+            grid-template-columns: 1fr 1fr
+            grid-template-rows: repeat(2,fit-content(100%))
+            grid-template-areas: "title title" "place button"
+        &-image
+            border-top-left-radius: variables.$gap__s
+            border-top-right-radius: variables.$gap__s
+            max-height: 200px
+            width: 350px
+            margin-bottom: variables.$gap__s
+        &-place
+            grid-area: place
+            text-transform: uppercase
+            margin-left: .8rem
+            font-size: .8rem
+            color: variables.$color__titulo
+            margin-bottom: variables.$gap__s
+        &-title
+            grid-area: title
+            text-align: start
+            font-size: variables.$gap__m
+            margin-top: variables.$gap__s
+            margin-inline: .8rem
+            margin-bottom: variables.$gap__xs
+        &-button
+            grid-area: button
+            margin-top: variables.$gap__l
+            margin-bottom: variables.$gap__xxl
+            margin-left: variables.$gap__l
+
+    .blog__card-long
+        height: 500px
+        box-sizing: border-box
+        border-radius: variables.$gap__s
+        margin-top: variables.$gap__l
+        background: variables.$color__morado-claro
+        &:hover
+            transform: scale(1.1)
+        &-image
+            border-top-left-radius: variables.$gap__s
+            border-top-right-radius: variables.$gap__s
+            width: 350px
+            margin-bottom: variables.$gap__s
+        &-wrapper
+            display: grid
+            grid-template-columns: 1fr 1fr
+            grid-template-rows: repeat(2,fit-content(100%))
+            grid-template-areas: "title title" "place button"
+        &-place
+            grid-area: place
+            text-transform: uppercase
+            margin-left: .8rem
+            font-size: .8rem
+            color: variables.$color__titulo
+            margin-bottom: variables.$gap__s
+        &-title
+            grid-area: title
+            text-align: start
+            font-size: variables.$gap__m
+            margin-top: variables.$gap__s
+            margin-inline: .8rem
+            margin-bottom: variables.$gap__xs
+        &-button
+            grid-area: button
+            margin-top: variables.$gap__l
+            margin-bottom: variables.$gap__xxl
+            margin-left: variables.$gap__l
+
+.blog__line
+    padding-block: variables.$gap__m
+    &-container
+        display: grid
+        max-height: 300px
+        grid-template-columns: auto 1fr
+        grid-template-rows: repeat(3, auto)
+        grid-template-areas: "image title" "image description" "image link"
+        gap: variables.$gap__m
+        margin-top: variables.$gap__xl
+        padding-bottom: variables.$gap__xxl
+        border-bottom: 1px solid variables.$color__morado-claro
+    &-hgroup
+        grid-area: title
+        margin-top: 0
+    &-title
+        margin-block: 0
+        font-size: variables.$gap__xl
+    &-description
+        grid-area: description
+        margin-top: 0
+    &-button
+        grid-area: link
+        margin-left: auto
+        margin-right: variables.$gap__m
+    &-image
+        grid-area: image
+        max-height: 300px
+
+.blog__line-reverse
+    padding-block: variables.$gap__l
+    &-container
+        display: grid
+        max-height: 300px
+        grid-template-columns: 1fr auto
+        grid-template-rows: repeat(3, auto)
+        grid-template-areas: "title image" "description image" "link image"
+        gap: variables.$gap__m
+        margin-top: variables.$gap__xl
+        padding-bottom: variables.$gap__xxl
+        border-bottom: 1px solid variables.$color__morado-claro
+    &-hgroup
+        grid-area: title
+        //text-align: end
+        margin-top: 0
+    &-title
+        margin-block: 0
+        //text-align: right
+        font-size: variables.$gap__xl
+    &-description
+        grid-area: description
+        margin-top: 0
+    &-button
+        grid-area: link
+        margin-right: auto
+        margin-bottom: variables.$gap__s
+    &-image
+        grid-area: image
+        max-height: 300px
+
+.container-button
+    padding-block: variables.$gap__l
+
+
+

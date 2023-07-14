@@ -1,0 +1,174 @@
+@use "base"
+@use "variables"
+@use "typography"
+
+//hero
+.hero
+    padding:
+        top: variables.$gap__header
+        left: variables.$gap__s
+        right: variables.$gap__s
+        bottom: variables.$gap__l
+    background: variables.$color__morado-claro
+    &__title
+        color: variables.$color__titulo
+        font-size: variables.$gap__xl
+    &__description
+        text-align: center
+        font-size: variables.$gap__s
+        margin-left: variables.$gap__xs
+        margin-right: variables.$gap__xs
+        color: variables.$color__texto
+        padding-bottom: variables.$gap__m
+
+//arte urbano
+.urbano
+    &__container
+        display: flex
+        flex-direction: column
+        background: variables.$color__blanco
+    &__introducción
+        padding-block: variables.$gap--xl
+    &__title-section
+        color: variables.$color__corporativo
+        font-weight: normal
+        font-size: 2.2rem
+        margin-top: 0
+    &__description
+        text-align: center
+        font-size: variables.$gap__s
+        color: variables.$color__texto
+    &__cards
+        margin-top: variables.$gap__l
+        display: flex
+        flex-direction: column
+        margin-inline: variables.$gap__s
+
+    &__tarjet
+        display: flex
+        flex-direction: column
+        border-radius: .3rem
+        margin-block: variables.$gap--l
+        box-shadow: 0 0 variables.$gap__s variables.$color__shadow
+        position: relative
+        &-image
+            text-align: center
+            box-sizing: border-box
+            border-radius: variables.$gap__s
+            max-height: 100vh
+            margin: 0
+            //width: 320px
+            margin-bottom: variables.$gap__xs
+            z-index: -1
+        &-wrapper
+            position: absolute
+            top: 5px
+            left: 10px
+            background: #fff8
+            padding-inline: variables.$gap__s
+            border-radius: variables.$gap__s
+        &-title
+            font-size: variables.$gap__m
+            font-weight: normal
+            color: variables.$color__corporativo
+            font-family: typography.$fuente__titulos
+            margin-bottom: variables.$gap__xs
+        &-place
+            margin-top: variables.$gap__xs
+            font-size: variables.$gap__s
+            font-weight: bold
+            color: variables.$color__titulo
+        &-button
+            position: absolute
+            display: flex
+            min-width: 35px
+            top: 170px
+            left: 130px
+            margin: variables.$gap__xs
+            .tarjet-button
+                margin-inline: variables.$gap__s
+                width: 80%
+
+
+
+    &__card
+        display: flex
+        flex-direction: column
+        border-radius: variables.$gap__s
+        background: variables.$color__morado-claro
+        margin-block: variables.$gap--l
+        box-shadow: 0 0 variables.$gap__s variables.$color__shadow
+        &-image
+            box-sizing: border-box
+            border-top-left-radius: variables.$gap__s
+            border-top-right-radius: variables.$gap__s
+            //height: 200px
+            margin: 0
+            width: 500px
+            margin-bottom: variables.$gap__xs
+        &-wrapper
+            display: grid
+            grid-template-columns: 2fr 1fr
+            grid-template-rows: repeat(2,fit-content(100%))
+            grid-template-areas: "place place" "title button"
+        &-place
+            grid-area: place
+            margin-left: .8rem
+            font-size: variables.$gap__s
+            color: variables.$color__titulo
+            margin-bottom: variables.$gap__l
+        &-title
+            grid-area: title
+            font-size: variables.$gap__m
+            text-align: start
+            margin-top: variables.$gap__xs
+            margin-left: .8rem
+            margin-bottom: variables.$gap__xs
+        &-button
+            grid-area: button
+            margin-bottom: variables.$gap__m
+            display: flex
+            justify-content: flex-end
+            gap: variables.$gap__m
+
+    .urbano__card-long
+        height: 460px
+        box-sizing: border-box
+        border-radius: variables.$gap__s
+        margin-top: variables.$gap__l
+        background: variables.$color__morado-claro
+        &:hover
+            transform: scale(1.1)
+        &-image
+            border-top-left-radius: variables.$gap__s
+            border-top-right-radius: variables.$gap__s
+            width: 400px
+            margin-bottom: variables.$gap__s
+        &-wrapper
+            display: grid
+            grid-template-columns: 1fr 1fr
+            grid-template-rows: repeat(2,fit-content(100%))
+            grid-template-areas: "place place" "title button"
+        &-place
+            grid-area: place
+            text-transform: uppercase
+            margin-left: .8rem
+            font-size: .8rem
+            color: variables.$color__titulo
+            margin-bottom: variables.$gap__s
+        &-title
+            grid-area: title
+            text-align: start
+            font-size: variables.$gap__m
+            margin-top: variables.$gap__s
+            margin-inline: .8rem
+            margin-bottom: variables.$gap__xs
+        &-button
+            grid-area: button
+            display: flex
+            margin-top: variables.$gap__l
+            margin-bottom: variables.$gap__xxl
+            margin-inline: variables.$gap__xs
+            .card-long-button
+                margin-right: variables.$gap__xs
+

@@ -1,0 +1,126 @@
+@use "typography"
+@use "variables"
+@use "mixins"
+
+html
+  scroll-behavior: smooth
+
+body
+  font-family: typography.$fuente__texto
+
+h2
+  font-size: 1.6rem
+  font-family: typography.$fuente__texto
+  text-align: left
+  color: variables.$color__morado-medio
+
+h3
+  font-family: typography.$fuente__texto
+
+h4
+  font-size:  1rem
+  font-family: typography.$fuente__texto
+
+.container
+  margin: 0 auto
+  max-width: 1000px
+  padding-block: 1rem
+  overflow: hidden
+
+.image
+  max-width: 100%
+  object-fit: cover
+  display: block
+  object-position: center
+
+.ul-reset
+  display: flex
+  flex-wrap: wrap
+  list-style: none
+  padding: 0
+
+.link
+  text-decoration: none
+  display: inline-block
+  color: inherit
+
+.strong
+  color: variables.$color__corporativo
+  font-weight: bold
+
+
+//botones
+.button
+  display: inline-block
+  box-sizing: border-box
+  text-align: center
+  width: max-content
+  height: max-content
+  &--leer-mas
+    border: none
+    background: none
+    padding: 0
+    color: variables.$color__morado-medio
+    font-size: .8rem
+  &--grupos
+    display: flex
+    align-content: flex-end
+    align-items: center
+    justify-content: flex-end
+    margin-left: auto
+    padding-top: .7rem
+    padding-bottom: variables.$gap__l
+    gap: variables.$gap__s
+  &--planificar
+    display: flex
+    align-content: flex-end
+    font-weight: 700
+    background: white
+    color: variables.$color__corporativo
+    border: 1px solid variables.$color__corporativo
+    border-radius: 6px
+    padding: .4rem
+    padding-inline: variables.$gap__s
+  &--ver
+    display: flex
+    align-content: flex-end
+    font-weight: 700
+    background: variables.$color__corporativo
+    color: variables.$color__blanco
+    border: 1px solid variables.$color__corporativo
+    border-radius: 6px
+    padding: .4rem
+    padding-inline: variables.$gap__s
+  &--go
+    font-weight: 700
+    background: variables.$color__corporativo
+    color: variables.$color__blanco
+    border: 1px solid variables.$color__corporativo
+    border-radius: 6px
+    padding: .4rem
+    padding-inline: variables.$gap__l
+
+  @include mixins.hover
+    transform: scale(1.2)
+
+
+.ver-mas-btn
+ margin: 0 auto
+
+.hidden
+  display: none
+
+//swiper
+.swiper, .swiper--hero, .mySwiper
+  width: 100%
+  height: 100%
+.swiper-pagination-mySwiper
+  display: flex
+  justify-content: center
+
+
+
+
+
+
+
